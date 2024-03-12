@@ -1,4 +1,4 @@
-package game.engine.titans;
+package game.engine.interfaces;
 
 public interface Comparable {
 
