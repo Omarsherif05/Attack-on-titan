@@ -1,11 +1,5 @@
 package game.engine.titans;
-public abstract class Titan  {
-	int baseHealth;
-	int baseDamage;
-	int heightInMeters;
+
+public abstract class Titan {
 	
-	public Titan(){;
-	
-	}
-		
 }
