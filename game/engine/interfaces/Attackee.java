@@ -8,6 +8,8 @@ public interface Attackee 	 {
 	///
 	  default  int getCurrentHealth (){
 	  return CurrentHealth;
+
+	  x
 	  }
 	///
 	  default  void setCurrentHealth (int health){
