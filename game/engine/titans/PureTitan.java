@@ -15,13 +15,13 @@ public class PureTitan extends Titan{
 	}
 
 	public void attack() {
-		// TODO Auto-generated method stub
+
 		
 	}
 
 
 	public void getsAttacked() {
-		// TODO Auto-generated method stub
+
 		
 	}
 
