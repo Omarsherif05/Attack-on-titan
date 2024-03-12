@@ -45,10 +45,10 @@ public abstract class Titan implements Comparable{
         this.speed = speed;
     }
 
-	public int compareTo(Titan otherTitan) {
-	    if (this.distanceFromBase < otherTitan.distanceFromBase) {
+	public int compareTo(Titan o) {
+	    if (this.distanceFromBase < o.distanceFromBase) {
 	        return -1;
-	    } else if (this.distanceFromBase > otherTitan.distanceFromBase) {
+	    } else if (this.distanceFromBase > o.distanceFromBase) {
 	        return 1;
 	    } else {
 	        return 0;
