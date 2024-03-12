@@ -1,7 +1,7 @@
 package game.engine.interfaces;
 public interface Attackee 	 {
 	
-	  void setCurrentHealth(int currentHealth);
+ void setCurrentHealth(int currentHealth);
 	  int getCurrentHealth();
 	  int getResourcesValue();
 	 /* 
@@ -12,15 +12,15 @@ public interface Attackee 	 {
 	  x
 	  }
 	///
-	  default  void setCurrentHealth (int health){
-		  CurrentHealth=health;
+	default  void setCurrentHealth (int health){
+	  CurrentHealth=health;
 		  }
 	///  
 	  default  int getResourcesValue(){
 		  return ResourcesValue;
 		  }
-	  
+	
 	  */
-	  
+
 }
 /*where should i make the implemntation class or should this interface being inherited from anothor class */
