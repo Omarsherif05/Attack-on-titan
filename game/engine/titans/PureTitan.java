@@ -13,7 +13,7 @@ public class PureTitan extends Titan{
 	}
 
 	public void attack() {
-
+			
 		
 	}
 
