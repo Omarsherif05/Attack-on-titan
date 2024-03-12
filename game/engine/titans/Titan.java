@@ -9,7 +9,15 @@ public abstract class Titan implements Comparable{
     protected int speed;
     protected final int resourcesValue;
     protected final int dangerLevel;
-   
+
+    public Titan(int baseHealth, int baseDamage, int heightInMeters, int resourcesValue, int dangerLevel) {
+        this.baseHealth = baseHealth;
+        this.baseDamage = baseDamage;
+        this.heightInMeters = heightInMeters;
+        this.resourcesValue = resourcesValue;
+        this.dangerLevel = dangerLevel;
+    }
+
     public int getCurrentHealth() {
         return currentHealth;
     }
