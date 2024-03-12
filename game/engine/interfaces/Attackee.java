@@ -16,9 +16,6 @@ public interface Attackee 	 {
 	  CurrentHealth=health;
 		  }
 	///  
-	  default  int getResourcesValue(){
-		  return ResourcesValue;
-		  }
 	
 	  */
 

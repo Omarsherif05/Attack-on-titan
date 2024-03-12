@@ -7,7 +7,7 @@ public interface Mobil {
 	 void setSpeed(int speed);
 
 	 
-	 
+	 /*
 	 default int getDistance(){
 		 return distanceFromBase;
 	 }
@@ -27,5 +27,5 @@ public interface Mobil {
 	  default void setSpeed(int speed){
 		 this.speed=speed;	 }
 	 }
-		 
+		 */ 
 }
