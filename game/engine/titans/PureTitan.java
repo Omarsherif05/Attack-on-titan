@@ -47,8 +47,9 @@ public class PureTitan extends Titan{
 		}
 
 		public int compareTo(Object o) {
-			o =new PureTitan(baseHealth, baseDamage, heightInMeters, distanceFromBase, speed, resourcesValue, dangerLevel);
-			if (this.distanceFromBase <o.distanceFromBase) {
+			PureTitan x = new PureTitan(baseHealth, baseDamage, heightInMeters, distanceFromBase, speed, resourcesValue, dangerLevel);
+			x = (PureTitan) o;
+			if (this.distanceFromBase < o.distanceFromBase) {
 				return -1;
 			} else if (this.distanceFromBase > o.distanceFromBase) {
 				return 1;
@@ -58,7 +59,7 @@ public class PureTitan extends Titan{
 	}
 
 
-
+// object doesn't have distanceFromBase attribute
 ///////compare to problem
 
 }
