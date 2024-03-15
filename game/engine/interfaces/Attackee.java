@@ -1,23 +1,7 @@
 package game.engine.interfaces;
 public interface Attackee 	 {
 	
- void setCurrentHealth(int currentHealth);
-	  int getCurrentHealth();
-	  int getResourcesValue();
-	 /* 
-	///
-	  default  int getCurrentHealth (){
-	  return CurrentHealth;
-
-	  x
-	  }
-	///
-	default  void setCurrentHealth (int health){
-	  CurrentHealth=health;
-		  }
-	///  
-	
-	  */
-
+void setCurrentHealth(int currentHealth);
+	int getCurrentHealth();
+	int getResourcesValue();
 }
-/*where should i make the implemntation class or should this interface being inherited from anothor class */

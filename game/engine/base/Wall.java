@@ -6,7 +6,7 @@ public class Wall implements Attackee{
 
 	
 	
-	protected final int baseHealth;
+	public  final int baseHealth ;
 	protected int currentHealth;
 
 
