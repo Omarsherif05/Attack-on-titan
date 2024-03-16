@@ -9,11 +9,11 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class DataLoader {
-    // Attributes
+   
     private static final String TITANS_FILE_NAME = "titans.csv";
     private static final String WEAPONS_FILE_NAME = "weapons.csv";
 
-    // Method to read titans from CSV file and load into HashMap
+    
     public static HashMap<Integer, TitanRegistry> readTitanRegistry() throws IOException {
         HashMap<Integer, TitanRegistry> titanMap = new HashMap<>();
         try (BufferedReader br = new BufferedReader(new FileReader(TITANS_FILE_NAME))) {
@@ -34,7 +34,7 @@ public class DataLoader {
         return titanMap;
     }
 
-    // Method to read weapons from CSV file and load into HashMap
+    
     public static HashMap<Integer, WeaponRegistry> readWeaponRegistry() throws IOException {
         HashMap<Integer, WeaponRegistry> weaponMap = new HashMap<>();
         try (BufferedReader br = new BufferedReader(new FileReader(WEAPONS_FILE_NAME))) {
