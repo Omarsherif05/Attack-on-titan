@@ -1,6 +1,6 @@
 package game.engine.weapons;
 
-protected abstract class Weapon {
+public abstract class Weapon {
 
 	private final int baseDamage;
 	
