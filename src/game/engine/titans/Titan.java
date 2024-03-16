@@ -59,7 +59,27 @@ public abstract class Titan implements Comparable,Mobil,Attacker,Attackee{
 	        return 0;
 	    }
 	}
-    public abstract void move();
+    public int getBaseHealth() {
+		return baseHealth;
+	}
+
+	public int getBaseDamage() {
+		return baseDamage;
+	}
+
+	public int getHeightInMeters() {
+		return heightInMeters;
+	}
+
+	public int getResourcesValue() {
+		return resourcesValue;
+	}
+
+	public int getDangerLevel() {
+		return dangerLevel;
+	}
+
+	public abstract void move();
 
     public abstract void attack();
 
