@@ -8,7 +8,7 @@ import game.engine.titans.Titan;
 public class Lane implements Comparable  {
      public final Wall laneWall =new  Wall(Wall.baseHealth);
      //
-     protected static  int dangerLevel =0;
+     public static  int dangerLevel =0;
      protected final PriorityQueue<Titan> titan =new PriorityQueue<>();
      protected final ArrayList<Weapon> weapons =new ArrayList<>();
 
@@ -16,7 +16,7 @@ public class Lane implements Comparable  {
      this.laneWall=laneWall; 
      }
      
-     public  int compareTo(Object o){
+     public int compareTo(Object o){
           o = new Lane(laneWall) ;
           if(this.Lane.dangerLevel<Lane.dangerLevel)
                return -1;
