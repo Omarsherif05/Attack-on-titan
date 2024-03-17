@@ -5,13 +5,25 @@ import game.engine.weapons.*;
 import game.engine.base.Wall;
 import game.engine.interfaces.Comparable;
 import game.engine.titans.Titan;
-public class Lane  {
+public class Lane implements Comparable  {
      public final Wall laneWall =new  Wall(Wall.baseHealth);
      //
-     protected int dangerLevel =0;
-     PriorityQueue<Titan> titan =new PriorityQueue<>();
-     final ArrayList<Weapon> weapons =new ArrayList<>();
+     protected static  int dangerLevel =0;
+     protected final PriorityQueue<Titan> titan =new PriorityQueue<>();
+     protected final ArrayList<Weapon> weapons =new ArrayList<>();
+
      private Lane(Wall laneWall){
      this.laneWall=laneWall; 
      }
+     
+     public  int compareTo(Object o){
+          o = new Lane(laneWall) ;
+          if(this.Lane.dangerLevel<Lane.dangerLevel)
+               return -1;
+          if(this.Lane.dangerLevel>Lane.dangerLevel)
+               return 1;
+          else
+               return 0;
+     }
+
 }

@@ -11,8 +11,7 @@ public class TitanRegistry {
     private final int dangerLevel;
 
     
-    public TitanRegistry(int code, int baseHealth, int baseDamage, int heightInMeters, int speed,
-                         int resourcesValue, int dangerLevel) {
+    public TitanRegistry(int code, int baseHealth, int baseDamage, int heightInMeters, int speed,int resourcesValue, int dangerLevel) {
         this.code = code;
         this.baseHealth = baseHealth;
         this.baseDamage = baseDamage;
