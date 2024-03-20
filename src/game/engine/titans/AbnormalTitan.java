@@ -8,8 +8,8 @@ public class AbnormalTitan extends Titan{
 	}
 	//// depend on comparing element
 	public int compareTo(Object o){
-	o =new AbnormalTitan(baseHealth, baseDamage, heightInMeters, distanceFromBase, speed, resourcesValue, dangerLevel);
-	return 0;	
+		o =new AbnormalTitan(baseHealth, getDamage(), getHeightInMeters(), getDistanceFromBase(), speed, resourcesValue, getDangerLevel());
+		return 0;	
 	}
 		
 	
