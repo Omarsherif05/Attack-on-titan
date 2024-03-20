@@ -37,7 +37,4 @@ public class Battle {
         this.resourcesGathered=initialNumOfLanes;
         this.initialResourcesPerLane= initialResourcesPerLane;
     }
-    //last method 
-    //last element in constructor
-    //hashmap
 }
