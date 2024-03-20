@@ -12,6 +12,11 @@ public class Lane implements Comparable  {
      protected final PriorityQueue<Titan> titan =new PriorityQueue<>();
      protected final ArrayList<Weapon> weapons =new ArrayList<>();
 
+     
+     public Wall getLaneWall() {
+         return laneWall;
+     }
+
      private Lane(Wall laneWall){
      this.laneWall=laneWall; 
      }
