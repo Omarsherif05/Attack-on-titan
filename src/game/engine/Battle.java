@@ -82,7 +82,15 @@ public class Battle {
 		this.numberOfTitansPerTurn = numberOfTitansPerTurn;
 	}
 
+	public ArrayList<Titan> getApproachingTitans() {
+		return approachingTitans;
+	}
+
+	
 	
     
     
+	
+	
+	
 }
