@@ -22,40 +22,41 @@ public class PureTitan extends Titan{
 	}
 
 	public  int getDistance(){
-	return distanceFromBase;
+		return distanceFromBase;
 	}
 	
 	
 
-	public  void setDistance(int distance){;
-	distanceFromBase=distance;
+	public  void setDistance(int distance){
+		this. distanceFromBase=distance;
 	
 	}
 
 
 	public  int getSpeed(){
-	return speed;
+		return speed;
 	}
 	
 
 	public void setSpeed(int speed){
-	this.speed=speed;	 }
+		this.speed=speed;	
+	}
 
 	
 	public  int getResourcesValue(){
 		return resourcesValue;
-		}
+	}
 
-		public int compareTo(Object o) {
-			PureTitan x = new PureTitan(baseHealth, baseDamage, heightInMeters, distanceFromBase, speed, resourcesValue, dangerLevel);
-			x = (PureTitan) o;
-			if (this.distanceFromBase < o.distanceFromBase) {
-				return -1;
-			} else if (this.distanceFromBase > o.distanceFromBase) {
-				return 1;
-			} else {
-				return 0;
-			}
+	public int compareTo(Object o) {
+		PureTitan x = new PureTitan(baseHealth, baseDamage, heightInMeters, distanceFromBase, speed, resourcesValue, dangerLevel);
+		x = (PureTitan) o;
+		if (this.distanceFromBase < o.distanceFromBase) {
+			return -1;
+		} else if (this.distanceFromBase > o.distanceFromBase) {
+			return 1;
+		} else {
+			return 0;
+		}
 	}
 
 
