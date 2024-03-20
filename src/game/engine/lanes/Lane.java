@@ -17,7 +17,19 @@ public class Lane implements Comparable  {
          return laneWall;
      }
 
-     private Lane(Wall laneWall){
+     public static int getDangerLevel() {
+		return dangerLevel;
+	}
+
+	public PriorityQueue<Titan> getTitan() {
+		return titan;
+	}
+
+	public ArrayList<Weapon> getWeapons() {
+		return weapons;
+	}
+
+	private Lane(Wall laneWall){
      this.laneWall=laneWall; 
      }
      
