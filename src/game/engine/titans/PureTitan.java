@@ -58,6 +58,9 @@ public class PureTitan extends Titan{
 			return 0;
 		}
 	}
+	
+	
+	
 
 
 // object doesn't have distanceFromBase attribute

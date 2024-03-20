@@ -22,7 +22,15 @@ public class Battle {
     private BattlePhase battlePhase =BattlePhase.EARLY;
     private int numberOfTitansPerTurn=1;  
     private int score;
-    private int titanSpawnDistance =1;
+    public int getResourcesGathered() {
+		return resourcesGathered;
+	}
+
+	public void setResourcesGathered(int resourcesGathered) {
+		this.resourcesGathered = resourcesGathered;
+	}
+
+	private int titanSpawnDistance =1;
     private final WeaponFactory weaponFactory;
     //
     private final HashMap<Integer, TitanRegistry> titansArchives;

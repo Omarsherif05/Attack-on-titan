@@ -63,7 +63,7 @@ public abstract class Titan implements Comparable,Mobil,Attacker,Attackee{
 		return baseHealth;
 	}
 
-	public int getBaseDamage() {
+	public int getDamage() {
 		return baseDamage;
 	}
 
