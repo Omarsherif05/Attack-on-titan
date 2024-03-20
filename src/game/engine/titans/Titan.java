@@ -9,7 +9,7 @@ public abstract class Titan implements Comparable,Mobil,Attacker,Attackee{
     protected final int baseHealth;
     protected int currentHealth;
     protected final int baseDamage;
-    protected final int heightInMeters;
+    private final int heightInMeters;
     protected int distanceFromBase;
     protected int speed;
     protected final int resourcesValue;
