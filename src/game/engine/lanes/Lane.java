@@ -10,7 +10,7 @@ public class Lane implements Comparable{
      public final Wall laneWall =new  Wall(Wall.baseHealth);
      public static  int dangerLevel =0;
      protected final PriorityQueue<Titan> titan =new PriorityQueue<>();
-     protected final ArrayList<Weapon> weapons =new ArrayList<>();
+     private final ArrayList<Weapon> weapons =new ArrayList<>();
 
      
      public Wall getLaneWall() {
