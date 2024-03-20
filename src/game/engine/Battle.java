@@ -45,4 +45,44 @@ public class Battle {
         this.resourcesGathered=initialNumOfLanes;
         this.initialResourcesPerLane= initialResourcesPerLane;
     }
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public int getTitanSpawnDistance() {
+		return titanSpawnDistance;
+	}
+
+	public void setTitanSpawnDistance(int titanSpawnDistance) {
+		this.titanSpawnDistance = titanSpawnDistance;
+	}
+
+	public WeaponFactory getWeaponFactory() {
+		return weaponFactory;
+	}
+
+	public PriorityQueue<Lane> getLanes() {
+		return lanes;
+	}
+
+	public void setNumberOfTurns(int numberOfTurns) {
+		this.numberOfTurns = numberOfTurns;
+	}
+
+	public int getNumberOfTitansPerTurn() {
+		return numberOfTitansPerTurn;
+	}
+
+	public void setNumberOfTitansPerTurn(int numberOfTitansPerTurn) {
+		this.numberOfTitansPerTurn = numberOfTitansPerTurn;
+	}
+
+	
+    
+    
 }
