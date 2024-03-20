@@ -22,21 +22,12 @@ public class Battle {
     private BattlePhase battlePhase =BattlePhase.EARLY;
     private int numberOfTitansPerTurn=1;  
     private int score;
-    public int getResourcesGathered() {
-		return resourcesGathered;
-	}
-
-	public void setResourcesGathered(int resourcesGathered) {
-		this.resourcesGathered = resourcesGathered;
-	}
-
 	private int titanSpawnDistance =1;
     private final WeaponFactory weaponFactory;
-    //
     private final HashMap<Integer, TitanRegistry> titansArchives;
     private final ArrayList<Titan> approachingTitans ;
     private final PriorityQueue<Lane> lanes =new PriorityQueue<>(Lane.dangerLevel);
-    private final ArrayList<Lane> originalLanes ;
+    private final ArrayList<Lane> originalLanes;
 
     private Battle(int numberOfTurns, int score, int titanSpawnDistance, int initialNumOfLanes,int initialResourcesPerLane) throws IOException {
         this.numberOfTurns=numberOfTurns;
@@ -87,7 +78,13 @@ public class Battle {
 	}
 
 	
-	
+	public int getResourcesGathered() {
+		return resourcesGathered;
+	}
+
+	public void setResourcesGathered(int resourcesGathered) {
+		this.resourcesGathered = resourcesGathered;
+	}
     
     
 	

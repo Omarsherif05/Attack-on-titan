@@ -48,7 +48,7 @@ public class PureTitan extends Titan{
 	}
 
 	public int compareTo(Object o) {
-		PureTitan x = new PureTitan(baseHealth, baseDamage, heightInMeters, distanceFromBase, speed, resourcesValue, dangerLevel);
+		PureTitan x = new PureTitan(baseHealth, getDamage(), getHeightInMeters(), distanceFromBase, speed, resourcesValue, getDangerLevel());
 		x = (PureTitan) o;
 		if (this.distanceFromBase < o.distanceFromBase) {
 			return -1;
