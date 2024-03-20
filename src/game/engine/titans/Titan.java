@@ -8,7 +8,7 @@ import game.engine.interfaces.Mobil;
 public abstract class Titan implements Comparable,Mobil,Attacker,Attackee{
     protected final int baseHealth;
     protected int currentHealth;
-    protected final int baseDamage;
+    private final int baseDamage;
     private final int heightInMeters;
     protected int distanceFromBase;
     protected int speed;
