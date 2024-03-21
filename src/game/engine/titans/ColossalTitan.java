@@ -11,39 +11,10 @@ public class ColossalTitan extends Titan {
 	}
 
 	
-	public int getDistance() {
-		return distanceFromBase;
 
-	}
 
 	
-	public void setDistance(int distance) {
-		this.distanceFromBase = distance;
-		
-	}
-
 	
-	public int getResourcesValue() {
-		return resourcesValue;
-	}
-
-	
-	public void move() {
-		
-		
-	}
-
-	
-	public void attack() {
-		
-		
-	}
-
-	
-	public void getsAttacked() {
-		
-		
-	}
 
 
 

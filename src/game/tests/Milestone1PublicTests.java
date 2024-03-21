@@ -1364,7 +1364,6 @@ public class Milestone1PublicTests {
 		int new_currentHealth = (int) (Math.random()* 100);
 		setterMethod.invoke(pureTitan,new_currentHealth);
 		assertEquals(new_currentHealth, getterMethod.invoke(pureTitan,null));
-
 		int negative_currentHealth = -1;
 		setterMethod.invoke(pureTitan,negative_currentHealth);
 		assertEquals(0, getterMethod.invoke(pureTitan,null));

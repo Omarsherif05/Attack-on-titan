@@ -4,37 +4,27 @@ public class WeaponRegistry {
    
     private final int code;
     private final int price;
-    private final int damage;
-    private final String name;
-    private final int minRange;
-    private final int maxRange;
+    private static int damage;
+    private String name;
+    private int minRange;
+    private int maxRange;
 
    
     public WeaponRegistry(int code, int price) {
         this.code = code;
         this.price = price;
-        this.damage = 0; 
-        this.name = null; 
-        this.minRange = 0; 
-        this.maxRange = 0; 
     }
 
     
     public WeaponRegistry(int code, int price, int damage, String name) {
-        this.code = code;
-        this.price = price;
+        this(code,price);
         this.damage = damage;
         this.name = name;
-        this.minRange = 0; 
-        this.maxRange = 0; 
     }
 
     
     public WeaponRegistry(int code, int price, int damage, String name, int minRange, int maxRange) {
-        this.code = code;
-        this.price = price;
-        this.damage = damage;
-        this.name = name;
+    	this(code,price,damage,name);
         this.minRange = minRange;
         this.maxRange = maxRange;
     }
@@ -48,7 +38,7 @@ public class WeaponRegistry {
         return price;
     }
 
-    public int getDamage() {
+    public static int getDamage() {
         return damage;
     }
 

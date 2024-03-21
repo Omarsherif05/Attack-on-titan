@@ -1,18 +1,17 @@
 package game.engine.titans;
 
-import game.engine.interfaces.Attackee;
+import game.engine.interfaces.Attackee; 
 import game.engine.interfaces.Attacker;
-import game.engine.interfaces.Comparable;
 import game.engine.interfaces.Mobil;
 
-public abstract class Titan implements Comparable,Mobil,Attacker,Attackee{
-    protected final int baseHealth;
-    protected int currentHealth;
+abstract public class Titan implements Comparable<Titan>,Mobil,Attacker,Attackee{
+    private final int baseHealth;
+    private int currentHealth;
     private final int baseDamage;
     private final int heightInMeters;
-    protected int distanceFromBase;
-    protected int speed;
-    protected final int resourcesValue;
+    private int distanceFromBase;
+    private int speed;
+    private final int resourcesValue;
     private final int dangerLevel;
 
     public Titan(int baseHealth, int baseDamage, int heightInMeters, int distanceFromBase, int speed, int resourcesValue, int dangerLevel) {
@@ -23,22 +22,29 @@ public abstract class Titan implements Comparable,Mobil,Attacker,Attackee{
         this.speed = speed;
         this.resourcesValue = resourcesValue;
         this.dangerLevel = dangerLevel;
-        this.currentHealth = baseHealth;
+        this.currentHealth = Math.max(0,baseHealth);
     }
+
+    
 
     public int getCurrentHealth() {
-        return currentHealth;
+		return currentHealth;
+	}
+
+
+
+	public void setCurrentHealth(int currentHealth) {
+        if(currentHealth<0)
+        	this.currentHealth =0;
+        else
+        	this.currentHealth =currentHealth;
     }
 
-    public void setCurrentHealth(int currentHealth) {
-        this.currentHealth = currentHealth;
-    }
-
-    public int getDistanceFromBase() {
+    public int getDistance() {
         return distanceFromBase;
     }
 
-    public void setDistanceFromBase(int distanceFromBase) {
+    public void setDistance(int distanceFromBase) {
         this.distanceFromBase = distanceFromBase;
     }
 
@@ -51,13 +57,7 @@ public abstract class Titan implements Comparable,Mobil,Attacker,Attackee{
     }
 
 	public int compareTo(Titan o) {
-	    if (this.distanceFromBase < o.distanceFromBase) {
-	        return -1;
-	    } else if (this.distanceFromBase > o.distanceFromBase) {
-	        return 1;
-	    } else {
-	        return 0;
-	    }
+		return Integer.compare(this.distanceFromBase, o.distanceFromBase);
 	}
     public int getBaseHealth() {
 		return baseHealth;
@@ -78,11 +78,6 @@ public abstract class Titan implements Comparable,Mobil,Attacker,Attackee{
 	public int getDangerLevel() {
 		return dangerLevel;
 	}
-
-	public abstract void move();
-
-    public abstract void attack();
-
-    public abstract void getsAttacked();
+	
 }
 

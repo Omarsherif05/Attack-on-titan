@@ -3,29 +3,28 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 import game.engine.weapons.*;
 import game.engine.base.Wall;
-import game.engine.interfaces.Comparable;
 import game.engine.titans.Titan;
 
-public class Lane implements Comparable{
-     public final Wall laneWall =new  Wall(Wall.baseHealth);
-     public static int dangerLevel;
-     protected final PriorityQueue<Titan> titans =new PriorityQueue<>();
-     private final ArrayList<Weapon> weapons =new ArrayList<>();
+public class Lane implements Comparable<Lane>{
+     private final Wall laneWall;
+     private int dangerLevel;
+     private final PriorityQueue<Titan> titans;
+     private final ArrayList<Weapon> weapons;
 
      
      public Wall getLaneWall() {
          return laneWall;
      }
 
-     public static int getDangerLevel() {
+     public int getDangerLevel() {
 		return dangerLevel;
 	}
 
-	public static void setDangerLevel(int dangerLevel) {
-		Lane.dangerLevel = dangerLevel;
+	public void setDangerLevel(int dangerLevel) {
+		this.dangerLevel = dangerLevel;
 	}
 
-	public PriorityQueue<Titan> getTitan() {
+	public PriorityQueue<Titan> getTitans() {
 		return titans;
 	}
 
@@ -42,14 +41,8 @@ public class Lane implements Comparable{
 	}
 
      
-     public int compareTo(Object o){
-          o = new Lane(laneWall) ;
-          if(this.Lane.dangerLevel<Lane.dangerLevel)
-               return -1;
-          if(this.Lane.dangerLevel>Lane.dangerLevel)
-               return 1;
-          else
-               return 0;
+     public int compareTo(Lane lane){
+         return Integer.compare(this.dangerLevel, lane.dangerLevel);
      }
 
      
