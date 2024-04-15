@@ -14,7 +14,7 @@ import game.engine.weapons.factory.WeaponFactory;
 
 public class Battle {
     private static final int [][]PHASES_APPROACHING_TITANS={{1,1,1,2,1,3,4},{2,2,2,1,3,3,4},{4,4,4,4,4,4,4}};
-    private final int WALL_BASE_HEALTH =10000;
+    private final static int WALL_BASE_HEALTH =10000;
     private int numberOfTurns ;
     private int resourcesGathered ;
     private BattlePhase battlePhase =BattlePhase.EARLY;
@@ -64,6 +64,9 @@ public class Battle {
 
 	public void setNumberOfTurns(int numberOfTurns) {
 		this.numberOfTurns = numberOfTurns;
+	}
+	public int getNumberOfTurns() {
+		return numberOfTurns;
 	}
 
 	public int getNumberOfTitansPerTurn() {
