@@ -45,7 +45,11 @@ abstract public class Titan implements Comparable<Titan>,Mobil,Attacker,Attackee
     }
 
     public void setDistance(int distanceFromBase) {
-        this.distanceFromBase = distanceFromBase;
+        if (distanceFromBase < 0) {
+            this.distanceFromBase = 0;
+        } else {
+            this.distanceFromBase = distanceFromBase;
+        }
     }
 
     public int getSpeed() {
