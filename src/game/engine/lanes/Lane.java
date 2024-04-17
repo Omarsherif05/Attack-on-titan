@@ -3,6 +3,9 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 import game.engine.weapons.*;
 import game.engine.base.Wall;
+import game.engine.interfaces.Attackee;
+import game.engine.interfaces.Attacker;
+import game.engine.interfaces.Mobil;
 import game.engine.titans.Titan;
 
 public class Lane implements Comparable<Lane>{
@@ -39,14 +42,29 @@ public class Lane implements Comparable<Lane>{
         this.titans = new PriorityQueue<>();
         this.weapons = new ArrayList<>();
 	}
-
+	
      
      public int compareTo(Lane lane){
          return Integer.compare(this.dangerLevel, lane.dangerLevel);
      }
 
-     
-     
+    /* public void addTitan(Attackee titan) {
+         titans.add(titan);
+     }
+     public void addWeapon(Attacker weapon) {
+         weapons.add(weapon);
+     }
+     public void moveLaneTitans(){
+    	 for (Attackee titan : titans){
+    		 if (titan instanceof Mobil){
+    			 Mobil mobilTitan = (Mobil) titan;
+    			 if (!mobilTitan.hasReachedTarget()){
+                     mobilTitan.move();
+                 }
+             }
+         }
+     }
+     */
      
      
      
