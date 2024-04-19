@@ -16,7 +16,7 @@ public class WallTrap extends Weapon{
 		Titan currentTitan = laneTitans.peek();
 		int damage = this.getDamage();
 		currentTitan.takeDamage(damage);
-		if (currentTitan.isDefeated()) {
+		if (currentTitan.isDefeated()&& currentTitan.hasReachedTarget()) {
 			laneTitans.remove();
 			return currentTitan.getResourcesValue();
 		}
