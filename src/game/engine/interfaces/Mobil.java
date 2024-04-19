@@ -7,7 +7,7 @@ public interface Mobil {
 	 int getSpeed();
 	 void setSpeed(int speed);
 
-	 //not finished
+	 /*not finished
 	 default boolean hasReachedTarget(){
 		 return getDistance().equals(setDistance(distance));
 		}
@@ -17,9 +17,9 @@ public interface Mobil {
 		 getDistance().moveTowards(setDistance());
          return hasReachedTarget();
         }
-	 
+	 */
 	 default boolean hasReachedTarget() {
-	        return getDistance() <= 0; // Assuming target is reached when distance is 0 or less
+	        return getDistance() <= 0; 
 	    }
 	 
 	 default boolean move() {
