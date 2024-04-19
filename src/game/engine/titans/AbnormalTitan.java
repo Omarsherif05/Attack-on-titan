@@ -12,11 +12,9 @@ public class AbnormalTitan extends Titan {
 
 	public int attack(Attackee target) {
 		target.takeDamage(getDamage());
-		if(!target.isDefeated()) {
+		if (!target.isDefeated()) {
 			return target.takeDamage(getDamage());
 		}
-		
-		
+		return target.getResourcesValue();
 	}
-
 }
