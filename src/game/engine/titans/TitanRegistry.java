@@ -48,4 +48,6 @@ public class TitanRegistry {
 	public int getDangerLevel() {
 		return dangerLevel;
 	}
+	
+	
 }
