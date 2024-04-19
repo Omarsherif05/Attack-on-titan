@@ -10,4 +10,8 @@ public class ColossalTitan extends Titan {
 
 	}
 
+	public boolean move(){
+		setDistance(getDistance()+moveTowards()+1);;
+		return hasReachedTarget();
+	   }
 }

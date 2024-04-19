@@ -1,5 +1,6 @@
 package game.engine.titans;
 
+
 public class ArmoredTitan extends Titan {
 	public static final int TITAN_CODE = 3;
 
@@ -8,5 +9,11 @@ public class ArmoredTitan extends Titan {
 		super(baseHealth, baseDamage, heightInMeters, distanceFromBase, speed, resourcesValue, dangerLevel);
 
 	}
-
+	public int takeDamage(int damage) {
+    	setCurrentHealth((int)(0.25*(getCurrentHealth() - damage)));
+        if (isDefeated()) {
+            return getResourcesValue(); 
+        }
+        return 0;
+    }
 }

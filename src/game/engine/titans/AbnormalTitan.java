@@ -1,5 +1,7 @@
 package game.engine.titans;
 
+import game.engine.interfaces.Attackee;
+
 public class AbnormalTitan extends Titan {
 	public static final int TITAN_CODE = 2;
 
@@ -7,5 +9,9 @@ public class AbnormalTitan extends Titan {
 			int resourcesValue, int dangerLevel) {
 		super(baseHealth, baseDamage, heightInMeters, distanceFromBase, speed, resourcesValue, dangerLevel);
 	}
-
-}
+	
+	public int attack(Attackee target) {
+        return target.takeDamage(getDamage());
+    }
+	
+	}
