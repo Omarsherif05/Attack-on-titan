@@ -118,4 +118,8 @@ public class Battle {
 		}
 	}
 
+	public static int[][] getPhasesApproachingTitans() {
+		return PHASES_APPROACHING_TITANS;
+	}
+	
 }
