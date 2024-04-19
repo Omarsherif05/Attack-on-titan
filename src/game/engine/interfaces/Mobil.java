@@ -3,22 +3,24 @@ package game.engine.interfaces;
 import game.engine.titans.Titan;
 
 public interface Mobil {
-	
-	 int getDistance();
-	 void setDistance(int distance);
-	 int getSpeed();
-	 void setSpeed(int speed);
 
-	 default boolean hasReachedTarget() {
-        return getDistance() <= 0; 
-    }
+	int getDistance();
 
-    
-    default boolean move() {
-        int distance = getDistance();
-        int speed = getSpeed();
-        setDistance(Math.max(distance - speed, 0));
-		
-        return hasReachedTarget();
-    }
+	void setDistance(int distance);
+
+	int getSpeed();
+
+	void setSpeed(int speed);
+
+	 //not finished
+	 default boolean hasReachedTarget(){
+		 return getDistance().equals(setDistance(distance));
+		}
+
+	   
+	 default boolean move(){
+		 getDistance().moveTowards(setDistance());
+         return hasReachedTarget();
+        }
+
 }
