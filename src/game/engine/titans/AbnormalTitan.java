@@ -14,4 +14,4 @@ public class AbnormalTitan extends Titan {
         return target.takeDamage(getDamage());
     }
 	
-	}
+}
