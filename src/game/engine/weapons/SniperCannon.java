@@ -21,5 +21,4 @@ public class SniperCannon extends Weapon {
 		}
 		return 0;
 	}
-
 }
