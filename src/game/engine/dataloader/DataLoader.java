@@ -60,6 +60,6 @@ public class DataLoader {
                 weaponMap.put(code, weapon);
             }
         }
-        return weaponMap;
-    }
+		return weaponMap;
+	}
 }

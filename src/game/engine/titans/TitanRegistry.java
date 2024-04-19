@@ -1,52 +1,51 @@
 package game.engine.titans;
 
 public class TitanRegistry {
-    
-    private final int code;
-    private final int baseHealth;
-    private final int baseDamage;
-    private final int heightInMeters;
-    private final int speed;
-    private final int resourcesValue;
-    private final int dangerLevel;
 
-    
-    public TitanRegistry(int code, int baseHealth, int baseDamage, int heightInMeters, int speed,int resourcesValue, int dangerLevel) {
-        this.code = code;
-        this.baseHealth = baseHealth;
-        this.baseDamage = baseDamage;
-        this.heightInMeters = heightInMeters;
-        this.speed = speed;
-        this.resourcesValue = resourcesValue;
-        this.dangerLevel = dangerLevel;
-    }
+	private final int code;
+	private final int baseHealth;
+	private final int baseDamage;
+	private final int heightInMeters;
+	private final int speed;
+	private final int resourcesValue;
+	private final int dangerLevel;
 
-    
-    public int getCode() {
-        return code;
-    }
+	public TitanRegistry(int code, int baseHealth, int baseDamage, int heightInMeters, int speed, int resourcesValue,
+			int dangerLevel) {
+		this.code = code;
+		this.baseHealth = baseHealth;
+		this.baseDamage = baseDamage;
+		this.heightInMeters = heightInMeters;
+		this.speed = speed;
+		this.resourcesValue = resourcesValue;
+		this.dangerLevel = dangerLevel;
+	}
 
-    public int getBaseHealth() {
-        return baseHealth;
-    }
+	public int getCode() {
+		return code;
+	}
 
-    public int getBaseDamage() {
-        return baseDamage;
-    }
+	public int getBaseHealth() {
+		return baseHealth;
+	}
 
-    public int getHeightInMeters() {
-        return heightInMeters;
-    }
+	public int getBaseDamage() {
+		return baseDamage;
+	}
 
-    public int getSpeed() {
-        return speed;
-    }
+	public int getHeightInMeters() {
+		return heightInMeters;
+	}
 
-    public int getResourcesValue() {
-        return resourcesValue;
-    }
+	public int getSpeed() {
+		return speed;
+	}
 
-    public int getDangerLevel() {
-        return dangerLevel;
-    }
+	public int getResourcesValue() {
+		return resourcesValue;
+	}
+
+	public int getDangerLevel() {
+		return dangerLevel;
+	}
 }
