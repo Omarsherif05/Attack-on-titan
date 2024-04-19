@@ -9,9 +9,14 @@ public class AbnormalTitan extends Titan {
 			int resourcesValue, int dangerLevel) {
 		super(baseHealth, baseDamage, heightInMeters, distanceFromBase, speed, resourcesValue, dangerLevel);
 	}
-	
+
 	public int attack(Attackee target) {
-        return target.takeDamage(getDamage());
-    }
-	
+
+		if (!target.isDefeated()) {
+			target.takeDamage(getDamage());
+		}
+		return target.takeDamage(getDamage());
+
+	}
+
 }
