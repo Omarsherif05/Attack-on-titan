@@ -1,5 +1,7 @@
 package game.engine.interfaces;
 
+import game.engine.titans.Titan;
+
 public interface Mobil {
 	
 	 int getDistance();
@@ -9,7 +11,7 @@ public interface Mobil {
 
 	 //not finished
 	 default boolean hasReachedTarget(){
-		 return getDistance().equals(setDistance(distance));
+		 return Titan.equals(getDistance());
 		}
 
 	   

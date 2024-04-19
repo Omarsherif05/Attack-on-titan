@@ -8,9 +8,8 @@ public interface Attackee {
     default boolean isDefeated() {
         return getCurrentHealth() <= 0;
     }
-    //ERROR
     default int takeDamage(int damage) {
-    	getCurrentHealth() = getCurrentHealth() - damage;
+    	setCurrentHealth((int)getCurrentHealth() - damage);
         if (isDefeated()) {
             return getResourcesValue(); 
         }
