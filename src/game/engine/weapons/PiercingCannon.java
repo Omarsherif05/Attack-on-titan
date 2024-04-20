@@ -28,7 +28,7 @@ public class PiercingCannon extends Weapon {
 					resourcesValue += currentTitan.getResourcesValue();
 				}
 			}
-			
+
 		}
 		return resourcesValue;
 	}
