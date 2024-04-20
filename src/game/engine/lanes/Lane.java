@@ -47,14 +47,6 @@ public class Lane implements Comparable<Lane> {
 		return Integer.compare(this.dangerLevel, lane.dangerLevel);
 	}
 
-	/*
-	 * public void addTitan(Attackee titan) { titans.add(titan); } public void
-	 * addWeapon(Attacker weapon) { weapons.add(weapon); } public void
-	 * moveLaneTitans(){ for (Attackee titan : titans){ if (titan instanceof Mobil){
-	 * Mobil mobilTitan = (Mobil) titan; if (!mobilTitan.hasReachedTarget()){
-	 * mobilTitan.move(); } } } }
-	 */
-
 	public void addTitan(Titan titan) {
 		titans.add(titan);
 	}
