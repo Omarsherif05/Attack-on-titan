@@ -63,8 +63,8 @@ public class Lane implements Comparable<Lane> {
 	 }
 
 	 public void moveLaneTitans(){
-		if(((Mobil) titans).hasReachedTarget()){
-
+		if(!((Mobil) titans).hasReachedTarget()){
+			titans.move();
 		}
 	 }
 }

@@ -15,7 +15,7 @@ public interface Mobil {
 		return getDistance() <= 0;
 	}
 
-	default boolean move() {
+	public default boolean move() {
 		int distance = getDistance();
 		int speed = getSpeed();
 
