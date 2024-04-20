@@ -77,17 +77,6 @@ public class Lane implements Comparable<Lane> {
 			((Attacker) attackList).attack(laneWall);
 			return Battle.getResourcesGathered();
 		}
-<<<<<<< HEAD
-=======
-			
-		}
-		while (!titans.isEmpty() && ((Mobil) titans).hasReachedTarget()) {
-			((Attacker) titans).attack(laneWall);
-			return Battle.getResourcesGathered();
-
-		}
-	}
->>>>>>> 06b486c752b2998475408776ce9bce5e50443fc1
 }
 	}
 		public int performLaneWeaponsAttacks(){
@@ -95,4 +84,23 @@ public class Lane implements Comparable<Lane> {
 				 ((Attacker) weapons).attack((Attackee) titans);
 				 return Battle.getResourcesGathered();
 			}
-	}}
+
+	}
+		public boolean isLaneLost(){
+			if(laneWall.getCurrentHealth()<=0){
+				return true;
+			}
+			return false;
+		}
+
+		public void updateLaneDangerLevel(){
+			ArrayList<Titan> titanList = new ArrayList<Titan>();
+		if(!titans.isEmpty()) {
+			
+			for(int i  = 0; i<titans.size(); i++) {
+				Titan currentTitan = titans.poll();
+				dangerLevel+=currentTitan.getDangerLevel();
+			}
+		}
+}
+}
