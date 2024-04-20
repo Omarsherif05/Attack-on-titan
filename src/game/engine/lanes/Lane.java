@@ -94,7 +94,6 @@ public class Lane implements Comparable<Lane> {
 		}
 
 		public void updateLaneDangerLevel(){
-			ArrayList<Titan> titanList = new ArrayList<Titan>();
 		if(!titans.isEmpty()) {
 			
 			for(int i  = 0; i<titans.size(); i++) {
