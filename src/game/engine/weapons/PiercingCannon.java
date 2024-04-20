@@ -16,12 +16,12 @@ public class PiercingCannon extends Weapon {
 	public int turnAttack(PriorityQueue<Titan> laneTitans) {
 		int resourcesValue = 0;
 		int damage = this.getDamage();
-		int currentTitans = Math.min(laneTitans.size(), 5);
+		int count = Math.min(laneTitans.size(), 5);
 
 		PriorityQueue<Titan> secondQueue = new PriorityQueue<>(
 				(titan1, titan2) -> Integer.compare(titan1.getDistance(), titan2.getDistance()));
 
-		for (int i = 0; i < currentTitans; i++) {
+		for (int i = 0; i < count; i++) {
 			if (laneTitans.isEmpty()) {
 				break;
 			}
@@ -36,5 +36,6 @@ public class PiercingCannon extends Weapon {
 		}
 		return resourcesValue;
 	}
+	
 
 }

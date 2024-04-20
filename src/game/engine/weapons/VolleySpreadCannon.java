@@ -23,9 +23,16 @@ public class VolleySpreadCannon extends Weapon {
 		return maxRange;
 	}
 
-	@Override
 	public int turnAttack(PriorityQueue<Titan> laneTitans) {
-		// TODO Auto-generated method stub
+		Titan currentTitan = laneTitans.peek();
+		int damage = this.getDamage();
+		if(currentTitan.getDistance()>this.getMinRange()&& currentTitan.getDistance()<this.getMaxRange()) {
+			currentTitan.takeDamage(damage);
+		}
+		if (currentTitan.isDefeated()) {
+			laneTitans.remove();
+			return currentTitan.getResourcesValue();
+		}
 		return 0;
 	}
 
