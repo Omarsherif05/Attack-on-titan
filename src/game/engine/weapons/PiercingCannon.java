@@ -19,18 +19,18 @@ public class PiercingCannon extends Weapon {
 		int damage = this.getDamage();
 		int currentTitans = Math.min(laneTitans.size(), 5);
 
-		PriorityQueue<Titan> attackQueue = new PriorityQueue<>(
+		PriorityQueue<Titan> secondQueue = new PriorityQueue<>(
 				(titan1, titan2) -> Integer.compare(titan1.getDistance(), titan2.getDistance()));
 
 		for (int i = 0; i < currentTitans; i++) {
 			if (laneTitans.isEmpty()) {
 				break;
 			}
-			attackQueue.add(laneTitans.poll());
+			secondQueue.add(laneTitans.poll());
 		}
 
-		while (!attackQueue.isEmpty()) {
-			Titan targetTitan = attackQueue.poll();
+		while (!secondQueue.isEmpty()) {
+			Titan targetTitan = secondQueue.poll();
 			targetTitan.takeDamage(damage);
 			if (targetTitan.isDefeated()) {
 				resourcesValue += targetTitan.getResourcesValue();
