@@ -47,31 +47,34 @@ public class Lane implements Comparable<Lane> {
 		return Integer.compare(this.dangerLevel, lane.dangerLevel);
 	}
 
-	/*
-	 * public void addTitan(Attackee titan) { titans.add(titan); } public void
-	 * addWeapon(Attacker weapon) { weapons.add(weapon); } public void
-	 * moveLaneTitans(){ for (Attackee titan : titans){ if (titan instanceof Mobil){
-	 * Mobil mobilTitan = (Mobil) titan; if (!mobilTitan.hasReachedTarget()){
-	 * mobilTitan.move(); } } } }
-	 */
-	
-	 public void addTitan(Titan titan){
+	public void addTitan(Titan titan) {
 		titans.add(titan);
-	 }
+	}
 
-	 public void addWeapon(Weapon weapon){
+	public void addWeapon(Weapon weapon) {
 		weapons.add(weapon);
-	 }
+	}
 
-	 public void moveLaneTitans(){
-		if(!((Mobil) titans).hasReachedTarget()){
-			((Mobil) titans).move();
+	public void moveLaneTitans() {
+		while (!titans.isEmpty()) {
+			if (!((Mobil) titans).hasReachedTarget()) {
+				((Mobil) titans).move();
+			}
 		}
-	 }
 
+<<<<<<< HEAD
 	 public int performLaneTitansAttacks(){
 		if(((Mobil) titans).hasReachedTarget()&&titans.isEmpty())
 		return Battle.getResourcesGathered();
 	 }
+=======
+	}
+
+	public int performLaneTitansAttacks() {
+		if (((Mobil) titans).hasReachedTarget())
+
+			return Battle.getResourcesGathered();
+	}
+>>>>>>> 4a3d6e71b9f79fbf807f7640f8d51396eb6b70ab
 
 }
