@@ -1,5 +1,9 @@
 package game.engine.weapons;
 
+import java.util.PriorityQueue;
+
+import game.engine.titans.Titan;
+
 public class VolleySpreadCannon extends Weapon {
     public static final int WEAPON_CODE = 3;
     private final int minRange;
@@ -17,6 +21,12 @@ public class VolleySpreadCannon extends Weapon {
 
 	public int getMaxRange() {
 		return maxRange;
+	}
+
+	@Override
+	int turnAttack(PriorityQueue<Titan> laneTitans) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
    
