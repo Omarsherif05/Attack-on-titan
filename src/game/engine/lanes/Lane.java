@@ -77,6 +77,17 @@ public class Lane implements Comparable<Lane> {
 			((Attacker) attackList).attack(laneWall);
 			return Battle.getResourcesGathered();
 		}
+<<<<<<< HEAD
+=======
+			
+		}
+		while (!titans.isEmpty() && ((Mobil) titans).hasReachedTarget()) {
+			((Attacker) titans).attack(laneWall);
+			return Battle.getResourcesGathered();
+
+		}
+	}
+>>>>>>> 06b486c752b2998475408776ce9bce5e50443fc1
 }
 	}
 		public int performLaneWeaponsAttacks(){
