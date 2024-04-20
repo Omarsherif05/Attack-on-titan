@@ -51,9 +51,19 @@ public class TitanRegistry {
 		return dangerLevel;
 	}
 	
-	public Titan spawnTitan(int distanceFromBase) {
-		DataLoader.readTitanRegistry().
-		return null;
-		
-	}
+	 public static Titan spawnTitan(int distanceFromBase, String registryCode, TitanRegistry registry) throws Exception {
+	        if (registry == null || !registry.hasTitan(registryCode)) {
+	            throw new Exception("Invalid Titan registry code: " + registryCode);
+	        }
+
+	        TitanData titanData = registry.getTitanData(registryCode);
+	        return new Titan(
+	                titanData.getBaseHealth(),
+	                titanData.getBaseDamage(),
+	                titanData.getHeightInMeters(),
+	                distanceFromBase,
+	                titanData.getSpeed(),
+	                titanData.getResourcesValue(),
+	                titanData.getDangerLevel());
+	    }
 }
