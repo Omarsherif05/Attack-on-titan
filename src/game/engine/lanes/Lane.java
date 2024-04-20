@@ -59,22 +59,28 @@ public class Lane implements Comparable<Lane> {
 		while (!titans.isEmpty()) {
 			if (!((Mobil) titans).hasReachedTarget()) {
 				((Mobil) titans).move();
+				break;
 			}
 		}
-
-<<<<<<< HEAD
-	 public int performLaneTitansAttacks(){
-		if(((Mobil) titans).hasReachedTarget()&&titans.isEmpty())
-		return Battle.getResourcesGathered();
-	 }
-=======
 	}
 
 	public int performLaneTitansAttacks() {
-		if (((Mobil) titans).hasReachedTarget())
+		
+		ArrayList<Titan> attackList = new ArrayList<Titan>();
+		if(!titans.isEmpty()) {
+			
+			for(int i  = 0; i<titans.size(); i++) {
+				Titan currentTitan = titans.poll();
+				if(currentTitan.hasReachedTarget()) {
+				attackList.add(currentTitan);
+			}
+		}
+			
+		}
+		while (!titans.isEmpty() && ((Mobil) titans).hasReachedTarget()) {
+			((Attacker) titans).attack(laneWall);
+			return Wall.getResourcesValue();
 
-			return Battle.getResourcesGathered();
+		}
 	}
->>>>>>> 4a3d6e71b9f79fbf807f7640f8d51396eb6b70ab
-
 }
