@@ -28,16 +28,13 @@ public class PiercingCannon extends Weapon {
 			}
 			secondQueue.add(laneTitans.poll());
 		}
-
 		while (!secondQueue.isEmpty()) {
 			Titan targetTitan = secondQueue.poll();
 			targetTitan.takeDamage(damage);
 			if (targetTitan.isDefeated()) {
 				resourcesValue += targetTitan.getResourcesValue();
 			}
-
 		}
-
 		return resourcesValue;
 	}
 
