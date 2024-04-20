@@ -22,7 +22,7 @@ public class VolleySpreadCannon extends Weapon {
 	public int getMaxRange() {
 		return maxRange;
 	}
-////////////////////////////
+////////////////////////////ERROR ERROR
 	public int turnAttack(PriorityQueue<Titan> laneTitans) {
 		Titan currentTitan = laneTitans.peek();
 		int damage = this.getDamage();
