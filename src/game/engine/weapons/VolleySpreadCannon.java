@@ -5,15 +5,15 @@ import java.util.PriorityQueue;
 import game.engine.titans.Titan;
 
 public class VolleySpreadCannon extends Weapon {
-	public static final int WEAPON_CODE = 3;
-	private final int minRange;
-	private final int maxRange;
+    public static final int WEAPON_CODE = 3;
+    private final int minRange;
+    private final int maxRange;
 
-	public VolleySpreadCannon(int baseDamage, int minRange, int maxRange) {
-		super(baseDamage);
-		this.minRange = minRange;
-		this.maxRange = maxRange;
-	}
+    public VolleySpreadCannon(int baseDamage, int minRange, int maxRange) {
+        super(baseDamage);
+        this.minRange = minRange;
+        this.maxRange = maxRange;
+    }
 
 	public int getMinRange() {
 		return minRange;
@@ -24,18 +24,19 @@ public class VolleySpreadCannon extends Weapon {
 	}
 
 	public int turnAttack(PriorityQueue<Titan> laneTitans) {
-		PriorityQueue<Titan> secondQueue = new PriorityQueue<>(
-				(titan1, titan2) -> Integer.compare(titan1.getDistance(), titan2.getDistance()));
-		Titan currentTitan = secondQueue.peek();
+		Titan currentTitan = laneTitans.peek();
 		int damage = this.getDamage();
-		if (currentTitan.getDistance() > this.getMinRange() && currentTitan.getDistance() < this.getMaxRange()) {
+		if(currentTitan.getDistance()>this.getMinRange()&& currentTitan.getDistance()<this.getMaxRange()) {
 			currentTitan.takeDamage(damage);
 		}
 		if (currentTitan.isDefeated()) {
-			secondQueue.remove();
+			laneTitans.remove();
 			return currentTitan.getResourcesValue();
 		}
 		return 0;
 	}
+
+   
+
 
 }
