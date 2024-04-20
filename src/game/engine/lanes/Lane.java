@@ -70,8 +70,7 @@ public class Lane implements Comparable<Lane> {
 	 }
 
 	 public int performLaneTitansAttacks(){
-		if(((Mobil) titans).hasReachedTarget())
-			
+		if(((Mobil) titans).hasReachedTarget()&&titans.isEmpty())
 		return Battle.getResourcesGathered();
 	 }
 
