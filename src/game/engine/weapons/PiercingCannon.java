@@ -14,7 +14,7 @@ public class PiercingCannon extends Weapon{
 	}
 
 	@Override
-	int turnAttack(PriorityQueue<Titan> laneTitans) {
+	public int turnAttack(PriorityQueue<Titan> laneTitans) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
