@@ -54,25 +54,28 @@ public class Lane implements Comparable<Lane> {
 	 * Mobil mobilTitan = (Mobil) titan; if (!mobilTitan.hasReachedTarget()){
 	 * mobilTitan.move(); } } } }
 	 */
-	
-	 public void addTitan(Titan titan){
+
+	public void addTitan(Titan titan) {
 		titans.add(titan);
-	 }
+	}
 
-	 public void addWeapon(Weapon weapon){
+	public void addWeapon(Weapon weapon) {
 		weapons.add(weapon);
-	 }
+	}
 
-	 public void moveLaneTitans(){
-		if(!((Mobil) titans).hasReachedTarget()){
-			((Mobil) titans).move();
+	public void moveLaneTitans() {
+		while (!titans.isEmpty()) {
+			if (!((Mobil) titans).hasReachedTarget()) {
+				((Mobil) titans).move();
+			}
 		}
-	 }
 
-	 public int performLaneTitansAttacks(){
-		if(((Mobil) titans).hasReachedTarget())
-			
-		return Battle.getResourcesGathered();
-	 }
+	}
+
+	public int performLaneTitansAttacks() {
+		if (((Mobil) titans).hasReachedTarget())
+
+			return Battle.getResourcesGathered();
+	}
 
 }

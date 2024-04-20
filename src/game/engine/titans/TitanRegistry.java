@@ -1,5 +1,7 @@
 package game.engine.titans;
 
+import game.engine.dataloader.DataLoader;
+
 public class TitanRegistry {
 
 	private final int code;
@@ -49,5 +51,9 @@ public class TitanRegistry {
 		return dangerLevel;
 	}
 	
-	
+	public Titan spawnTitan(int distanceFromBase) {
+		DataLoader.readTitanRegistry().
+		return null;
+		
+	}
 }
