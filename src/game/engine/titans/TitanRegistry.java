@@ -1,7 +1,5 @@
 package game.engine.titans;
 
-import game.engine.dataloader.DataLoader;
-
 public class TitanRegistry {
 
 	private final int code;

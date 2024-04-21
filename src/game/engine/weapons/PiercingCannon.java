@@ -16,14 +16,13 @@ public class PiercingCannon extends Weapon {
 
 	public int turnAttack(PriorityQueue<Titan> laneTitans) {
 		int resourcesValue = 0;
-		int damage = this.getDamage();
 		int count = Math.min(laneTitans.size(), 5);
 		Iterator<Titan> iterator = laneTitans.iterator();
 
 		if (!laneTitans.isEmpty()) {
 			for (int i = 0; i < count; i++) {
 				Titan currentTitan = iterator.next();
-				currentTitan.takeDamage(damage);
+				currentTitan.takeDamage(this.getDamage());
 				if (currentTitan.isDefeated()) {
 					iterator.remove();
 					resourcesValue += currentTitan.getResourcesValue();
