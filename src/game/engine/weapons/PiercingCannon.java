@@ -16,7 +16,7 @@ public class PiercingCannon extends Weapon {
 
 	public int turnAttack(PriorityQueue<Titan> laneTitans) {
 		int resourcesValue = 0;
-		int count = Math.min(laneTitans.size(), 5);
+		int count = Math.min(laneTitans.size(), 6);
 		Iterator<Titan> iterator = laneTitans.iterator();
 
 		if (!laneTitans.isEmpty()) {
