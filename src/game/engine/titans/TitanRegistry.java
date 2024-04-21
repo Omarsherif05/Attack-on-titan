@@ -50,14 +50,23 @@ public class TitanRegistry {
 	public int getDangerLevel() {
 		return dangerLevel;
 	}
-	
-	public Titan spawnTitan(int distanceFromBase){
-		switch(code){
-			case 1: return new PureTitan( getBaseHealth(), getBaseDamage(),  getHeightInMeters(), distanceFromBase, getSpeed(), getResourcesValue(),  getDangerLevel());
-			case 2: return new AbnormalTitan( getBaseHealth(),  getBaseDamage(), getHeightInMeters(),  distanceFromBase,  getSpeed(),getResourcesValue(),  getDangerLevel());
-			case 3: return new ArmoredTitan( getBaseHealth(),  getBaseDamage(),  getHeightInMeters(),  distanceFromBase,  getSpeed(),getResourcesValue(),  getDangerLevel());
-			case 4: return new ColossalTitan( getBaseHealth(),  getBaseDamage(),  getHeightInMeters(),  distanceFromBase,  getSpeed(),getResourcesValue(),  getDangerLevel());
-			default: return null;
+
+	public Titan spawnTitan(int distanceFromBase) {
+		switch (code) {
+		case 1:
+			return new PureTitan(getBaseHealth(), getBaseDamage(), getHeightInMeters(), distanceFromBase, getSpeed(),
+					getResourcesValue(), getDangerLevel());
+		case 2:
+			return new AbnormalTitan(getBaseHealth(), getBaseDamage(), getHeightInMeters(), distanceFromBase,
+					getSpeed(), getResourcesValue(), getDangerLevel());
+		case 3:
+			return new ArmoredTitan(getBaseHealth(), getBaseDamage(), getHeightInMeters(), distanceFromBase, getSpeed(),
+					getResourcesValue(), getDangerLevel());
+		case 4:
+			return new ColossalTitan(getBaseHealth(), getBaseDamage(), getHeightInMeters(), distanceFromBase,
+					getSpeed(), getResourcesValue(), getDangerLevel());
+		default:
+			return null;
 		}
 	}
 }
