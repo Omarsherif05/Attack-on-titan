@@ -1,5 +1,6 @@
 package game.engine.weapons;
 
+import java.util.Iterator;
 import java.util.PriorityQueue;
 
 import game.engine.titans.Titan;
@@ -22,18 +23,23 @@ public class VolleySpreadCannon extends Weapon {
 	public int getMaxRange() {
 		return maxRange;
 	}
-////////////////////////////ERROR ERROR
+
 	public int turnAttack(PriorityQueue<Titan> laneTitans) {
-		Titan currentTitan = laneTitans.peek();
+		int resourcesValue = 0;
 		int damage = this.getDamage();
-		if(currentTitan.getDistance()>this.getMinRange()&& currentTitan.getDistance()<this.getMaxRange()) {
+		Iterator<Titan> iterator = laneTitans.iterator();
+		for(int i  = 0; i<laneTitans.size(); i++){
+			Titan currentTitan = iterator.next();
+			if(currentTitan.getDistance()>this.getMinRange()&& currentTitan.getDistance()<this.getMaxRange()) {
 			currentTitan.takeDamage(damage);
 		}
 		if (currentTitan.isDefeated()) {
-			laneTitans.remove();
-			return currentTitan.getResourcesValue();
+			iterator.remove();
+			resourcesValue += currentTitan.getResourcesValue();
 		}
-		return 0;
+		}
+		
+		return resourcesValue;
 	}
 
    

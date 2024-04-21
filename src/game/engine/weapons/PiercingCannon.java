@@ -25,6 +25,7 @@ public class PiercingCannon extends Weapon {
 				Titan currentTitan = iterator.next();
 				currentTitan.takeDamage(damage);
 				if (currentTitan.isDefeated()) {
+					iterator.remove();
 					resourcesValue += currentTitan.getResourcesValue();
 				}
 			}

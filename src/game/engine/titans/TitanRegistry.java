@@ -51,19 +51,13 @@ public class TitanRegistry {
 		return dangerLevel;
 	}
 	
-	 public static Titan spawnTitan(int distanceFromBase, String registryCode, TitanRegistry registry) throws Exception {
-	        if (registry == null || !registry.hasTitan(registryCode)) {
-	            throw new Exception("Invalid Titan registry code: " + registryCode);
-	        }
-
-	        TitanData titanData = registry.getTitanData(registryCode);
-	        return new Titan(
-	                titanData.getBaseHealth(),
-	                titanData.getBaseDamage(),
-	                titanData.getHeightInMeters(),
-	                distanceFromBase,
-	                titanData.getSpeed(),
-	                titanData.getResourcesValue(),
-	                titanData.getDangerLevel());
-	    }
+	public Titan spawnTitan(int distanceFromBase){
+		switch(code){
+			case 1: return new PureTitan( getBaseHealth(), getBaseDamage(),  getHeightInMeters(), distanceFromBase, getSpeed(), getResourcesValue(),  getDangerLevel());
+			case 2: return new AbnormalTitan( getBaseHealth(),  getBaseDamage(), getHeightInMeters(),  distanceFromBase,  getSpeed(),getResourcesValue(),  getDangerLevel());
+			case 3: return new ArmoredTitan( getBaseHealth(),  getBaseDamage(),  getHeightInMeters(),  distanceFromBase,  getSpeed(),getResourcesValue(),  getDangerLevel());
+			case 4: return new ColossalTitan( getBaseHealth(),  getBaseDamage(),  getHeightInMeters(),  distanceFromBase,  getSpeed(),getResourcesValue(),  getDangerLevel());
+			default: return null;
+		}
+	}
 }
