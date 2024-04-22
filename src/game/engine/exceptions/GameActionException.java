@@ -1,7 +1,9 @@
 package game.engine.exceptions;
 
 public abstract class GameActionException extends Exception {
-    public GameActionException() {
+    private static final long serialVersionUID = 1L;
+
+	public GameActionException() {
         super();
     }
 
