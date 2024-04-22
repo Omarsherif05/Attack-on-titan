@@ -38,4 +38,22 @@ public class WeaponFactory {
 
         return new FactoryResponse(weapon, remainingResources);
     }
+    public void addWeaponToShop(int code, int price) {
+        if (weaponShop.containsKey(code)) {
+            throw new IllegalArgumentException("Weapon with code " + code + " already exists in the shop");
+        }
+        weaponShop.put(code, new WeaponRegistry(code, price));
+    }
+    public void addWeaponToShop(int code, int price, int damage, String name) {
+        if (weaponShop.containsKey(code)) {
+            throw new IllegalArgumentException("Weapon with code " + code + " already exists in the shop");
+        }
+        weaponShop.put(code, new WeaponRegistry(code, price, damage, name));
+    }
+    public void addWeaponToShop(int code, int price, int damage, String name, int minRange, int maxRange) {
+        if (weaponShop.containsKey(code)) {
+            throw new IllegalArgumentException("Weapon with code " + code + " already exists in the shop");
+        }
+        weaponShop.put(code, new WeaponRegistry(code, price, damage, name, minRange, maxRange));
+    }
 }
