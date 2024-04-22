@@ -3,7 +3,6 @@ package game.engine.lanes;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 import game.engine.weapons.*;
-import game.engine.Battle;
 import game.engine.base.Wall;
 import game.engine.interfaces.Attackee;
 import game.engine.interfaces.Attacker;
