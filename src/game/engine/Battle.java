@@ -9,6 +9,7 @@ import java.util.PriorityQueue;
 import game.engine.base.Wall;
 import game.engine.dataloader.DataLoader;
 import game.engine.exceptions.InsufficientResourcesException;
+import game.engine.exceptions.InvalidLaneException;
 import game.engine.lanes.Lane;
 import game.engine.titans.Titan;
 import game.engine.titans.TitanRegistry;
@@ -135,9 +136,27 @@ public class Battle {
 		}
 	}
 
+//need
+	public void passTurn(){
+		for(Lane lane : lanes){
+		if(!lane.isLaneLost())
+		lane.moveLaneTitans();
+		}
+		this.performWeaponsAttacks();
+		this.performTitansAttacks();
+		this.updateLanesDangerLevels();
+		this.finalizeTurns();
+	}
+	}
+
 	public void purchaseWeapon(int weaponCode, Lane lane) throws InsufficientResourcesException{
 		if(!lane.isLaneLost()){
 			WeaponFactory.buyWeapon( Battle.getResourcesGathered(),weaponCode);
+		}
+	//	if(weaponCode==null) {
+	//		throw new InvalidLaneException();
+	//	}
+
 		}
 	}
 
