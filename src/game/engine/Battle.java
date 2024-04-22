@@ -125,4 +125,13 @@ public class Battle {
 	public void refillApproachingTitans(){
 		approachingTitans.
 	}
+	public boolean isGameOver() {
+	    for (Lane lane : lanes) {
+	        if (lane.getLaneWall().isDefeated()) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+
 }
