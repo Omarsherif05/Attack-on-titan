@@ -135,7 +135,6 @@ public class Battle {
 	}
 	private void finalizeTurns() {
 	    numberOfTurns++; 
-
 	    if (numberOfTurns < 15) {
 	        battlePhase = BattlePhase.EARLY;
 	    } else if (numberOfTurns < 30) {
