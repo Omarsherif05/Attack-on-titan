@@ -136,7 +136,22 @@ public class Battle {
 		}
 	}
 
-//need
+
+	public void purchaseWeapon(int weaponCode, Lane lane) throws InsufficientResourcesException{
+		if(!lane.isLaneLost()){
+		WeaponFactory.buyWeapon( Battle.getResourcesGathered(),weaponCode);
+		this.performWeaponsAttacks();
+		this.performTitansAttacks();
+		this.updateLanesDangerLevels();
+		this.finalizeTurns();
+		}
+		//	if(weaponCode==null) {
+		//		throw new InvalidLaneException();
+		//	}
+
+		}
+
+	//need exceptions
 	public void passTurn(){
 		for(Lane lane : lanes){
 		if(!lane.isLaneLost())
@@ -149,24 +164,43 @@ public class Battle {
 	}
 	}
 
-	public void purchaseWeapon(int weaponCode, Lane lane) throws InsufficientResourcesException{
-		if(!lane.isLaneLost()){
-			WeaponFactory.buyWeapon( Battle.getResourcesGathered(),weaponCode);
-		}
-	//	if(weaponCode==null) {
-	//		throw new InvalidLaneException();
-	//	}
-
-		}
-	}
-
-	public boolean isGameOver() {
-		for (Lane lane : lanes) {
-			if (lane.getLaneWall().isDefeated()) {
-				return true;
+	private void moveTitans(){
+		for(Lane lane : lanes){
+			if(!lane.isLaneLost()){
+				lane.moveLaneTitans();
 			}
 		}
-		return false;
+	}
+	
+	private int performWeaponsAttacks(){
+		int totalResourcesGatheredx=0;
+		for(Lane lane : lanes){
+			totalResourcesGatheredx +=lane.performLaneWeaponsAttacks();
+		}	
+		return totalResourcesGatheredx;
+	}
+
+	private int performTitansAttacks(){
+		for(Lane lane : lanes ){
+			if(!lane.isLaneLost()){
+				for(Titan titan: lane.getTitans()){
+					titan.attack(lane.getLaneWall());
+				} 
+			}
+		}
+
+	}
+
+	private void updateLanesDangerLevels(){
+		int totalDangerLevel =0;
+		for(Lane lane : lanes ){
+			if(!lane.isLaneLost()){
+				for(Titan titan: lane.getTitans()){
+					totalDangerLevel+=titan.getDangerLevel();
+				} 
+			lane.setDangerLevel(totalDangerLevel);	
+			}
+		}
 	}
 
 	private void finalizeTurns() {
@@ -181,7 +215,18 @@ public class Battle {
 				numberOfTitansPerTurn *= 2;
 			}
 		}
+	}	
+	private void performTurn(){
+
 	}
 
+	public boolean isGameOver() {
+		for (Lane lane : lanes) {
+			if (lane.getLaneWall().isDefeated()) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
 
