@@ -15,7 +15,7 @@ public class ColossalTitan extends Titan {
 		int distance = getDistance();
 		int speed = getSpeed();
 		setDistance(distance - speed);
-		speed++;
+		setSpeed(++speed);
 		return hasReachedTarget();
 	}
 }

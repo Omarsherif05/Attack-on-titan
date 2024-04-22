@@ -12,13 +12,17 @@ public class SniperCannon extends Weapon {
 	}
 
 	public int turnAttack(PriorityQueue<Titan> laneTitans) {
-		Titan currentTitan = laneTitans.peek();
-		int damage = this.getDamage();
-		currentTitan.takeDamage(damage);
-		if (currentTitan.isDefeated()) {
-			laneTitans.remove();
-			return currentTitan.getResourcesValue();
+		if (!laneTitans.isEmpty()) {
+			Titan currentTitan = laneTitans.poll();
+			int damage = this.getDamage();
+			currentTitan.takeDamage(damage);
+			if (currentTitan.isDefeated()) {
+				return currentTitan.getResourcesValue();
+			} else {
+				laneTitans.offer(currentTitan);
+			}
 		}
 		return 0;
+
 	}
 }

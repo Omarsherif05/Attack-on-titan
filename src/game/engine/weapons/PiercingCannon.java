@@ -13,10 +13,10 @@ public class PiercingCannon extends Weapon {
 		super(baseDamage);
 
 	}
-
+////ERRORs
 	public int turnAttack(PriorityQueue<Titan> laneTitans) {
 		int resourcesValue = 0;
-		int count = Math.min(laneTitans.size(), 6);
+		int count = Math.min(laneTitans.size(), 5);
 		Iterator<Titan> iterator = laneTitans.iterator();
 
 		if (!laneTitans.isEmpty()) {
@@ -28,8 +28,8 @@ public class PiercingCannon extends Weapon {
 					resourcesValue += currentTitan.getResourcesValue();
 				}
 			}
-
 		}
+
 		return resourcesValue;
 	}
 

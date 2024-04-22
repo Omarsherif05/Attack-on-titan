@@ -10,7 +10,7 @@ public class ArmoredTitan extends Titan {
 	}
 
 	public int takeDamage(int damage) {
-		setCurrentHealth((int) (0.25 * (getCurrentHealth() - damage)));
+		setCurrentHealth((int) (getCurrentHealth() - (0.25 * damage)));
 		if (isDefeated()) {
 			return getResourcesValue();
 		}

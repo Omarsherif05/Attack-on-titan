@@ -1,6 +1,5 @@
 package game.engine.weapons;
 
-import game.engine.dataloader.DataLoader;
 
 public class WeaponRegistry {
 
