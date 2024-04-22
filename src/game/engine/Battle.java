@@ -1,15 +1,18 @@
 package game.engine;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 
 import game.engine.base.Wall;
 import game.engine.dataloader.DataLoader;
+import game.engine.exceptions.InsufficientResourcesException;
 import game.engine.lanes.Lane;
 import game.engine.titans.Titan;
 import game.engine.titans.TitanRegistry;
+import game.engine.weapons.Weapon;
 import game.engine.weapons.factory.WeaponFactory;
 
 public class Battle {
@@ -122,9 +125,21 @@ public class Battle {
 		return PHASES_APPROACHING_TITANS;
 	}
 	
+//!completed
 	public void refillApproachingTitans(){
-		approachingTitans.
+		approachingTitans.clear();
+		if(getBattlePhase()==battlePhase.EARLY){
+			int[]approachingTitansarray=PHASES_APPROACHING_TITANS[0];			
+		
+		}
 	}
+
+	public void purchaseWeapon(int weaponCode, Lane lane) throws InsufficientResourcesException{
+		if(!lane.isLaneLost()){
+			WeaponFactory.buyWeapon( Battle.getResourcesGathered(),weaponCode);
+		}
+	}
+
 	public boolean isGameOver() {
 	    for (Lane lane : lanes) {
 	        if (lane.getLaneWall().isDefeated()) {
@@ -135,3 +150,4 @@ public class Battle {
 	}
 
 }
+

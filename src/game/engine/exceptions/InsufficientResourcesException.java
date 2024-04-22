@@ -1,5 +1,4 @@
 package game.engine.exceptions;
-import game.engine.exceptions.GameActionException;;
 public class InsufficientResourcesException extends GameActionException {
 	private static final long serialVersionUID = 1L;
 	private static final String MSG = "Not enough resources, resources provided = ";
