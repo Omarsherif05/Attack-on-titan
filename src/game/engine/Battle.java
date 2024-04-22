@@ -133,5 +133,19 @@ public class Battle {
 	    }
 	    return false;
 	}
+	private void finalizeTurns() {
+	    numberOfTurns++; 
+
+	    if (numberOfTurns < 15) {
+	        battlePhase = BattlePhase.EARLY;
+	    } else if (numberOfTurns < 30) {
+	        battlePhase = BattlePhase.INTENSE;
+	    } else {
+	        battlePhase = BattlePhase.GRUMBLING;
+	        if (numberOfTurns % 5 == 0) {
+	            numberOfTitansPerTurn *= 2; 
+	        }
+	    }
+	}
 
 }
