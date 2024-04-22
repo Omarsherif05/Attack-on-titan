@@ -65,41 +65,48 @@ public class Lane implements Comparable<Lane> {
 	}
 
 	public int performLaneTitansAttacks() {
-		
+		int totalResourcesGathered = 0;
 		ArrayList<Titan> attackList = new ArrayList<Titan>();
-		if(!titans.isEmpty()) {
-			
-			for(int i  = 0; i<titans.size(); i++) {
-				Titan currentTitan = titans.poll();
-				if(currentTitan.hasReachedTarget()) {
-				attackList.add(currentTitan);
-			}
-			((Attacker) attackList).attack(laneWall);
-			return Battle.getResourcesGathered();
-		}
-}
-	}
-		public int performLaneWeaponsAttacks(){
-			if(!weapons.isEmpty()){
-				 ((Attacker) weapons).attack((Attackee) titans);
-				 return Battle.getResourcesGathered();
+		if (!titans.isEmpty()) {
+			for (Titan titan : titans) {
+				if (titan.hasReachedTarget()) {
+					attackList.add(titan);
+				}
 			}
 
-	}
-		public boolean isLaneLost(){
-			if(laneWall.getCurrentHealth()<=0){
-				return true;
+			for (Titan titan : attackList) {
+				int resourcesGathered = titan.attack(laneWall);
+				totalResourcesGathered += resourcesGathered;
 			}
-			return false;
-		}
 
-		public void updateLaneDangerLevel(){
-		if(!titans.isEmpty()) {
+		}
+		return totalResourcesGathered;
+	}
+
+	public int performLaneWeaponsAttacks() {
+		int totalResourcesGathered = 0;
+		if (!weapons.isEmpty()) {
+			totalResourcesGathered+=((Attacker) weapons).attack((Attackee) titans);
 			
-			for(int i  = 0; i<titans.size(); i++) {
+		}return totalResourcesGathered;
+
+	}
+	
+
+	public boolean isLaneLost() {
+		if (laneWall.getCurrentHealth() <= 0) {
+			return true;
+		}
+		return false;
+	}
+
+	public void updateLaneDangerLevel() {
+		if (!titans.isEmpty()) {
+
+			for (int i = 0; i < titans.size(); i++) {
 				Titan currentTitan = titans.poll();
-				dangerLevel+=currentTitan.getDangerLevel();
+				dangerLevel += currentTitan.getDangerLevel();
 			}
 		}
-}
+	}
 }
