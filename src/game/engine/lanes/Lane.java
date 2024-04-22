@@ -72,7 +72,6 @@ public class Lane implements Comparable<Lane> {
 					attackList.add(titan);
 				}
 			}
-
 			for (Titan titan : attackList) {
 				int resourcesGathered = titan.attack(laneWall);
 				totalResourcesGathered += resourcesGathered;
@@ -84,13 +83,12 @@ public class Lane implements Comparable<Lane> {
 
 	public int performLaneWeaponsAttacks() {
 		int totalResourcesGathered = 0;
-		for( Weapon weapon:weapons){
-			totalResourcesGathered+=((Attacker) weapon).attack((Attackee) titans);
+		for (Weapon weapon : weapons) {
+			totalResourcesGathered += ((Attacker) weapon).attack((Attackee) titans);
 		}
 		return totalResourcesGathered;
 
 	}
-	
 
 	public boolean isLaneLost() {
 		if (laneWall.getCurrentHealth() <= 0) {
@@ -108,4 +106,5 @@ public class Lane implements Comparable<Lane> {
 			}
 		}
 	}
+	
 }
