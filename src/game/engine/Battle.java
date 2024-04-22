@@ -219,6 +219,12 @@ public class Battle {
 	private void performTurn(){
 
 	}
+	private void updateLanesDangerLevels() {
+	    for (Lane lane : lanes) {
+	        int dangerLevel = La
+	        lane.setDangerLevel(dangerLevel);
+	    }
+	}
 
 	public boolean isGameOver() {
 		for (Lane lane : lanes) {
