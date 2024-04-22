@@ -80,11 +80,11 @@ public class Lane implements Comparable<Lane> {
 }
 	}
 		public int performLaneWeaponsAttacks(){
-			if(!weapons.isEmpty()){
-				 ((Attacker) weapons).attack((Attackee) titans);
-				 return Battle.getResourcesGathered();
-			}
-
+			int total_resources_gathered=0;
+		for( Weapon weapon:weapons){
+			total_resources_gathered+=((Attacker) weapon).attack((Attackee) titans);
+		}
+		return total_resources_gathered;
 	}
 		public boolean isLaneLost(){
 			if(laneWall.getCurrentHealth()<=0){

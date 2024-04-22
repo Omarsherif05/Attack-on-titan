@@ -122,4 +122,7 @@ public class Battle {
 		return PHASES_APPROACHING_TITANS;
 	}
 	
+	public void refillApproachingTitans(){
+		approachingTitans.
+	}
 }
