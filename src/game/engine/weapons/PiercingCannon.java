@@ -1,5 +1,6 @@
 package game.engine.weapons;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.PriorityQueue;
 
@@ -13,6 +14,7 @@ public class PiercingCannon extends Weapon {
 		super(baseDamage);
 
 	}
+
 ////ERRORs
 	public int turnAttack(PriorityQueue<Titan> laneTitans) {
 		int resourcesValue = 0;
@@ -32,5 +34,4 @@ public class PiercingCannon extends Weapon {
 
 		return resourcesValue;
 	}
-
 }

@@ -97,14 +97,24 @@ public class Lane implements Comparable<Lane> {
 		return false;
 	}
 
-	public void updateLaneDangerLevel() {
-		if (!titans.isEmpty()) {
+//	public void updateLaneDangerLevel() {
+//		if (!titans.isEmpty()) {
+//			for (int i = 0; i < titans.size(); i++) {
+//				Titan currentTitan = titans.poll();
+//				dangerLevel += currentTitan.getDangerLevel();
+//			}
+//		}
+//	}
 
-			for (int i = 0; i < titans.size(); i++) {
-				Titan currentTitan = titans.poll();
-				dangerLevel += currentTitan.getDangerLevel();
+	public void updateLaneDangerLevel() {
+		ArrayList<Titan> laneTitans = new ArrayList<Titan>();
+		if (!titans.isEmpty()) {
+			for (Titan titan : titans) {
+				laneTitans.add(titan);
+			}
+			for (Titan titan : laneTitans) {
+				dangerLevel += titan.getDangerLevel();
 			}
 		}
 	}
-	
 }

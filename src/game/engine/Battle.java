@@ -9,6 +9,7 @@ import java.util.PriorityQueue;
 import game.engine.base.Wall;
 import game.engine.dataloader.DataLoader;
 import game.engine.exceptions.InsufficientResourcesException;
+import game.engine.exceptions.InvalidLaneException;
 import game.engine.lanes.Lane;
 import game.engine.titans.Titan;
 import game.engine.titans.TitanRegistry;
@@ -140,7 +141,6 @@ public class Battle {
 			WeaponFactory.buyWeapon( Battle.getResourcesGathered(),weaponCode);
 		}
 	}
-
 	public boolean isGameOver() {
 		for (Lane lane : lanes) {
 			if (lane.getLaneWall().isDefeated()) {
@@ -162,6 +162,12 @@ public class Battle {
 				numberOfTitansPerTurn *= 2;
 			}
 		}
+	}
+	private void updateLanesDangerLevels() {
+	    for (Lane lane : lanes) {
+	        int dangerLevel = La
+	        lane.setDangerLevel(dangerLevel);
+	    }
 	}
 
 }
