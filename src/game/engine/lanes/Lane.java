@@ -67,30 +67,6 @@ public class Lane implements Comparable<Lane> {
 	public int performLaneTitansAttacks() {
 		int totalResourcesGathered = 0;
 		ArrayList<Titan> attackList = new ArrayList<Titan>();
-<<<<<<< HEAD
-		if(!titans.isEmpty()) {
-			
-			for(int i  = 0; i<titans.size(); i++) {
-				Titan currentTitan = titans.poll();
-				if(currentTitan.hasReachedTarget()) {
-				attackList.add(currentTitan);
-			}
-			((Attacker) attackList).attack(laneWall);
-			return Battle.getResourcesGathered();
-		}
-}
-	}
-		public int performLaneWeaponsAttacks(){
-			int total_resources_gathered=0;
-		for( Weapon weapon:weapons){
-			total_resources_gathered+=((Attacker) weapon).attack((Attackee) titans);
-		}
-		return total_resources_gathered;
-	}
-		public boolean isLaneLost(){
-			if(laneWall.getCurrentHealth()<=0){
-				return true;
-=======
 		if (!titans.isEmpty()) {
 			for (Titan titan : titans) {
 				if (titan.hasReachedTarget()) {
@@ -101,7 +77,6 @@ public class Lane implements Comparable<Lane> {
 			for (Titan titan : attackList) {
 				int resourcesGathered = titan.attack(laneWall);
 				totalResourcesGathered += resourcesGathered;
->>>>>>> 6f406ceb56453183d92c372ea136f468f5df7d5b
 			}
 
 		}
@@ -110,10 +85,10 @@ public class Lane implements Comparable<Lane> {
 
 	public int performLaneWeaponsAttacks() {
 		int totalResourcesGathered = 0;
-		if (!weapons.isEmpty()) {
-			totalResourcesGathered+=((Attacker) weapons).attack((Attackee) titans);
-			
-		}return totalResourcesGathered;
+		for( Weapon weapon:weapons){
+			totalResourcesGathered+=((Attacker) weapon).attack((Attackee) titans);
+		}
+		return totalResourcesGathered;
 
 	}
 	
