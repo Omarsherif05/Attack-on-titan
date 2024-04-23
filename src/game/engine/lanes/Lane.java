@@ -62,12 +62,12 @@ public class Lane implements Comparable<Lane> {
 			}
 		}
 	}
+
 ///////////////////////
 	public int performLaneTitansAttacks() {
 		int totalResourcesGathered = 0;
 		ArrayList<Titan> attackList = new ArrayList<Titan>();
 		if (!titans.isEmpty()) {
-			if(!laneWall.isDefeated()) {
 			for (Titan titan : titans) {
 				if (titan.hasReachedTarget()) {
 					attackList.add(titan);
@@ -77,8 +77,6 @@ public class Lane implements Comparable<Lane> {
 				int resourcesGathered = titan.attack(laneWall);
 				totalResourcesGathered += resourcesGathered;
 			}
-
-		}
 		}
 		return totalResourcesGathered;
 	}
@@ -86,10 +84,10 @@ public class Lane implements Comparable<Lane> {
 	public int performLaneWeaponsAttacks() {
 		int totalResourcesGathered = 0;
 		for (Weapon weapon : weapons) {
-			for(Titan titan: titans) {
+			for (Titan titan : titans) {
 				totalResourcesGathered += ((Attacker) weapon).attack(titan);
 			}
-			
+
 		}
 		return totalResourcesGathered;
 
