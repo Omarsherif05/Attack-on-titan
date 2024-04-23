@@ -170,11 +170,14 @@ public class Battle {
 		int TitansPerTurnNumber = numberOfTitansPerTurn;
 		Lane leastDangerlane = lanes.poll();
 		PriorityQueue<Titan> titans = leastDangerlane.getTitans();
-		if (TitansPerTurnNumber == 0) {
+		for (int i = TitansPerTurnNumber; i > 0; i--) {
 			if (approachingTitans.isEmpty()) {
 				refillApproachingTitans();
 			}
+			Titan currentTitan = approachingTitans.remove(0);
+			titans.add(currentTitan);
 		}
+		lanes.add(leastDangerlane);
 
 	}
 
