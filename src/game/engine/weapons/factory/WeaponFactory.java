@@ -40,7 +40,6 @@ public class WeaponFactory {
 	public void addWeaponToShop(int code, int price) {
 		if (!weaponShop.containsKey(code)) {
 			weaponShop.put(code, new WeaponRegistry(code, price));
-			
 		} else {
 			throw new IllegalArgumentException("Weapon with code " + code + " already exists in the shop");
 		}

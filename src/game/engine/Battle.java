@@ -189,7 +189,6 @@ public class Battle {
 				if (!currentLane.isLaneLost()) {
 					currentLane.moveLaneTitans();
 					newLanesValue.add(currentLane);
-					currentLane = lanes.poll();
 				}
 			}
 			lanes.addAll(newLanesValue);
