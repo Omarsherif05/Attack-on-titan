@@ -25,7 +25,7 @@ public class WallTrap extends Weapon {
 				if (titan.isDefeated()) {
 					resourcesValue += titan.getResourcesValue();
 				} else {
-					currentTitans.offer(titan);
+					currentTitans.add(titan);
 				}
 			}
 

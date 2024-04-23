@@ -18,7 +18,7 @@ public class SniperCannon extends Weapon {
 		if (!laneTitans.isEmpty()) {
 			for (int i = 0; i < laneTitans.size(); i++) {
 				Titan titan = laneTitans.poll();
-				currentTitans.offer(titan);
+				currentTitans.add(titan);
 			}
 			laneTitans.addAll(currentTitans);
 			Titan currentTitan = laneTitans.poll();
@@ -26,7 +26,7 @@ public class SniperCannon extends Weapon {
 			if (currentTitan.isDefeated()) {
 				return currentTitan.getResourcesValue();
 			} else {
-				laneTitans.offer(currentTitan);
+				laneTitans.add(currentTitan);
 			}
 		}
 		return resourcesValue;

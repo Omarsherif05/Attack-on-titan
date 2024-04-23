@@ -24,7 +24,7 @@ public class PiercingCannon extends Weapon {
 				if (titan.isDefeated()) {
 					resourcesValue += titan.getResourcesValue();
 				} else {
-					currentTitans.offer(titan);
+					currentTitans.add(titan);
 				}
 
 			}
