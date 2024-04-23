@@ -257,13 +257,13 @@ public class Battle {
 	private void performTurn() {
 		if (isGameOver()) {
 			return;
-		}else {
+		} else {
 			moveTitans();
-		performWeaponsAttacks();
-		performTitansAttacks();
-		addTurnTitansToLane();
-		updateLanesDangerLevels();
-		finalizeTurns();
+			performWeaponsAttacks();
+			performTitansAttacks();
+			addTurnTitansToLane();
+			updateLanesDangerLevels();
+			finalizeTurns();
 		}
 	}
 
