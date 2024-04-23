@@ -248,7 +248,7 @@ public class Battle {
 			battlePhase = BattlePhase.INTENSE;
 		} else {
 			battlePhase = BattlePhase.GRUMBLING;
-			if (numberOfTurns >= 30 && numberOfTurns % 5 == 0) {
+			if (numberOfTurns > 30 && numberOfTurns % 5 == 0) {
 				numberOfTitansPerTurn *= 2;
 			}
 		}
