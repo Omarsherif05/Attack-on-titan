@@ -210,24 +210,36 @@ public class Battle {
 		lanes.addAll(newLanesValue);
 		return totalResourcesGathered;
 	}
-
 	private int performTitansAttacks() {
-		int resources = 0;
-		for (Lane lane : lanes) {
-			if (!lane.getTitans().isEmpty()) {
-				if (!lane.isLaneLost()) {
-					for (Titan titan : lane.getTitans()) {
-						titan.attack(lane.getLaneWall());
-						if (lane.getLaneWall().isDefeated()) {
-							resources += lane.getLaneWall().getResourcesValue();
-						}
-					}
-				}
-			}
-		}
-		return resources;
+        int resources = 0;
+        for (Lane lane : lanes) {
+            if (!lane.getTitans().isEmpty()) {
+                if (!lane.isLaneLost()) {
+                    for (Titan titan : lane.getTitans()) {
+                        titan.attack(lane.getLaneWall());
+                        if (lane.getLaneWall().isDefeated()) {
+                            resources += lane.getLaneWall().getResourcesValue();
+                        }
+                    }
+                }
+            }
+        }
+        return resources;
 
-	}
+    }
+//	private int performTitansAttacks() {
+//		int resources = 0;
+//		for (Lane lane : lanes) {
+//			resources += lane.performLaneTitansAttacks();
+//			if (lane.isLaneLost()) {
+//				lanes.remove(lane);
+//			}
+//			updateLanesDangerLevels();
+//		}
+//
+//		return resources;
+//
+//	}
 
 	private void updateLanesDangerLevels() {
 		int totalDangerLevel = 0;
