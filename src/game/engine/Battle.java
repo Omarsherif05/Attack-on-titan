@@ -215,11 +215,13 @@ public class Battle {
 	private int performTitansAttacks() {
 		int resources = 0;
 		for (Lane lane : lanes) {
-			if (!lane.isLaneLost()) {
-				for (Titan titan : lane.getTitans()) {
-					titan.attack(lane.getLaneWall());
-					if (lane.getLaneWall().isDefeated()) {
-						resources += lane.getLaneWall().getResourcesValue();
+			if (!lane.getTitans().isEmpty()) {
+				if (!lane.isLaneLost()) {
+					for (Titan titan : lane.getTitans()) {
+						titan.attack(lane.getLaneWall());
+						if (lane.getLaneWall().isDefeated()) {
+							resources += lane.getLaneWall().getResourcesValue();
+						}
 					}
 				}
 			}
