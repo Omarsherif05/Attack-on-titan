@@ -37,7 +37,7 @@ public class VolleySpreadCannon extends Weapon {
 				if (titan.isDefeated()) {
 					resourcesValue += titan.getResourcesValue();
 				} else {
-					currentTitans.add(titan);
+					currentTitans.offer(titan);
 				}
 			}
 		}
