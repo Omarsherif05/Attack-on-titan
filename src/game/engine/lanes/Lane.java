@@ -84,7 +84,10 @@ public class Lane implements Comparable<Lane> {
 	public int performLaneWeaponsAttacks() {
 		int totalResourcesGathered = 0;
 		for (Weapon weapon : weapons) {
-			totalResourcesGathered += ((Attacker) weapon).attack((Attackee) titans);
+			for(Titan titan: titans) {
+				totalResourcesGathered += ((Attacker) weapon).attack(titan);
+			}
+			
 		}
 		return totalResourcesGathered;
 

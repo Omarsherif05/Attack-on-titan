@@ -12,9 +12,16 @@ public class SniperCannon extends Weapon {
 	}
 
 	public int turnAttack(PriorityQueue<Titan> laneTitans) {
+		int resourcesValue = 0;
+		int damage = this.getDamage();
+		PriorityQueue<Titan> currentTitans = new PriorityQueue<Titan>();
 		if (!laneTitans.isEmpty()) {
+			for (int i = 0; i < laneTitans.size(); i++) {
+				Titan titan = laneTitans.poll();
+				currentTitans.offer(titan);
+			}
+			laneTitans.addAll(currentTitans);
 			Titan currentTitan = laneTitans.poll();
-			int damage = this.getDamage();
 			currentTitan.takeDamage(damage);
 			if (currentTitan.isDefeated()) {
 				return currentTitan.getResourcesValue();
@@ -22,7 +29,6 @@ public class SniperCannon extends Weapon {
 				laneTitans.offer(currentTitan);
 			}
 		}
-		return 0;
-
+		return resourcesValue;
 	}
 }

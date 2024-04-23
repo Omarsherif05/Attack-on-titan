@@ -187,11 +187,15 @@ public class Battle {
 	}
 
 	private int performWeaponsAttacks() {
-		int totalResourcesGatheredx = 0;
+		int totalResourcesGathered = 0;
 		for (Lane lane : lanes) {
-			totalResourcesGatheredx += lane.performLaneWeaponsAttacks();
+			if (!lane.isLaneLost()) {
+				totalResourcesGathered += lane.performLaneWeaponsAttacks();
+				score += totalResourcesGathered;
+
+			}
 		}
-		return totalResourcesGatheredx;
+		return totalResourcesGathered;
 	}
 
 	private int performTitansAttacks() {
