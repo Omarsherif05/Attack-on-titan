@@ -27,16 +27,16 @@ public class VolleySpreadCannon extends Weapon {
 	public int turnAttack(PriorityQueue<Titan> laneTitans) {
 		int resourcesValue = 0;
 		Iterator<Titan> iterator = laneTitans.iterator();
-		for (int i = 0; i < laneTitans.size(); i++) {
-			Titan currentTitan = iterator.next();
-			if (currentTitan.getDistance() > this.getMinRange() && currentTitan.getDistance() < this.getMaxRange()) {
-				currentTitan.takeDamage(this.getDamage());
+		for(Titan titan: laneTitans){
+			if (titan.getDistance() > this.getMinRange() && titan.getDistance() < this.getMaxRange()) {
+				titan.takeDamage(this.getDamage());
 			}
-			if (currentTitan.isDefeated()) {
+			if (titan.isDefeated()) {
 				iterator.remove();
-				resourcesValue += currentTitan.getResourcesValue();
+				resourcesValue += titan.getResourcesValue();
 			}
 		}
+		
 
 		return resourcesValue;
 	}

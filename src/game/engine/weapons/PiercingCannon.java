@@ -1,7 +1,5 @@
 package game.engine.weapons;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.PriorityQueue;
 
 import game.engine.titans.Titan;
@@ -15,23 +13,25 @@ public class PiercingCannon extends Weapon {
 
 	}
 
-////ERRORs
 	public int turnAttack(PriorityQueue<Titan> laneTitans) {
 		int resourcesValue = 0;
+		int damage = this.getDamage();
 		int count = Math.min(laneTitans.size(), 5);
-		Iterator<Titan> iterator = laneTitans.iterator();
-
+		PriorityQueue<Titan> currentTitans = new PriorityQueue<Titan>();
 		if (!laneTitans.isEmpty()) {
-			for (int i = 0; i < count; i++) {
-				Titan currentTitan = iterator.next();
-				currentTitan.takeDamage(this.getDamage());
-				if (currentTitan.isDefeated()) {
-					iterator.remove();
-					resourcesValue += currentTitan.getResourcesValue();
+			for (int i = 0; i < count && !laneTitans.isEmpty(); i++) {
+				Titan titan = laneTitans.poll();
+				titan.takeDamage(damage);
+				if (titan.isDefeated()) {
+					resourcesValue += titan.getResourcesValue();
+				}else{
+					currentTitans.add(titan);
 				}
+				
 			}
-		}
 
+		}
+		laneTitans.addAll(currentTitans);
 		return resourcesValue;
 	}
 }
