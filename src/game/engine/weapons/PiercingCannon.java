@@ -1,7 +1,6 @@
 package game.engine.weapons;
 
 import java.util.PriorityQueue;
-
 import game.engine.titans.Titan;
 
 public class PiercingCannon extends Weapon {
@@ -19,15 +18,15 @@ public class PiercingCannon extends Weapon {
 		int count = Math.min(laneTitans.size(), 5);
 		PriorityQueue<Titan> currentTitans = new PriorityQueue<Titan>();
 		if (!laneTitans.isEmpty()) {
-			for (int i = 0; i < count && !laneTitans.isEmpty(); i++) {
+			for (int i = 0; i < count; i++) {
 				Titan titan = laneTitans.poll();
 				titan.takeDamage(damage);
 				if (titan.isDefeated()) {
 					resourcesValue += titan.getResourcesValue();
-				}else{
-					currentTitans.add(titan);
+				} else {
+					currentTitans.offer(titan);
 				}
-				
+
 			}
 
 		}
