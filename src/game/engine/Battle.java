@@ -149,7 +149,7 @@ public class Battle {
 		if (!lane.isLaneLost()) {
 			
 			FactoryResponse Factoryresponsex;
-			WeaponFactory.buyWeapon(, weaponCode);
+			//WeaponFactory.buyWeapon(, weaponCode);
 
 			this.performWeaponsAttacks();
 			this.performTitansAttacks();
