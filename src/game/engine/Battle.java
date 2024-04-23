@@ -183,7 +183,7 @@ public class Battle {
 
 	private void moveTitans() {
 		PriorityQueue<Lane> newLanesValue = new PriorityQueue<Lane>();
-		while (!lanes.isEmpty()) {
+		if (!lanes.isEmpty()) {
 			Lane currentLane = lanes.poll();
 			for (int i = 0; i < lanes.size(); i++) {
 				if (!currentLane.isLaneLost()) {
@@ -198,13 +198,17 @@ public class Battle {
 	private int performWeaponsAttacks() {
 		int totalResourcesGathered = 0;
 		PriorityQueue<Lane> newLanesValue = new PriorityQueue<Lane>();
-		for (Lane lane : lanes) {
-			if (!lane.isLaneLost()) {
-				totalResourcesGathered += lane.performLaneWeaponsAttacks();
-				score += totalResourcesGathered;
-
+		if (!lanes.isEmpty()) {
+			Lane currentLane = lanes.poll();
+			for (int i = 0; i < lanes.size(); i++) {
+				if (!currentLane.isLaneLost()) {
+					totalResourcesGathered += currentLane.performLaneWeaponsAttacks();
+					newLanesValue.add(currentLane);
+					currentLane = lanes.poll();
+				}
 			}
 		}
+		lanes.addAll(newLanesValue);
 		return totalResourcesGathered;
 	}
 
@@ -244,7 +248,7 @@ public class Battle {
 			battlePhase = BattlePhase.INTENSE;
 		} else {
 			battlePhase = BattlePhase.GRUMBLING;
-			if (numberOfTurns % 5 == 0) {
+			if (numberOfTurns >= 30 && numberOfTurns % 5 == 0) {
 				numberOfTitansPerTurn *= 2;
 			}
 		}
