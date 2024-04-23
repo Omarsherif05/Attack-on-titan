@@ -142,14 +142,14 @@ public class Battle {
 		}
 	}
 
-	public void purchaseWeapon(int weaponCode, Lane lane) throws InsufficientResourcesException, InvalidLaneException{
-		if(!lanes.contains(lane)) {
+	public void purchaseWeapon(int weaponCode, Lane lane) throws InsufficientResourcesException, InvalidLaneException {
+		if (!lanes.contains(lane)) {
 			throw new InvalidLaneException("Lane doesn't exist");
 		}
 		if (!lane.isLaneLost()) {
-			
+
 			FactoryResponse Factoryresponsex;
-			//WeaponFactory.buyWeapon(, weaponCode);
+			// WeaponFactory.buyWeapon(, weaponCode);
 
 			this.performWeaponsAttacks();
 			this.performTitansAttacks();
@@ -264,12 +264,10 @@ public class Battle {
 	}
 
 	public boolean isGameOver() {
-		for (Lane lane : lanes) {
-			if (!lane.getLaneWall().isDefeated()) {
-				return false;
-			}
+		if (lanes.isEmpty()) {
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 }
