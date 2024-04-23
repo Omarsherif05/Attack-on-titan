@@ -184,11 +184,12 @@ public class Battle {
 	private void moveTitans() {
 		PriorityQueue<Lane> newLanesValue = new PriorityQueue<Lane>();
 		if (!lanes.isEmpty()) {
-			Lane currentLane = lanes.poll();
 			for (int i = 0; i < lanes.size(); i++) {
+				Lane currentLane = lanes.poll();
 				if (!currentLane.isLaneLost()) {
 					currentLane.moveLaneTitans();
 					newLanesValue.add(currentLane);
+					currentLane = lanes.poll();
 				}
 			}
 			lanes.addAll(newLanesValue);
@@ -199,12 +200,11 @@ public class Battle {
 		int totalResourcesGathered = 0;
 		PriorityQueue<Lane> newLanesValue = new PriorityQueue<Lane>();
 		if (!lanes.isEmpty()) {
-			Lane currentLane = lanes.poll();
 			for (int i = 0; i < lanes.size(); i++) {
+				Lane currentLane = lanes.poll();
 				if (!currentLane.isLaneLost()) {
 					totalResourcesGathered += currentLane.performLaneWeaponsAttacks();
 					newLanesValue.add(currentLane);
-					currentLane = lanes.poll();
 				}
 			}
 		}

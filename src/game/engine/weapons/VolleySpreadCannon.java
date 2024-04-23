@@ -1,6 +1,6 @@
 package game.engine.weapons;
 
-import java.util.Iterator;
+
 import java.util.PriorityQueue;
 
 import game.engine.titans.Titan;
