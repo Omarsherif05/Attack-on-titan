@@ -55,13 +55,16 @@ public class Lane implements Comparable<Lane> {
 	}
 ///////////PQ
 	public void moveLaneTitans() {
-		
+		PriorityQueue<Titan> temp = new PriorityQueue<Titan>();
 		while (!titans.isEmpty()) {
-			if (!((Mobil) titans).hasReachedTarget()) {
-				((Mobil) titans).move();
+			Titan currentTitan = titans.poll();
+			if (!(currentTitan.hasReachedTarget())) {
+				currentTitan.move();
+				temp.add(currentTitan);
 				
 			}
 		}
+		titans.addAll(temp);
 	}
 
 ///////////////////////
