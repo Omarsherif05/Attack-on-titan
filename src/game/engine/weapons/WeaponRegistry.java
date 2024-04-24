@@ -58,7 +58,7 @@ public class WeaponRegistry {
 		case 2:
 			return new SniperCannon(getDamage());
 		case 3:
-			return new VolleySpreadCannon(getDamage(), getMinRange(), getMinRange());
+			return new VolleySpreadCannon(getDamage(), getMinRange(), getMaxRange());
 		case 4:
 			return new WallTrap(getDamage());
 		default:

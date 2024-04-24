@@ -209,19 +209,24 @@ public class Battle {
 
 	}
 
-	private void moveTitans() {
-		PriorityQueue<Lane> newLanesValue = new PriorityQueue<Lane>();
-		if (!lanes.isEmpty()) {
-			for (int i = 0; i < lanes.size(); i++) {
-				Lane currentLane = lanes.poll();
-				if (!currentLane.isLaneLost()) {
-					currentLane.moveLaneTitans();
-					
-				}
+		private void moveTitans() {
+			for(Lane lane:lanes) {
+				lane.moveLaneTitans();
 			}
-			lanes.addAll(newLanesValue);
 		}
-	}
+//	private void moveTitans() {
+//		PriorityQueue<Lane> newLanesValue = new PriorityQueue<Lane>();
+//		if (!lanes.isEmpty()) {
+//			for (int i = 0; i < lanes.size(); i++) {
+//				Lane currentLane = lanes.poll();
+//				if (!currentLane.isLaneLost()) {
+//					currentLane.moveLaneTitans();
+//					
+//				}
+//			}
+//			lanes.addAll(newLanesValue);
+//		}
+//	}
 
 	private int performWeaponsAttacks() {
 		int totalResourcesGathered = 0;

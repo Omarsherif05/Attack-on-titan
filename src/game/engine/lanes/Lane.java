@@ -102,15 +102,22 @@ public class Lane implements Comparable<Lane> {
 //			}
 //		}
 //	}
-
 	public void updateLaneDangerLevel() {
-		PriorityQueue<Titan> laneTitans = new PriorityQueue<Titan>();
-		while (!titans.isEmpty()) {
-			Titan currentTitan = titans.poll();
-				laneTitans.add(currentTitan);
-				dangerLevel += currentTitan.getDangerLevel();
-			
+		int dangerLevel = 0;
+		for(Titan titan: titans) {
+			dangerLevel+=titan.getDangerLevel();
 		}
-		titans.addAll(laneTitans);
+		this.setDangerLevel(dangerLevel);
 	}
+//	public void updateLaneDangerLevel() {
+//		PriorityQueue<Titan> laneTitans = new PriorityQueue<Titan>();
+//		if(!isLaneLost()) {
+//		while (!titans.isEmpty()) {
+//				Titan currentTitan = titans.poll();
+//				laneTitans.add(currentTitan);
+//				dangerLevel += currentTitan.getDangerLevel();
+//			}
+//		}
+//		titans.addAll(laneTitans);
+//	}
 }
