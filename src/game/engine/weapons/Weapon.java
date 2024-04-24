@@ -2,9 +2,10 @@ package game.engine.weapons;
 
 import java.util.PriorityQueue;
 
+import game.engine.interfaces.Attacker;
 import game.engine.titans.Titan;
 
-public abstract class Weapon {
+public abstract class Weapon implements Attacker {
 
 	private final int baseDamage;
 	
