@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 import game.engine.weapons.*;
 import game.engine.base.Wall;
-import game.engine.interfaces.Attackee;
-import game.engine.interfaces.Attacker;
-import game.engine.interfaces.Mobil;
 import game.engine.titans.Titan;
 
 public class Lane implements Comparable<Lane> {
@@ -58,9 +55,10 @@ public class Lane implements Comparable<Lane> {
 		PriorityQueue<Titan> temp = new PriorityQueue<Titan>();
 		while (!titans.isEmpty()) {
 			Titan currentTitan = titans.poll();
+			temp.add(currentTitan);
 			if (!(currentTitan.hasReachedTarget())) {
 				currentTitan.move();
-				temp.add(currentTitan);
+				
 				
 			}
 		}
@@ -76,10 +74,6 @@ public class Lane implements Comparable<Lane> {
 					totalResourcesGathered+=titan.attack(laneWall);
 				}
 			}
-			/*
-			 * for (Titan titan : attackList) { int resourcesGathered =
-			 * titan.attack(laneWall); totalResourcesGathered += resourcesGathered; }
-			 */
 		}
 		return totalResourcesGathered;
 	}
@@ -110,14 +104,13 @@ public class Lane implements Comparable<Lane> {
 //	}
 
 	public void updateLaneDangerLevel() {
-		ArrayList<Titan> laneTitans = new ArrayList<Titan>();
-		if (!titans.isEmpty()) {
-			for (Titan titan : titans) {
-				laneTitans.add(titan);
-			}
-			for (Titan titan : laneTitans) {
-				dangerLevel += titan.getDangerLevel();
-			}
+		PriorityQueue<Titan> laneTitans = new PriorityQueue<Titan>();
+		while (!titans.isEmpty()) {
+			Titan currentTitan = titans.poll();
+				laneTitans.add(currentTitan);
+				dangerLevel += currentTitan.getDangerLevel();
+			
 		}
+		titans.addAll(laneTitans);
 	}
 }

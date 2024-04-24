@@ -28,17 +28,18 @@ public class VolleySpreadCannon extends Weapon {
 		int resourcesValue = 0;
 		int damage = this.getDamage();
 		PriorityQueue<Titan> currentTitans = new PriorityQueue<Titan>();
-		if (!laneTitans.isEmpty()) {
-			for (int i = 0; i < laneTitans.size(); i++) {
-				Titan titan = laneTitans.poll();
+		while (!laneTitans.isEmpty()) {
+			Titan titan = laneTitans.poll();
+				
 				if (titan.getDistance() >= this.getMinRange() && titan.getDistance() <= this.getMaxRange()) {
-					titan.takeDamage(damage);
-				}
+					resourcesValue+=titan.takeDamage(damage);
+				
 				if (titan.isDefeated()) {
 					resourcesValue += titan.getResourcesValue();
 				} else {
 					currentTitans.add(titan);
 				}
+				
 			}
 		}
 		laneTitans.addAll(currentTitans);

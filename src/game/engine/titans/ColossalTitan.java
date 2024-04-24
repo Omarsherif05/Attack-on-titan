@@ -11,11 +11,17 @@ public class ColossalTitan extends Titan {
 
 	}
 
+//	public boolean move() {
+//		int distance = getDistance();
+//		int speed = getSpeed();
+//		setDistance(distance - speed);
+//		setSpeed(++speed);
+//		return hasReachedTarget();
+//	}
 	public boolean move() {
-		int distance = getDistance();
-		int speed = getSpeed();
-		setDistance(distance - speed);
-		setSpeed(++speed);
-		return hasReachedTarget();
+		boolean reached = super.move();
+		setSpeed(getSpeed()+1);
+		return reached;
 	}
 }
+
