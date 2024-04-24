@@ -128,6 +128,7 @@ public class Battle {
 	}
 
 	public void refillApproachingTitans() {
+		if(!approachingTitans.isEmpty())return;
 		int[] approachingTitansarray = PHASES_APPROACHING_TITANS[battlePhase.ordinal()];
 		for (int index : approachingTitansarray) {
 			TitanRegistry x = titansArchives.get(index);
@@ -143,19 +144,14 @@ public class Battle {
 	}
 
 	public void purchaseWeapon(int weaponCode, Lane lane) throws InsufficientResourcesException, InvalidLaneException {
-		if (!lanes.contains(lane)) {
-			throw new InvalidLaneException("Lane doesn't exist");
+		if (!lanes.contains(lane)||lane.isLaneLost()) {
+			throw new InvalidLaneException();
 		}
-		if (!lane.isLaneLost()) {
 
-			FactoryResponse Factoryresponsex;
-			 WeaponFactory.buyWeapon(, weaponCode);
-
-			this.performWeaponsAttacks();
-			this.performTitansAttacks();
-			this.updateLanesDangerLevels();
-			this.finalizeTurns();
-		}
+			FactoryResponse Factoryrespons=  weaponFactory.buyWeapon(this.getResourcesGathered(), weaponCode);
+			setResourcesGathered(Factoryrespons.getRemainingResources());
+			lane.addWeapon(Factoryrespons.getWeapon());
+			performTurn();
 		// if(weaponCode==null) {
 		// throw new InvalidLaneException();
 		// }
@@ -199,7 +195,7 @@ public class Battle {
 		int totalResourcesGathered = 0;
 		PriorityQueue<Lane> newLanesValue = new PriorityQueue<Lane>();
 		if (!lanes.isEmpty()) {
-			for (int i = 0; i < lanes.size(); i++) {
+			while (!lanes.isEmpty()) {
 				Lane currentLane = lanes.poll();
 				if (!currentLane.isLaneLost()) {
 					totalResourcesGathered += currentLane.performLaneWeaponsAttacks();
@@ -213,17 +209,16 @@ public class Battle {
 	private int performTitansAttacks() {
         int resources = 0;
         for (Lane lane : lanes) {
-            if (!lane.getTitans().isEmpty()) {
                 if (!lane.isLaneLost()) {
                     for (Titan titan : lane.getTitans()) {
                         titan.attack(lane.getLaneWall());
                         if (lane.getLaneWall().isDefeated()) {
-                            resources += lane.getLaneWall().getResourcesValue();
+                            resources += lane.performLaneTitansAttacks();
                         }
                     }
                 }
             }
-        }
+        
         return resources;
 
     }

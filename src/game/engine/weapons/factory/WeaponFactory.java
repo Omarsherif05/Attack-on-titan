@@ -24,7 +24,7 @@ public class WeaponFactory {
 			throw new IllegalArgumentException("Invalid weapon code: " + weaponCode);
 		}
 
-		WeaponRegistry weaponData = weaponShop.get(weaponCode);
+		WeaponRegistry weaponData = this.weaponShop.get(weaponCode);
 		int weaponPrice = weaponData.getPrice();
 
 		if (resources < weaponPrice) {

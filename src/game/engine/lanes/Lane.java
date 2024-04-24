@@ -53,12 +53,13 @@ public class Lane implements Comparable<Lane> {
 	public void addWeapon(Weapon weapon) {
 		weapons.add(weapon);
 	}
-
+///////////PQ
 	public void moveLaneTitans() {
+		
 		while (!titans.isEmpty()) {
 			if (!((Mobil) titans).hasReachedTarget()) {
 				((Mobil) titans).move();
-				break;
+				
 			}
 		}
 	}
@@ -66,17 +67,16 @@ public class Lane implements Comparable<Lane> {
 ///////////////////////
 	public int performLaneTitansAttacks() {
 		int totalResourcesGathered = 0;
-		ArrayList<Titan> attackList = new ArrayList<Titan>();
 		if (!titans.isEmpty()) {
 			for (Titan titan : titans) {
 				if (titan.hasReachedTarget()) {
-					attackList.add(titan);
+					totalResourcesGathered+=titan.attack(laneWall);
 				}
 			}
-			for (Titan titan : attackList) {
-				int resourcesGathered = titan.attack(laneWall);
-				totalResourcesGathered += resourcesGathered;
-			}
+			/*
+			 * for (Titan titan : attackList) { int resourcesGathered =
+			 * titan.attack(laneWall); totalResourcesGathered += resourcesGathered; }
+			 */
 		}
 		return totalResourcesGathered;
 	}
@@ -84,10 +84,7 @@ public class Lane implements Comparable<Lane> {
 	public int performLaneWeaponsAttacks() {
 		int totalResourcesGathered = 0;
 		for (Weapon weapon : weapons) {
-			for (Titan titan : titans) {
-				totalResourcesGathered += ((Attacker) weapon).attack(titan);
-			}
-
+				totalResourcesGathered += (weapon).turnAttack(titans);
 		}
 		return totalResourcesGathered;
 

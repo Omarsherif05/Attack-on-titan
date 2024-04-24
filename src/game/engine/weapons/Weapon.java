@@ -18,5 +18,5 @@ public abstract class Weapon {
 		return baseDamage;
 	}
 	
-	abstract int turnAttack(PriorityQueue<Titan> laneTitans);
+	public abstract int turnAttack(PriorityQueue<Titan> laneTitans);
 }
