@@ -221,7 +221,6 @@ public class Battle {
 					updatedLane.add(currentLane);
 				}
 			}
-			updateLanesDangerLevels();
 		}
 		lanes.addAll(updatedLane);
 		return resources;
