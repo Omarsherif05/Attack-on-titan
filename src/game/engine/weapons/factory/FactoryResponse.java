@@ -12,7 +12,6 @@ public class FactoryResponse {
         this.weapon = weapon;
         this.remainingResources = remainingResources;
     }
-
     
     public Weapon getWeapon() {
         return weapon;

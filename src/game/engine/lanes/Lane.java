@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 import game.engine.weapons.*;
 import game.engine.base.Wall;
+import game.engine.interfaces.Attackee;
+import game.engine.interfaces.Mobil;
 import game.engine.titans.Titan;
 
 public class Lane implements Comparable<Lane> {
@@ -44,34 +46,35 @@ public class Lane implements Comparable<Lane> {
 	}
 
 	public void addTitan(Titan titan) {
-		titans.add(titan);
+		if (titan != null) {
+			titans.add(titan);
+		}
 	}
 
 	public void addWeapon(Weapon weapon) {
-		weapons.add(weapon);
-	}
-///////////PQ
-	public void moveLaneTitans() {
-		PriorityQueue<Titan> temp = new PriorityQueue<Titan>();
-		while (!titans.isEmpty()) {
-			Titan currentTitan = titans.poll();
-			temp.add(currentTitan);
-			if (!(currentTitan.hasReachedTarget())) {
-				currentTitan.move();
-				
-				
-			}
+		if (weapon != null) {
+			weapons.add(weapon);
 		}
-		titans.addAll(temp);
 	}
 
-///////////////////////
+	public void moveLaneTitans() {
+		PriorityQueue<Titan> updatedTitans = new PriorityQueue<Titan>();
+		while (!titans.isEmpty()) {
+			Titan currentTitan = titans.poll();
+			updatedTitans.add(currentTitan);
+			if (!(currentTitan.hasReachedTarget()) && !currentTitan.isDefeated()) {
+				currentTitan.move();
+			}
+		}
+		titans.addAll(updatedTitans);
+	}
+
 	public int performLaneTitansAttacks() {
 		int totalResourcesGathered = 0;
 		if (!titans.isEmpty()) {
 			for (Titan titan : titans) {
 				if (titan.hasReachedTarget()) {
-					totalResourcesGathered+=titan.attack(laneWall);
+					totalResourcesGathered += titan.attack(laneWall);
 				}
 			}
 		}
@@ -80,11 +83,12 @@ public class Lane implements Comparable<Lane> {
 
 	public int performLaneWeaponsAttacks() {
 		int totalResourcesGathered = 0;
-		for (Weapon weapon : weapons) {
+		if (!weapons.isEmpty()) {
+			for (Weapon weapon : weapons) {
 				totalResourcesGathered += (weapon).turnAttack(titans);
+			}
 		}
 		return totalResourcesGathered;
-
 	}
 
 	public boolean isLaneLost() {
@@ -94,30 +98,13 @@ public class Lane implements Comparable<Lane> {
 		return false;
 	}
 
-//	public void updateLaneDangerLevel() {
-//		if (!titans.isEmpty()) {
-//			for (int i = 0; i < titans.size(); i++) {
-//				Titan currentTitan = titans.poll();
-//				dangerLevel += currentTitan.getDangerLevel();
-//			}
-//		}
-//	}
 	public void updateLaneDangerLevel() {
-		int dangerLevel = 0;
-		for(Titan titan: titans) {
-			dangerLevel+=titan.getDangerLevel();
+		int danger = 0;
+		if (!titans.isEmpty()) {
+			for (Titan titan : titans) {
+				danger += titan.getDangerLevel();
+			}
 		}
-		this.setDangerLevel(dangerLevel);
+		this.setDangerLevel(danger);
 	}
-//	public void updateLaneDangerLevel() {
-//		PriorityQueue<Titan> laneTitans = new PriorityQueue<Titan>();
-//		if(!isLaneLost()) {
-//		while (!titans.isEmpty()) {
-//				Titan currentTitan = titans.poll();
-//				laneTitans.add(currentTitan);
-//				dangerLevel += currentTitan.getDangerLevel();
-//			}
-//		}
-//		titans.addAll(laneTitans);
-//	}
 }

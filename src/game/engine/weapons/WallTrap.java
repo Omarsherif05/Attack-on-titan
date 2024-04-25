@@ -17,8 +17,7 @@ public class WallTrap extends Weapon {
 		int damage = this.getDamage();
 		PriorityQueue<Titan> currentTitans = new PriorityQueue<Titan>();
 		if (!laneTitans.isEmpty()) {
-			for (int i = 0; i < laneTitans.size(); i++) {
-				Titan titan = laneTitans.poll();
+			for (Titan titan: laneTitans) {
 				if (titan.hasReachedTarget()) {
 					titan.takeDamage(damage);
 				}
@@ -28,11 +27,9 @@ public class WallTrap extends Weapon {
 					currentTitans.add(titan);
 				}
 			}
-
 		}
+		laneTitans.clear();
 		laneTitans.addAll(currentTitans);
 		return resourcesValue;
-
 	}
-
 }

@@ -9,7 +9,6 @@ public class PiercingCannon extends Weapon {
 
 	public PiercingCannon(int baseDamage) {
 		super(baseDamage);
-
 	}
 
 	public int turnAttack(PriorityQueue<Titan> laneTitans) {
@@ -26,9 +25,7 @@ public class PiercingCannon extends Weapon {
 				} else {
 					currentTitans.add(titan);
 				}
-
 			}
-
 		}
 		laneTitans.addAll(currentTitans);
 		return resourcesValue;

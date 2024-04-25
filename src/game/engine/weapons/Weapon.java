@@ -8,16 +8,14 @@ import game.engine.titans.Titan;
 public abstract class Weapon implements Attacker {
 
 	private final int baseDamage;
-	
-	
-	public Weapon (int baseDamage){
+
+	public Weapon(int baseDamage) {
 		this.baseDamage = baseDamage;
 	}
-
 
 	public int getDamage() {
 		return baseDamage;
 	}
-	
+
 	public abstract int turnAttack(PriorityQueue<Titan> laneTitans);
 }

@@ -57,7 +57,7 @@ abstract public class Titan implements Comparable<Titan>, Mobil, Attacker, Attac
 		this.speed = speed;
 	}
 
-	@Override
+	
 	public int compareTo(Titan o) {
 		return Integer.compare(this.distanceFromBase, o.distanceFromBase);
 	}

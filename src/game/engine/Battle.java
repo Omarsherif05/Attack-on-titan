@@ -1,11 +1,9 @@
 package game.engine;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.PriorityQueue;
-
 import game.engine.base.Wall;
 import game.engine.dataloader.DataLoader;
 import game.engine.exceptions.InsufficientResourcesException;
@@ -13,7 +11,6 @@ import game.engine.exceptions.InvalidLaneException;
 import game.engine.lanes.Lane;
 import game.engine.titans.Titan;
 import game.engine.titans.TitanRegistry;
-import game.engine.weapons.Weapon;
 import game.engine.weapons.factory.FactoryResponse;
 import game.engine.weapons.factory.WeaponFactory;
 
@@ -280,11 +277,10 @@ public class Battle {
 	private void updateLanesDangerLevels() {
 		PriorityQueue<Lane> updatedLanes = new PriorityQueue<Lane>();
 		while (!lanes.isEmpty()) {
-			Lane currentLanes = lanes.poll();
-			if (!currentLanes.isLaneLost()) {
-				currentLanes.updateLaneDangerLevel();
-				updatedLanes.add(currentLanes);
-				
+			Lane currentLane = lanes.poll();
+			if (!currentLane.isLaneLost()) {
+				currentLane.updateLaneDangerLevel();
+				updatedLanes.add(currentLane);
 			}
 		}
 		lanes.addAll(updatedLanes);
@@ -322,7 +318,6 @@ public class Battle {
 			if (!lane.isLaneLost()) {
 				return false;
 			}
-
 		}
 		return true;
 	}

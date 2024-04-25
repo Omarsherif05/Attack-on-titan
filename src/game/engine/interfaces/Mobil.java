@@ -18,9 +18,7 @@ public interface Mobil {
 	public default boolean move() {
 		int distance = getDistance();
 		int speed = getSpeed();
-
 		setDistance(Math.max(distance - speed, 0));
-
 		return hasReachedTarget();
 	}
 }

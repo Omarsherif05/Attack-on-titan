@@ -20,42 +20,30 @@ public class WeaponFactory {
 	}
 
 	public FactoryResponse buyWeapon(int resources, int weaponCode) throws InsufficientResourcesException {
+		int remainingResources;
 		if (!weaponShop.containsKey(weaponCode)) {
-			throw new IllegalArgumentException("Invalid weapon code: " + weaponCode);
+			throw new IllegalArgumentException("This weapon code doesn't exist");
 		}
-
-		WeaponRegistry weaponData = this.weaponShop.get(weaponCode);
+		WeaponRegistry weaponData = weaponShop.get(weaponCode);
 		int weaponPrice = weaponData.getPrice();
-
 		if (resources < weaponPrice) {
 			throw new InsufficientResourcesException(resources);
+		} else {
+			Weapon weapon = weaponData.buildWeapon();
+			remainingResources = resources - weaponPrice;
+			return new FactoryResponse(weapon, remainingResources);
 		}
-
-		Weapon weapon = weaponData.buildWeapon();
-		int remainingResources = resources - weaponPrice;
-
-		return new FactoryResponse(weapon, remainingResources);
 	}
 
 	public void addWeaponToShop(int code, int price) {
-		
-			weaponShop.put(code, new WeaponRegistry(code, price));
-		
-			
+		weaponShop.put(code, new WeaponRegistry(code, price));
 	}
 
 	public void addWeaponToShop(int code, int price, int damage, String name) {
-		
-			weaponShop.put(code, new WeaponRegistry(code, price, damage, name));
-		
-			
+		weaponShop.put(code, new WeaponRegistry(code, price, damage, name));
 	}
 
 	public void addWeaponToShop(int code, int price, int damage, String name, int minRange, int maxRange) {
-		
-			weaponShop.put(code, new WeaponRegistry(code, price, damage, name, minRange, maxRange));
-		
-			
-		
+		weaponShop.put(code, new WeaponRegistry(code, price, damage, name, minRange, maxRange));
 	}
 }
