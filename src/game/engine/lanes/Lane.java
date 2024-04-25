@@ -1,11 +1,10 @@
 package game.engine.lanes;
 
 import java.util.ArrayList;
+
 import java.util.PriorityQueue;
 import game.engine.weapons.*;
 import game.engine.base.Wall;
-import game.engine.interfaces.Attackee;
-import game.engine.interfaces.Mobil;
 import game.engine.titans.Titan;
 
 public class Lane implements Comparable<Lane> {
