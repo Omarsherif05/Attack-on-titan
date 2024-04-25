@@ -168,18 +168,21 @@ public class Battle {
 
 	private void addTurnTitansToLane() {
 		int numberOfTitans = numberOfTitansPerTurn;
-		Lane leastDangerousLane = lanes.poll();
-		PriorityQueue<Titan> titans = leastDangerousLane.getTitans();
-		if (!lanes.isEmpty() && !leastDangerousLane.isLaneLost()) {
-			for (int i = numberOfTitans; i > 0; i--) {
-				if (approachingTitans.isEmpty()) {
-					refillApproachingTitans();
+		if (!lanes.isEmpty()) {
+			Lane leastDangerousLane = lanes.poll();
+			PriorityQueue<Titan> currentTitans = leastDangerousLane.getTitans();
+			if (!leastDangerousLane.isLaneLost()) {
+				for (int i = numberOfTitans; i > 0; i--) {
+					if (approachingTitans.isEmpty()) {
+						refillApproachingTitans();
+					}
+					Titan currentTitan = approachingTitans.remove(0);
+					currentTitans.add(currentTitan);
 				}
-				Titan currentTitan = approachingTitans.remove(0);
-				titans.add(currentTitan);
 			}
+			lanes.add(leastDangerousLane);
 		}
-		lanes.add(leastDangerousLane);
+
 	}
 
 	private void moveTitans() {
