@@ -34,11 +34,9 @@ public class VolleySpreadCannon extends Weapon {
 						&& titan.getDistance() <= this.getMaxRange()) {
 					resourcesValue += titan.takeDamage(damage);
 
-					if (titan.isDefeated()) {
-						resourcesValue += titan.getResourcesValue();
-					} else {
+					if (!titan.isDefeated()) {
 						currentTitans.add(titan);
-					}
+					} 
 				} else {
 					currentTitans.add(titan);
 				}
