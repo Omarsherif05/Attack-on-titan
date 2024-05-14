@@ -1,0 +1,13 @@
+.button {
+  -fx-background-color: YELLOW; /* Green background */
+  -fx-color: white;
+  -fx-font-size: 12px;
+  -fx-padding: 10px 20px;
+  -fx-border-radius: 5px;
+}
+#pane {
+    -fx-background-repeat: stretch;
+    -fx-background-size: 1920 1080;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
