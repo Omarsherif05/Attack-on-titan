@@ -35,22 +35,17 @@ public class Main extends Application {
 	 */
 	public void start(Stage stage) throws Exception {
 		try {
-			/*
-			 * URL url = new File(
-			 * "C:\\Users\\mourad\\Desktop\\project\\Attack-on-titan\\src\\game\\gui\\menu.fxml"
-			 * ).toURI().toURL(); Parent root = FXMLLoader.load(url);
-			 */
-			Parent root = FXMLLoader.load(getClass().getResource("/game/gui/menuview/menu.fxml"));
-			String css = this.getClass().getResource("/game/gui/menuview/menu.css").toExternalForm();
+			
+			Parent root = FXMLLoader.load(getClass().getResource("/game/gui/menu.fxml"));
+			String css = this.getClass().getResource("/game/gui/menu.css").toExternalForm();
 			Scene scene = new Scene(root);
+			stage.setFullScreen(true);
+			stage.setFullScreenExitHint("Press Esc to exit fullscreen");
 			scene.getStylesheets().add(css);
 			stage.setTitle("Attack on titan");
 			stage.setScene(scene);
 			stage.show();
-		
-
 		} catch (Exception e) {
-			// generic exception handling
 			e.printStackTrace();
 		}
 	}
