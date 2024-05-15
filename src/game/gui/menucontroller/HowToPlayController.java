@@ -23,6 +23,8 @@ public class HowToPlayController {
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
+		String css = this.getClass().getResource("/game/gui/menucontroller/menu.css").toExternalForm();
+		scene.getStylesheets().add(css);
 		stage.show();
 	}
 
