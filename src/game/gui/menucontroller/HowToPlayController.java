@@ -12,12 +12,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label; 
 import javafx.event.ActionEvent;
 public class HowToPlayController {
-	@FXML
+
 	private Stage stage;
-	@FXML
 	private Scene scene;
-	@FXML
 	private Parent root;
+	
 	public void back(ActionEvent e) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("menu.fxml"));
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
