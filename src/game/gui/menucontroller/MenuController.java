@@ -20,7 +20,7 @@ public class MenuController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-	// Font cod_font;
+
 	
 	public void switchToEasyMode(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getResource(".fxml"));
