@@ -1,19 +1,29 @@
 package game.gui.menucontroller;
+import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label; 
+import javafx.event.ActionEvent;
 public class HowToPlayController {
 	@FXML
-	private TableView<?> table;
+	private Stage stage;
 	@FXML
-   private TableColumn<?, ?> Titan;
+	private Scene scene;
 	@FXML
- 	private TableColumn<?, ?> Specialability ;
-	@FXML
- 	private TableColumn<?, ?> photo;
-
-
-
+	private Parent root;
+	public void back(ActionEvent e) throws IOException {
+		root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
 
 }
