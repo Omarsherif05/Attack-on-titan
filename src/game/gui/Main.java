@@ -40,8 +40,8 @@ public class Main extends Application {
 			 * "C:\\Users\\mourad\\Desktop\\project\\Attack-on-titan\\src\\game\\gui\\menu.fxml"
 			 * ).toURI().toURL(); Parent root = FXMLLoader.load(url);
 			 */
-			Parent root = FXMLLoader.load(getClass().getResource("/game/gui/menuview/menu.fxml"));
-			String css = this.getClass().getResource("/game/gui/menuview/menu.css").toExternalForm();
+			Parent root = FXMLLoader.load(getClass().getResource("/game/gui/menucontroller/menu.fxml"));
+			String css = this.getClass().getResource("/game/gui/menucontroller/menu.css").toExternalForm();
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(css);
 			stage.setTitle("Attack on titan");

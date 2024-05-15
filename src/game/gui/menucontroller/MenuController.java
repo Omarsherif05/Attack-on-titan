@@ -29,10 +29,6 @@ public class MenuController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
-		/*
-		 * String css = this.getClass().getResource("menu.css").toExternalForm();
-		 * scene.getStylesheets().add(css);
-		 */
 		
 	}
 
@@ -44,12 +40,15 @@ public class MenuController {
 		stage.show();
 	}
 	public void HowToPlay(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("/game/gui/menuview/HowToplay.fxml"));
+		root = FXMLLoader.load(getClass().getResource("/game/gui/menucontroller/HowToplay.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
 	}
 	
-	
+	public void exit(ActionEvent event) { 
+		  Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		  stage.close();
+		}
 }
