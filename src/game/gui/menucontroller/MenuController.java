@@ -30,7 +30,6 @@ public class MenuController {
 		stage.show();
 
 	}
-
 	public void switchToHardMode(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getResource(".fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
