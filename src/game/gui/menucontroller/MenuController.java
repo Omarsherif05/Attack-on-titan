@@ -21,15 +21,15 @@ public class MenuController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-	//Font cod_font;
-	
+	// Font cod_font;
+
 	public void switchToEasyMode(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getResource(".fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
-		
+
 	}
 
 	public void switchToHardMode(ActionEvent event) throws IOException {
@@ -39,6 +39,7 @@ public class MenuController {
 		stage.setScene(scene);
 		stage.show();
 	}
+
 	public void HowToPlay(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("/game/gui/menucontroller/HowToplay.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -46,9 +47,9 @@ public class MenuController {
 		stage.setScene(scene);
 		stage.show();
 	}
-	public void exit(ActionEvent event) { 
-		  Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		  stage.close();
-		}
-}
 
+	public void exit(ActionEvent event) {
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		stage.close();
+	}
+}
