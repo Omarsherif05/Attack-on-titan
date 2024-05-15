@@ -42,7 +42,6 @@ public class Main extends Application {
 			 */
 			Parent root = FXMLLoader.load(getClass().getResource("/game/gui/menuview/menu.fxml"));
 			String css = this.getClass().getResource("/game/gui/menuview/menu.css").toExternalForm();
-			
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(css);
 			stage.setTitle("Attack on titan");
