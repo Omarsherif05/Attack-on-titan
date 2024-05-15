@@ -46,7 +46,6 @@ public class MenuController {
 		stage.setScene(scene);
 		stage.show();
 	}
-	
 	public void exit(ActionEvent event) { 
 		  Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		  stage.close();
