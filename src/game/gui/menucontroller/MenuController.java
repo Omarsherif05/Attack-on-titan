@@ -52,3 +52,4 @@ public class MenuController {
 		  stage.close();
 		}
 }
+
