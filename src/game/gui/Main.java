@@ -18,21 +18,6 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
-
-	/*
-	 * 
-	 * public void start(Stage stage) throws Exception { Parent root =
-	 * FXMLLoader.load(getClass().getResource(
-	 * "file:/Attack-on-titan/src/game/gui/menuview/menu.fxml")); String css =
-	 * this.getClass().getResource("file:/Attack-on-titan/src/game/gui/app.css").
-	 * toExternalForm(); Scene scene = new Scene(root);
-	 * scene.getStylesheets().add(css); stage.setTitle("Attack on titan");
-	 * stage.setScene(scene); stage.show();
-	 * //Font.loadFont(getClass().getResourceAsStream("/cod_font.ttf"), 14);
-	 * 
-	 * 
-	 * } }
-	 */
 	public void start(Stage stage) throws Exception {
 		try {
 			
