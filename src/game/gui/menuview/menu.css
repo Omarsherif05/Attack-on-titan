@@ -1,0 +1,23 @@
+#pane {
+    -fx-background-repeat: stretch;
+    -fx-background-size: 1920 1080;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+.button {
+  -fx-background-color: BLACK; /* Adjust background color as desired */
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-padding: 10px 20px;
+  -fx-border-radius: 5px;
+  -fx-cursor: hand;
+  -fx-font-family: "cod_font.ttf";
+  -fx-font-size: 12px; 
+}
+.button:hover {
+  -fx-background-color: #2980b9; /* Slightly darker on hover */
+}
+.button:pressed {
+  -fx-background-color: #536878; /* Darken on press */
+}
