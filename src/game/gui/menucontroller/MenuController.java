@@ -1,5 +1,8 @@
 package game.gui.menucontroller;
 
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+import java.io.File;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -8,7 +11,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class MenuController {
@@ -16,22 +21,33 @@ public class MenuController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-
-	public void switchToScene1(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("scene1.fxml"));
+	//Font cod_font;
+	
+	public void switchToEasyMode(ActionEvent event) throws IOException {
+		root = FXMLLoader.load(getClass().getResource(".fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
-		String css = this.getClass().getResource("application.css").toExternalForm();
-		scene.getStylesheets().add(css);
+		//String css = this.getClass().getResource("application.css").toExternalForm();
+		//scene.getStylesheets().add(css);
+		
 	}
 
-	public void switchToScene2(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("scene2.fxml"));
+	public void switchToHardMode(ActionEvent event) throws IOException {
+		root = FXMLLoader.load(getClass().getResource(".fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
 	}
+	public void HowToPlay(ActionEvent event) throws IOException {
+		root = FXMLLoader.load(getClass().getResource("/game/gui/menuview/HowToplay.fxml"));
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	
+	
 }

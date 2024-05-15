@@ -8,17 +8,17 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('file:C:/Users/mourad/Downloads/la.jpeg');" stylesheets="@app.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.gui.menucontroller.MenuController">
    <children>
       <Button layoutX="154.0" layoutY="249.0" mnemonicParsing="false" onAction="#switchToEasyMode" prefHeight="26.0" prefWidth="78.0" text="Easy" />
-      <Label fx:id="attackontitan" alignment="TOP_CENTER" layoutX="83.0" layoutY="70.0" prefHeight="64.0" prefWidth="434.0" styleClass="custom-font" stylesheets="@app.css" text="ATTACK ON TITAN UTOPIA 2" textFill="#fffafa">
+      <Label fx:id="attackontitan" alignment="TOP_CENTER" layoutX="70.0" layoutY="54.0" prefHeight="106.0" prefWidth="459.0" stylesheets="@app.css" text="ATTACK ON TITAN UTOPIA 2" textFill="#ef1111">
          <font>
-            <Font name="Bookshelf Symbol 7" size="28.0" />
+            <Font name="Bookshelf Symbol 7" size="31.0" />
          </font>
       </Label>
       <Button layoutX="354.0" layoutY="249.0" mnemonicParsing="false" onAction="#switchToHardMode" prefHeight="26.0" prefWidth="78.0" text="Hard" />
-      <Label fx:id="choosemode" layoutX="143.0" layoutY="168.0" prefHeight="47.0" prefWidth="327.0" stylesheets="@app.css" text="Choose mode" textFill="WHITE">
+      <Label fx:id="choosemode" layoutX="143.0" layoutY="168.0" prefHeight="47.0" prefWidth="327.0" stylesheets="@app.css" text="Choose mode" textFill="#a41616">
          <font>
-            <Font name="Segoe UI Black" size="45.0" />
+            <Font name="Lucida Console" size="45.0" />
          </font>
       </Label>
-      <Button layoutX="4.0" layoutY="366.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" text="how to play" />
+      <Button layoutX="4.0" layoutY="353.0" mnemonicParsing="false" onAction="#HowToPlay" prefHeight="38.0" prefWidth="106.0" text="How to play" />
    </children>
 </AnchorPane>
