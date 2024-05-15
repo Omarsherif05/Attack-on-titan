@@ -25,6 +25,8 @@ public class HowToPlayController {
 		stage.setScene(scene);
 		String css = this.getClass().getResource("/game/gui/menucontroller/menu.css").toExternalForm();
 		scene.getStylesheets().add(css);
+		stage.setFullScreen(true);
+		stage.setFullScreenExitHint("Press ESC to exit.");
 		stage.show();
 	}
 

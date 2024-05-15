@@ -4,6 +4,8 @@ import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
 import java.io.File;
 import java.io.IOException;
+
+import game.gui.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,10 +41,15 @@ public class MenuController {
 	}
 
 	public void HowToPlay(ActionEvent event) throws IOException {
+		
 		root = FXMLLoader.load(getClass().getResource("/game/gui/menucontroller/HowToplay.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
+		String css = this.getClass().getResource("/game/gui/menucontroller/menu.css").toExternalForm();
+		scene.getStylesheets().add(css);
+		stage.setFullScreen(true);
+		stage.setFullScreenExitHint("Press ESC to exit.");
 		stage.show();
 	}
 
