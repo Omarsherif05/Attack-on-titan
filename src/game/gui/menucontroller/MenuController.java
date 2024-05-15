@@ -40,18 +40,15 @@ public class MenuController {
 		stage.show();
 	}
 	public void HowToPlay(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("/game/gui/HowToplay.fxml"));
+		root = FXMLLoader.load(getClass().getResource("/game/gui/menucontroller/HowToplay.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
 	}
 	
-	public void handleExitButtonAction(ActionEvent event) {
-		  // Get the stage from the event (assuming the button click triggers this function)
+	public void exit(ActionEvent event) { 
 		  Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		  
-		  // Close the stage (exits the game)
 		  stage.close();
 		}
 }

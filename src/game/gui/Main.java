@@ -36,8 +36,8 @@ public class Main extends Application {
 	public void start(Stage stage) throws Exception {
 		try {
 			
-			Parent root = FXMLLoader.load(getClass().getResource("/game/gui/menu.fxml"));
-			String css = this.getClass().getResource("/game/gui/menu.css").toExternalForm();
+			Parent root = FXMLLoader.load(getClass().getResource("/game/gui/menucontroller/menu.fxml"));
+			String css = this.getClass().getResource("/game/gui/menucontroller/menu.css").toExternalForm();
 			Scene scene = new Scene(root);
 			stage.setFullScreen(true);
 			stage.setFullScreenExitHint("Press Esc to exit fullscreen");
