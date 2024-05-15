@@ -19,7 +19,6 @@ public class Main extends Application {
 		launch(args);
 	}
 	
-	
 	public void start(Stage stage) throws Exception {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/game/gui/menucontroller/menu.fxml"));
