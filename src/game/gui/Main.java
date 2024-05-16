@@ -14,11 +14,10 @@ import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 
 public class Main extends Application {
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
-
 	public void start(Stage stage) throws Exception {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/game/gui/menucontroller/menu.fxml"));
@@ -27,8 +26,6 @@ public class Main extends Application {
 			scene.getStylesheets().add(css);
 			stage.setTitle("Attack on titan");
 			stage.setScene(scene);
-			stage.setFullScreen(true);
-			stage.setFullScreenExitHint("Press ESC to exit.");
 			stage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
