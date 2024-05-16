@@ -14,7 +14,6 @@ import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 
 public class Main extends Application {
-	
 	public static void main(String[] args) {
 		launch(args);
 	}
