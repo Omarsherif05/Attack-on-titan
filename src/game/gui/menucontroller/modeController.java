@@ -40,6 +40,7 @@ public void hard(ActionEvent e) throws IOException{
 	stage.setScene(scene);
 	stage.show();
 	Battle battle = new Battle(1,0,0,5,125);
+	
 	Text score= new Text("SCORE: "+battle.getScore());
 	Text turn= new Text("currentturn: "+battle.getNumberOfTurns());
 	Text phase= new Text("currentphase: "+battle.getBattlePhase());
