@@ -1,9 +1,10 @@
-#pane {
-    -fx-background-repeat: stretch;
+.root {
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
     -fx-background-size: 1920 1080;
     -fx-background-position: center center;
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
-    -fx-background-image: url("/Attack-on-titan/src/game/gui/resources/mainmenubackground.jpeg");
+    -fx-background-image: url("../menucontroller/mainmenubackground.jpeg");
 }
 
 .button {

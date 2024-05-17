@@ -41,11 +41,13 @@ public class MenuController {
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
-		Image image = new Image("howtoplay.png");
+		/*Image image = new Image("howtoplay.png");
 		ImageView imageview = new ImageView(image);
 		imageview.fitWidthProperty().bind(stage.widthProperty());
 		imageview.fitHeightProperty().bind(stage.heightProperty());
-		root.getChildren().add(imageview);
+		root.getChildren().add(imageview);*/
+		String css = this.getClass().getResource("/game/gui/menucontroller/howtoplay.css").toExternalForm();
+		scene.getStylesheets().add(css);
 		stage.show();
 
 	}

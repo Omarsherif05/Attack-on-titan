@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 
 public class Main extends Application {
+
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -26,12 +27,9 @@ public class Main extends Application {
 			stage.setTitle("Attack on titan");
 			stage.setScene(scene);
 			stage.show();
-
-
-			//
 		} catch (Exception e) {
 			e.printStackTrace();
-
+			
 		}
 	}
 }

@@ -38,7 +38,6 @@ public void hard(ActionEvent e) throws IOException{
 	stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 	scene = new Scene(root);
 	stage.setScene(scene);
-	//
 	stage.show();
 	Battle battle = new Battle(1,0,0,5,125);
 	
