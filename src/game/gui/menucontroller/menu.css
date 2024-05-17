@@ -25,3 +25,6 @@
 .button:pressed {
   -fx-background-color: #536878; /* Darken on press */
 }
+#pane{
+	 -fx-alignment: center;
+}
