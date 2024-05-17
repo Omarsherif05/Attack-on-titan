@@ -6,7 +6,6 @@
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
     -fx-background-image: url("../menucontroller/mainmenubackground.jpeg");
 }
-
 .button {
   -fx-background-color: BLACK; /* Adjust background color as desired */
   -fx-text-fill: white;
