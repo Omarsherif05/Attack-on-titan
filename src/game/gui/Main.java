@@ -25,6 +25,7 @@ public class Main extends Application {
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(css);
 			stage.setTitle("Attack on titan");
+			stage.setFullScreen(true);
 			stage.setScene(scene);
 			stage.show();
 		} catch (Exception e) {

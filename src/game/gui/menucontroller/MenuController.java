@@ -33,6 +33,7 @@ public class MenuController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
+		stage.setFullScreen(true);
 
 	}
 
@@ -46,6 +47,7 @@ public class MenuController {
 		imageview.fitWidthProperty().bind(stage.widthProperty());
 		imageview.fitHeightProperty().bind(stage.heightProperty());
 		root.getChildren().add(imageview);*/
+		stage.setFullScreen(true);
 		String css = this.getClass().getResource("/game/gui/menucontroller/howtoplay.css").toExternalForm();
 		scene.getStylesheets().add(css);
 		stage.show();

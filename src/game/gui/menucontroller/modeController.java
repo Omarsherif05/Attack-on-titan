@@ -21,6 +21,7 @@ public void easy(ActionEvent e) throws IOException{
 	stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 	scene = new Scene(root);
 	stage.setScene(scene);
+	stage.setFullScreen(true);
 	stage.show();
 	Battle battle = new Battle(1,0,0,3,250);
 	Text score= new Text("SCORE: "+battle.getScore());
@@ -37,6 +38,7 @@ public void hard(ActionEvent e) throws IOException{
 	stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 	scene = new Scene(root);
 	stage.setScene(scene);
+	stage.setFullScreen(true);
 	stage.show();
 	Battle battle = new Battle(1,0,0,5,125);
 	
