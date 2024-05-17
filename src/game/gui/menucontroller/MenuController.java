@@ -31,6 +31,8 @@ public class MenuController {
 		root = FXMLLoader.load(getClass().getResource("mode.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
+		String css = this.getClass().getResource("/game/gui/menucontroller/menu.css").toExternalForm();
+		scene.getStylesheets().add(css);
 		stage.setScene(scene);
 		stage.show();
 		stage.setFullScreen(true);
@@ -48,6 +50,7 @@ public class MenuController {
 		imageview.fitHeightProperty().bind(stage.heightProperty());
 		root.getChildren().add(imageview);*/
 		stage.setFullScreen(true);
+		stage.setFullScreenExitHint("");
 		String css = this.getClass().getResource("/game/gui/menucontroller/howtoplay.css").toExternalForm();
 		scene.getStylesheets().add(css);
 		stage.show();
