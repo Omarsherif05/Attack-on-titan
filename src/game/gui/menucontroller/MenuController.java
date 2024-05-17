@@ -22,7 +22,7 @@ public class MenuController {
 
 	private Stage stage;
 	private Scene scene;
-	private AnchorPane root;
+	private Parent root;
 	
 	
 

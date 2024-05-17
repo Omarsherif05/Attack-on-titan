@@ -3,23 +3,54 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@howtoplay.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.gui.menucontroller.HowToPlayController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.gui.menucontroller.HowToPlayController">
    <children>
-      <Label layoutY="142.0" prefHeight="79.0" prefWidth="397.0" textFill="RED" underline="true" />
-      <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#back" text="Back" />
-      <Label layoutX="96.0" layoutY="56.0" text="The gameplay contain 3 lanes each lane contain Wall,Titans,Weapons." textFill="#d1abab" />
-      <Label layoutX="96.0" layoutY="74.0" text="The Titans are going to attack the wall " textFill="#d1abab" />
-      <Label layoutX="96.0" layoutY="92.0" text="The game contain turns " textFill="#d1abab" />
-      <Label layoutX="96.0" layoutY="110.0" prefHeight="18.0" prefWidth="483.0" text="Before starting the following turn  player can purchase weapons according his rescources" textFill="#d1abab" />
-      <Label layoutX="96.0" layoutY="128.0" text="Each weapon has special feature" textFill="#d1abab" />
-      <Label layoutX="171.0" layoutY="14.0" text="Game instructions" textFill="RED">
-         <font>
-            <Font name="Californian FB" size="29.0" />
-         </font>
-      </Label>
-      <Label layoutX="96.0" layoutY="146.0" text="The game is over if  all player's walls destroyed " textFill="#d1abab" />
-      <Label layoutX="96.0" layoutY="164.0" text="The titans spawned in the start of the turn" textFill="#d1abab" />
+      <HBox alignment="CENTER" prefHeight="450.0" prefWidth="600.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="28.0" layoutY="54.0" text="The gameplay contain 3 lanes each lane contain Wall,Titans,Weapons." textAlignment="CENTER" textFill="#d1abab">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="28.0" layoutY="74.0" prefHeight="20.0" prefWidth="243.0" text="The Titans are going to attack the wall " textAlignment="CENTER" textFill="#d1abab">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="28.0" layoutY="94.0" text="The game contain turns " textAlignment="CENTER" textFill="#d1abab">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="28.0" layoutY="134.0" prefHeight="20.0" prefWidth="552.0" text="Before starting the following turn  player can purchase weapons according his rescources" textAlignment="CENTER" textFill="#d1abab">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="28.0" layoutY="114.0" text="Each weapon has special feature" textAlignment="CENTER" textFill="#d1abab">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label alignment="TOP_CENTER" layoutX="162.0" layoutY="14.0" text="Game instructions" textFill="RED">
+                  <font>
+                        <Font name="Californian FB" size="29.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="28.0" layoutY="155.0" text="The game is over if  all player's walls destroyed " textAlignment="CENTER" textFill="#d1abab">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="28.0" layoutY="175.0" text="The titans spawned in the start of the turn" textAlignment="CENTER" textFill="#d1abab">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Button alignment="BOTTOM_CENTER" layoutY="374.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="121.0" text="Back" />
+                  
+                  
+               </children></AnchorPane>
+            
+         </children>
+      </HBox>
    </children>
-</AnchorPane>
+</VBox>

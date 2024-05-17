@@ -10,7 +10,7 @@
    <children>
       <HBox alignment="CENTER" prefHeight="407.0" prefWidth="600.0">
          <children>
-           <AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+           <AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button layoutX="227.0" layoutY="163.0" mnemonicParsing="false" onAction="#switchToMode" prefHeight="37.0" prefWidth="146.0" text="Play" />
       <Button layoutX="227.0" layoutY="221.0" mnemonicParsing="false" onAction="#HowToPlay" prefHeight="37.0" prefWidth="146.0" text="How to play" />
