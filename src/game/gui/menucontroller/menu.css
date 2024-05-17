@@ -16,7 +16,7 @@
   -fx-font-family: "cod_font.ttf";
   -fx-font-size: 12px; 
   -fx-alignment: center;
--fx-justify-content: center;
+  -fx-justify-content: center;
 }
 .button:hover {
   -fx-background-color: #2980b9; /* Slightly darker on hover */
