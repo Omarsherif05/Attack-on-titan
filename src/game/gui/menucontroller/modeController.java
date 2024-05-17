@@ -29,7 +29,6 @@ public void easy(ActionEvent e) throws IOException{
 	Text resources= new Text("resources: "+battle.getResourcesGathered());
 	WeaponFactory x = new WeaponFactory();
 	x.getWeaponShop();
-
 	//+avaliable lanes
 }
 
