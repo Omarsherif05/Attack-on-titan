@@ -8,3 +8,7 @@ public void addweapoen(ActionEvent e){
 for (Weapoen:)	
 }
 }
+
+
+
+
