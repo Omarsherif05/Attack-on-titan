@@ -24,4 +24,9 @@
 .button:pressed {
   -fx-background-color: #536878; /* Darken on press */
 }
-
+.label {
+  -fx-text-fill: red; /* Sets the text color to red */
+  -fx-font-weight: bold; /* Makes the text bold */
+  -fx-alignment: center; /* Centers the text */
+  -fx-font-size: 20px; 
+}
