@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.gui.menucontroller.modeController">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0" />
@@ -22,10 +21,10 @@
             <ButtonBar layoutX="70.0" layoutY="200.0" prefHeight="40.0" prefWidth="200.0">
               <buttons>
                 <Button mnemonicParsing="false" onAction="#Lane1" text="Lane1" />
-                  <Button mnemonicParsing="false" text="Lane2" />
-                  <Button mnemonicParsing="false" text="Lane3" />
-                  <Button mnemonicParsing="false" text="Lane4" />
-                  <Button mnemonicParsing="false" text="Lane5" />
+                  <Button mnemonicParsing="false" onAction="#Lane2" text="Lane2" />
+                  <Button mnemonicParsing="false" onAction="#Lane3" text="Lane3" />
+                  <Button mnemonicParsing="false" onAction="#Lane4" text="Lane4" />
+                  <Button mnemonicParsing="false" onAction="#Lane5" text="Lane5" />
               </buttons>
             </ButtonBar>
          </children>
