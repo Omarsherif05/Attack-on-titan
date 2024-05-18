@@ -121,6 +121,7 @@ public class modeController {
 	}
 
 	public void walltrap(ActionEvent e) throws IOException {
+		weaponcode=4;
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		if (battle.getResourcesGathered() > 75) {
 			if (battle.getLanes().size() <= 3) {
@@ -133,7 +134,90 @@ public class modeController {
 			stage.setFullScreen(true);
 			stage.show();
 		}
+		else {
+			root = FXMLLoader.load(getClass().getResource("insufficientResources.fxml"));
+			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.setFullScreen(true);
+			stage.setFullScreenExitHint("");
+			stage.show();
+		}
 	}
+	public void volleyspread(ActionEvent e) throws IOException {
+		weaponcode=3;
+		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		if (battle.getResourcesGathered() > 100) {
+			if (battle.getLanes().size() <= 3) {
+				root = FXMLLoader.load(getClass().getResource("lanechooseeasy.fxml"));
+			} else if (battle.getLanes().size() <= 5) {
+				root = FXMLLoader.load(getClass().getResource("lanechoosehard.fxml"));
+			}
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.setFullScreen(true);
+			stage.show();
+		}
+		else {
+			root = FXMLLoader.load(getClass().getResource("insufficientResources.fxml"));
+			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.setFullScreen(true);
+			stage.setFullScreenExitHint("");
+			stage.show();
+		}
+	}
+	public void snipercannon(ActionEvent e) throws IOException {
+		weaponcode=2;
+		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		if (battle.getResourcesGathered() > 25) {
+			if (battle.getLanes().size() <= 3) {
+				root = FXMLLoader.load(getClass().getResource("lanechooseeasy.fxml"));
+			} else if (battle.getLanes().size() <= 5) {
+				root = FXMLLoader.load(getClass().getResource("lanechoosehard.fxml"));
+			}
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.setFullScreen(true);
+			stage.show();
+		}
+		else {
+			root = FXMLLoader.load(getClass().getResource("insufficientResources.fxml"));
+			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.setFullScreen(true);
+			stage.setFullScreenExitHint("");
+			stage.show();
+		}
+	}
+	public void piercingcannon(ActionEvent e) throws IOException {
+		weaponcode=1;
+		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		if (battle.getResourcesGathered() > 25) {
+			if (battle.getLanes().size() <= 3) {
+				root = FXMLLoader.load(getClass().getResource("lanechooseeasy.fxml"));
+			} else if (battle.getLanes().size() <= 5) {
+				root = FXMLLoader.load(getClass().getResource("lanechoosehard.fxml"));
+			}
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.setFullScreen(true);
+			stage.show();
+		}
+		else {
+			root = FXMLLoader.load(getClass().getResource("insufficientResources.fxml"));
+			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.setFullScreen(true);
+			stage.setFullScreenExitHint("");
+			stage.show();
+		}
+	}
+
+
 
 	public void Lane1() throws InsufficientResourcesException, InvalidLaneException, IOException {
 		ArrayList<Lane> x = new ArrayList<Lane>();
@@ -151,6 +235,77 @@ public class modeController {
 		}
 	}
 
+	public void Lane2() throws InsufficientResourcesException, InvalidLaneException, IOException {
+		ArrayList<Lane> x = new ArrayList<Lane>();
+		x = battle.getOriginalLanes();
+		switch (weaponcode) {
+		case 1:
+			if(!(boolean) x.get(1).isLaneLost()) {
+			battle.purchaseWeapon(1, (Lane) x.get(1));
+			}
+			else {
+				Parent root = FXMLLoader.load(getClass().getResource("laneislost.fxml"));
+				Scene scene = new Scene(root);
+				stage.setTitle("Attack on titan");
+				stage.setFullScreen(true);
+				stage.setFullScreenExitHint("");
+				stage.setScene(scene);
+				stage.show();
+			}
+		case 2:
+			battle.purchaseWeapon(2, (Lane) x.get(1));
+		case 3:
+			battle.purchaseWeapon(3, (Lane) x.get(1));
+		case 4:
+			battle.purchaseWeapon(4, (Lane) x.get(1));
+
+		}
+	}
+	public void Lane3() throws InsufficientResourcesException, InvalidLaneException, IOException {
+		ArrayList<Lane> x = new ArrayList<Lane>();
+		x = battle.getOriginalLanes();
+		switch (weaponcode) {
+		case 1:
+			battle.purchaseWeapon(1, (Lane) x.get(2));
+		case 2:
+			battle.purchaseWeapon(2, (Lane) x.get(2));
+		case 3:
+			battle.purchaseWeapon(3, (Lane) x.get(2));
+		case 4:
+			battle.purchaseWeapon(4, (Lane) x.get(2));
+
+		}
+	}
+	public void Lane4() throws InsufficientResourcesException, InvalidLaneException, IOException {
+		ArrayList<Lane> x = new ArrayList<Lane>();
+		x = battle.getOriginalLanes();
+		switch (weaponcode) {
+		case 1:
+			battle.purchaseWeapon(1, (Lane) x.get(3));
+		case 2:
+			battle.purchaseWeapon(2, (Lane) x.get(3));
+		case 3:
+			battle.purchaseWeapon(3, (Lane) x.get(3));
+		case 4:
+			battle.purchaseWeapon(4, (Lane) x.get(3));
+
+		}
+	}
+	public void Lane5() throws InsufficientResourcesException, InvalidLaneException, IOException {
+		ArrayList<Lane> x = new ArrayList<Lane>();
+		x = battle.getOriginalLanes();
+		switch (weaponcode) {
+		case 1:
+			battle.purchaseWeapon(1, (Lane) x.get(4));
+		case 2:
+			battle.purchaseWeapon(2, (Lane) x.get(4));
+		case 3:
+			battle.purchaseWeapon(3, (Lane) x.get(4));
+		case 4:
+			battle.purchaseWeapon(4, (Lane) x.get(4));
+
+		}
+	}
 	public void addweapoen(ActionEvent e) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("weapons.fxml"));
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -161,6 +316,56 @@ public class modeController {
 		String css = this.getClass().getResource("/game/gui/menucontroller/weapons.css").toExternalForm();
 		scene.getStylesheets().add(css);
 		stage.show();
+	}
+	public void back(ActionEvent e) throws IOException {
+		if(isEasyMode) {
+		root = FXMLLoader.load(getClass().getResource("lanechooseeasy.fxml"));
+		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.setFullScreen(true);
+		stage.setFullScreenExitHint("");
+		stage.show();
+		}
+		else {
+		root = FXMLLoader.load(getClass().getResource("lanechoosehard.fxml"));
+		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.setFullScreen(true);
+		stage.setFullScreenExitHint("");
+		stage.show();}
+	}
+	public void backShop(ActionEvent e) throws IOException {
+		root = FXMLLoader.load(getClass().getResource("weapons.fxml"));
+		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.setFullScreen(true);
+		stage.setFullScreenExitHint("");
+		stage.show();
+	}
+	public void passturn(ActionEvent e) throws IOException {
+		if(isEasyMode) {
+		battle.passTurn();
+		root = FXMLLoader.load(getClass().getResource("easy.fxml"));
+		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.setFullScreen(true);
+		stage.setFullScreenExitHint("");
+		stage.show();
+		}
+		else {
+			battle.passTurn();
+			root = FXMLLoader.load(getClass().getResource("hard.fxml"));
+			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.setFullScreen(true);
+			stage.setFullScreenExitHint("");
+			stage.show();
+		}
 	}
 
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.gui.menucontroller.modeController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0" />
+      <AnchorPane prefHeight="510.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="167.0" layoutY="41.0" prefHeight="127.0" prefWidth="338.0" text="Insufficient resources" textFill="RED">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="108.0" layoutY="200.0" mnemonicParsing="false" onAction="#backShop" prefHeight="44.0" prefWidth="192.0" text="buy anothor weapon" />
+            <Button layoutX="336.0" layoutY="200.0" mnemonicParsing="false" onAction="#passturn" prefHeight="44.0" prefWidth="192.0" text="Pass Weapon purchase" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

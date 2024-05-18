@@ -9,7 +9,7 @@
       <Text fx:id="score" layoutX="69.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text fx:id="turn" layoutX="69.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text fx:id="phase" layoutX="69.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="xyz" layoutX="69.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="69.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" fx:id="xyz" />
       <Button layoutX="489.0" layoutY="32.0" mnemonicParsing="false" onAction="#addweapoen" text="Add weapon" />
    </children>
 </AnchorPane>
