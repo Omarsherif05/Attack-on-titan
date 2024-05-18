@@ -222,6 +222,8 @@ public class Battle {
 				resources += currentLane.performLaneTitansAttacks();
 				if (!currentLane.isLaneLost()) {
 					updatedLane.add(currentLane);
+					
+					
 				}
 				
 			}
