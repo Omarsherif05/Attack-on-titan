@@ -25,3 +25,7 @@ public void addweapoen(ActionEvent e) throws IOException{
 	stage.show();
 }
 }
+
+
+
+
