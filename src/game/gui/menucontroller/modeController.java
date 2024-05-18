@@ -1,8 +1,10 @@
 package game.gui.menucontroller;
 
 import java.io.IOException;
+import java.util.PriorityQueue;
 
 import game.engine.Battle;
+import game.engine.lanes.Lane;
 import game.engine.weapons.factory.WeaponFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,8 +31,9 @@ public class modeController {
 	private Text xyz;
 
 	private Battle battle;
-	private boolean isEasyMode;
 
+	private boolean isEasyMode;
+	private int weaponcode;
 	@FXML
 	public void initialize() {
 		try {
@@ -99,7 +102,7 @@ public class modeController {
 		setupBattle(isEasyMode);
 		WeaponFactory x = new WeaponFactory();
 		x.getWeaponShop();
-		// +avaliable lanes
+		battle.initializeLanes(3);
 	}
 
 	public void hard(ActionEvent e) throws IOException {
@@ -114,25 +117,40 @@ public class modeController {
 		stage.show();
 		isEasyMode = false;
 		setupBattle(isEasyMode);
-
-		// weaponshop+avaliable lanes
-
+		WeaponFactory x = new WeaponFactory();
+		x.getWeaponShop();
+		battle.initializeLanes(5);
 	}
 
 	public void walltrap(ActionEvent e) throws IOException {
-		///
-		battle.setResourcesGathered(battle.getResourcesGathered() - 100);
+		
+		if(battle.getResourcesGathered()>75) { 	
+		//resources-easy/hard
 		if (battle.getLanes().size() <= 3) {
-			root = FXMLLoader.load(getClass().getResource("lanechooseeasy.fxml"));
+			root = FXMLLoader.load(getClass().getResource("lanechooseeasy.fxml"));	
+			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.setFullScreen(true);
 		}
 		if (battle.getLanes().size() <= 5) {
 			root = FXMLLoader.load(getClass().getResource("lanechoosehard.fxml"));
+			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.setFullScreen(true);
 		}
-		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.setFullScreen(true);
+		}
 	}
+	public void Lane1() {
+		switch(weaponcode) {
+		case 1:
+			PriorityQueue<Lane> x= battle.getLanes();
+		battle.purchaseWeapon(1,x);
+		
+		}
+	}
+	
 
 	public void addweapoen(ActionEvent e) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("weapons.fxml"));
@@ -145,5 +163,7 @@ public class modeController {
 		scene.getStylesheets().add(css);
 		stage.show();
 	}
+	  
+	
 
 }

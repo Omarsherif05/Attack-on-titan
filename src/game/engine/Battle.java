@@ -110,7 +110,7 @@ public class Battle {
 		this.battlePhase = battlePhase;
 	}
 
-	private void initializeLanes(int numOfLanes) {
+	public void initializeLanes(int numOfLanes) {
 		for (int i = 0; i < numOfLanes; i++) {
 			Wall wall = new Wall(WALL_BASE_HEALTH);
 			Lane lane = new Lane(wall);
