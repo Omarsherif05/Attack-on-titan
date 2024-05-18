@@ -1,9 +1,12 @@
 package game.gui.menucontroller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 import game.engine.Battle;
+import game.engine.exceptions.InsufficientResourcesException;
+import game.engine.exceptions.InvalidLaneException;
 import game.engine.lanes.Lane;
 import game.engine.weapons.factory.WeaponFactory;
 import javafx.event.ActionEvent;
@@ -135,11 +138,18 @@ public class modeController {
 		}
 		}
 	}
-	public void Lane1() {
+	public void Lane1() throws InsufficientResourcesException, InvalidLaneException, IOException {
+		ArrayList<Lane> x = new ArrayList<Lane>();
+		x=battle.getOriginalLanes();
 		switch(weaponcode) {
 		case 1:
-			PriorityQueue<Lane> x= battle.getLanes();
-		battle.purchaseWeapon(1,x);
+		battle.purchaseWeapon(1,(Lane)x.get(0));
+		case 2:
+		battle.purchaseWeapon(2,(Lane)x.get(0));
+		case 3:
+		battle.purchaseWeapon(3,(Lane)x.get(0));
+		case 4:
+		battle.purchaseWeapon(4,(Lane)x.get(0));
 		
 		}
 	}
