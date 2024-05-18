@@ -37,6 +37,7 @@ public class modeController {
 
 	private boolean isEasyMode;
 	private int weaponcode;
+
 	@FXML
 	public void initialize() {
 		isEasyMode = true;
@@ -59,6 +60,7 @@ public class modeController {
 			e.printStackTrace();
 		}
 	}
+
 	private void updateTurn() {
 		if (turn != null && battle != null) {
 			turn.setText("Turn: " + battle.getNumberOfTurns());
@@ -119,41 +121,35 @@ public class modeController {
 	}
 
 	public void walltrap(ActionEvent e) throws IOException {
-		
-		if(battle.getResourcesGathered()>75) { 	
-		//resources-easy/hard
-		if (battle.getLanes().size() <= 3) {
-			root = FXMLLoader.load(getClass().getResource("lanechooseeasy.fxml"));	
-			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		if (battle.getResourcesGathered() > 75) {
+			if (battle.getLanes().size() <= 3) {
+				root = FXMLLoader.load(getClass().getResource("lanechooseeasy.fxml"));
+			} else if (battle.getLanes().size() <= 5) {
+				root = FXMLLoader.load(getClass().getResource("lanechoosehard.fxml"));
+			}
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.setFullScreen(true);
-		}
-		if (battle.getLanes().size() <= 5) {
-			root = FXMLLoader.load(getClass().getResource("lanechoosehard.fxml"));
-			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-			scene = new Scene(root);
-			stage.setScene(scene);
-			stage.setFullScreen(true);
-		}
+			stage.show();
 		}
 	}
+
 	public void Lane1() throws InsufficientResourcesException, InvalidLaneException, IOException {
 		ArrayList<Lane> x = new ArrayList<Lane>();
-		x=battle.getOriginalLanes();
-		switch(weaponcode) {
+		x = battle.getOriginalLanes();
+		switch (weaponcode) {
 		case 1:
-		battle.purchaseWeapon(1,(Lane)x.get(0));
+			battle.purchaseWeapon(1, (Lane) x.get(0));
 		case 2:
-		battle.purchaseWeapon(2,(Lane)x.get(0));
+			battle.purchaseWeapon(2, (Lane) x.get(0));
 		case 3:
-		battle.purchaseWeapon(3,(Lane)x.get(0));
+			battle.purchaseWeapon(3, (Lane) x.get(0));
 		case 4:
-		battle.purchaseWeapon(4,(Lane)x.get(0));
-		
+			battle.purchaseWeapon(4, (Lane) x.get(0));
+
 		}
 	}
-	
 
 	public void addweapoen(ActionEvent e) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("weapons.fxml"));
@@ -166,7 +162,5 @@ public class modeController {
 		scene.getStylesheets().add(css);
 		stage.show();
 	}
-	  
-	
 
 }
