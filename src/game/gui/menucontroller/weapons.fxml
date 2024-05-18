@@ -14,7 +14,7 @@
    <children>
       <HBox alignment="CENTER" prefHeight="351.0" prefWidth="610.0">
          <children>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane prefHeight="574.0" prefWidth="592.0">
                <children>
                   <Text fill="#ff1010" layoutX="146.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add weapon">
                      <font>

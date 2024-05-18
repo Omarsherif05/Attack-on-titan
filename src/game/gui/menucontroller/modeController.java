@@ -15,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import game.gui.*;
@@ -36,13 +37,23 @@ public class modeController {
 	private Battle battle;
 
 	private boolean isEasyMode;
-	private int weaponcode;
+	private int weaponcode =0;
+	@FXML
+	private ImageView weapon2L1;
+	@FXML
+	private ImageView weapon1L1;
 
 	@FXML
 	public void initialize() {
 		isEasyMode = true;
 		setupBattle(isEasyMode);
 
+	}
+	private void setcode(int e) {
+		this.weaponcode=e;
+	}
+	private int getcode() {
+		return weaponcode;
 	}
 
 	public void setupBattle(boolean isEasy) {
@@ -121,7 +132,7 @@ public class modeController {
 	}
 
 	public void walltrap(ActionEvent e) throws IOException {
-		weaponcode=4;
+		setcode(4);
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		if (battle.getResourcesGathered() > 75) {
 			if (battle.getLanes().size() <= 3) {
@@ -145,7 +156,7 @@ public class modeController {
 		}
 	}
 	public void volleyspread(ActionEvent e) throws IOException {
-		weaponcode=3;
+		setcode(3);
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		
 		if (battle.getResourcesGathered() > 100) {
@@ -170,7 +181,8 @@ public class modeController {
 		}
 	}
 	public void snipercannon(ActionEvent e) throws IOException {
-		weaponcode=2;
+		setcode(2);
+
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		if (battle.getResourcesGathered() > 25) {
 			if (battle.getLanes().size() <= 3) {
@@ -179,6 +191,7 @@ public class modeController {
 				root = FXMLLoader.load(getClass().getResource("lanechoosehard.fxml"));
 			}
 			scene = new Scene(root);
+			
 			stage.setScene(scene);
 			stage.setFullScreen(true);
 			stage.show();
@@ -194,7 +207,7 @@ public class modeController {
 		}
 	}
 	public void piercingcannon(ActionEvent e) throws IOException {
-		weaponcode=1;
+		setcode(1);
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		if (battle.getResourcesGathered() > 25) {
 			if (battle.getLanes().size() <= 3) {
@@ -223,16 +236,27 @@ public class modeController {
 	public void Lane1() throws InsufficientResourcesException, InvalidLaneException, IOException {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
-		switch (weaponcode) {
+		switch (getcode()) {
 		case 1:
 			battle.purchaseWeapon(1, (Lane) x.get(0));
 		case 2:
 			battle.purchaseWeapon(2, (Lane) x.get(0));
 		case 3:
 			battle.purchaseWeapon(3, (Lane) x.get(0));
-		case 4:
+		case 4:{
 			battle.purchaseWeapon(4, (Lane) x.get(0));
-
+			weapon1L1=new ImageView("pirecing cannon.png");
+			Parent root = FXMLLoader.load(getClass().getResource("/game/gui/menucontroller/easy.fxml"));
+			String css = this.getClass().getResource("/game/gui/menucontroller/menu.css").toExternalForm();
+			Scene scene = new Scene(root);
+			scene.getStylesheets().add(css);
+			stage.setTitle("Attack on titan");
+			stage.setFullScreen(true);
+			stage.setFullScreenExitHint("");
+			stage.setScene(scene);
+			stage.show();
+		}
+		default: System.out.println("x");
 		}
 	}
 
