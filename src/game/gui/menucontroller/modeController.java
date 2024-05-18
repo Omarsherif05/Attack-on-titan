@@ -147,6 +147,7 @@ public class modeController {
 	public void volleyspread(ActionEvent e) throws IOException {
 		weaponcode=3;
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		
 		if (battle.getResourcesGathered() > 100) {
 			if (battle.getLanes().size() <= 3) {
 				root = FXMLLoader.load(getClass().getResource("lanechooseeasy.fxml"));
