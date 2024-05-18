@@ -37,7 +37,7 @@ public class modeController {
 	private Battle battle;
 
 	private boolean isEasyMode;
-	private int weaponcode =0;
+	private int weaponcode ;
 	@FXML
 	private ImageView weapon2L1;
 	@FXML
@@ -132,7 +132,7 @@ public class modeController {
 	}
 
 	public void walltrap(ActionEvent e) throws IOException {
-		setcode(4);
+		this.weaponcode=4;
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		if (battle.getResourcesGathered() > 75) {
 			if (battle.getLanes().size() <= 3) {

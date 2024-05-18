@@ -24,9 +24,9 @@
                   <ButtonBar layoutY="241.0" prefHeight="158.0" prefWidth="587.0">
                     <buttons>
                         <Button mnemonicParsing="false" onAction="#walltrap" prefHeight="26.0" prefWidth="156.0" text="Wall trap" />
-                        <Button mnemonicParsing="false" prefHeight="26.0" text="Sniper cannon" />
-                        <Button mnemonicParsing="false" text="Volley spread cannon" />
-                      <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Piercing cannon" />
+                        <Button mnemonicParsing="false" onAction="#snipercannon" prefHeight="26.0" text="Sniper cannon" />
+                        <Button mnemonicParsing="false" onAction="#volleyspread" text="Volley spread cannon" />
+                      <Button mnemonicParsing="false" onAction="#piercingcannon" prefHeight="26.0" prefWidth="150.0" text="Piercing cannon" />
                     </buttons>
                   </ButtonBar>
                   <ImageView fitHeight="93.0" fitWidth="158.0" layoutX="14.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
