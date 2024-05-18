@@ -23,6 +23,7 @@ public class Main extends Application {
 			String css = this.getClass().getResource("/game/gui/menucontroller/menu.css").toExternalForm();
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(css);
+			
 			stage.setTitle("Attack on titan");
 			stage.setFullScreen(true);
 			stage.setFullScreenExitHint("");
