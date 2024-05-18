@@ -36,15 +36,8 @@ public class modeController {
 	private int weaponcode;
 	@FXML
 	public void initialize() {
-		try {
-			battle = new Battle(1, 0, 0, 5, 125);
-			updateResources();
-			updatePhase();
-			updateTurn();
-			updateScore();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		isEasyMode = true;
+		setupBattle(isEasyMode);
 
 	}
 
