@@ -223,6 +223,7 @@ public class Battle {
 				if (!currentLane.isLaneLost()) {
 					updatedLane.add(currentLane);
 				}
+				
 			}
 		}
 		lanes.addAll(updatedLane);
