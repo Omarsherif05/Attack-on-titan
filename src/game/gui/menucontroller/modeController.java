@@ -19,11 +19,75 @@ public class modeController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-	public Battle battle;
+	@FXML
+	private Text score;
+	@FXML
+	private Text phase;
+	@FXML
+	private Text turn;
+	@FXML
+	private Text xyz;
+
+	private Battle battle;
+	private boolean isEasyMode;
+
+	@FXML
+	public void initialize() {
+		try {
+			battle = new Battle(1, 0, 0, 5, 125);
+			updateResources();
+			updatePhase();
+			updateTurn();
+			updateScore();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void setupBattle(boolean isEasy) {
+		try {
+			if (isEasy) {
+				battle = new Battle(1, 0, 0, 3, 250);
+			} else {
+				battle = new Battle(1, 0, 0, 5, 125);
+			}
+			updateResources();
+			updatePhase();
+			updateTurn();
+			updateScore();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	private void updateTurn() {
+		if (turn != null && battle != null) {
+			turn.setText("Turn: " + battle.getNumberOfTurns());
+		}
+	}
+
+	private void updatePhase() {
+		if (phase != null && battle != null) {
+			phase.setText("Phase: " + battle.getBattlePhase());
+		}
+	}
+
+	private void updateScore() {
+		if (score != null && battle != null) {
+			score.setText("SCORE: " + battle.getScore());
+		}
+	}
+
+	private void updateResources() {
+		if (xyz != null && battle != null) {
+			xyz.setText("Resources: " + battle.getResourcesGathered());
+		}
+	}
 
 	public void easy(ActionEvent e) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("easy.fxml"));
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		battle = new Battle(1, 0, 0, 3, 250);
 		scene = new Scene(root);
 		stage.setScene(scene);
 		String css = this.getClass().getResource("/game/gui/menucontroller/easy.css").toExternalForm();
@@ -31,11 +95,8 @@ public class modeController {
 		stage.setFullScreen(true);
 		stage.setFullScreenExitHint("");
 		stage.show();
-		battle = new Battle(1, 0, 0, 3, 250);
-		Text score = new Text("SCORE: " + battle.getScore());
-		Text turn = new Text("currentturn: " + battle.getNumberOfTurns());
-		Text phase = new Text("currentphase: " + battle.getBattlePhase());
-		Text resources = new Text("resources: " + battle.getResourcesGathered());
+		isEasyMode = true;
+		setupBattle(isEasyMode);
 		WeaponFactory x = new WeaponFactory();
 		x.getWeaponShop();
 		// +avaliable lanes
@@ -51,30 +112,28 @@ public class modeController {
 		String css = this.getClass().getResource("/game/gui/menucontroller/hard.css").toExternalForm();
 		scene.getStylesheets().add(css);
 		stage.show();
-		 battle = new Battle(1, 0, 0, 5, 125);
+		isEasyMode = false;
+		setupBattle(isEasyMode);
 
-		Text score = new Text("SCORE: " + battle.getScore());
-		Text turn = new Text("currentturn: " + battle.getNumberOfTurns());
-		Text phase = new Text("currentphase: " + battle.getBattlePhase());
-		Text resources = new Text("resources: " + battle.getResourcesGathered());
 		// weaponshop+avaliable lanes
 
 	}
+
 	public void walltrap(ActionEvent e) throws IOException {
 		///
-		battle.setResourcesGathered(battle.getResourcesGathered()-100);
-		if(battle.getLanes().size()<=3) {
-		root = FXMLLoader.load(getClass().getResource("lanechooseeasy.fxml"));
+		battle.setResourcesGathered(battle.getResourcesGathered() - 100);
+		if (battle.getLanes().size() <= 3) {
+			root = FXMLLoader.load(getClass().getResource("lanechooseeasy.fxml"));
 		}
-		if(battle.getLanes().size()<=5) {
+		if (battle.getLanes().size() <= 5) {
 			root = FXMLLoader.load(getClass().getResource("lanechoosehard.fxml"));
 		}
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setFullScreen(true);
-		}
-		
+	}
+
 	
-	
+
 }
