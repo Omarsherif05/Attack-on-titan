@@ -134,7 +134,6 @@ public class modeController {
 			stage.show();
 		}
 	}
-
 	public void Lane1() throws InsufficientResourcesException, InvalidLaneException, IOException {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
