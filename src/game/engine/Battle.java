@@ -226,6 +226,7 @@ public class Battle {
 			}
 		}
 		lanes.addAll(updatedLane);
+		
 		return resources;
 	}
 
