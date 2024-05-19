@@ -17,6 +17,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import game.gui.*;
@@ -38,13 +39,14 @@ public class easyController {
 		private Text xyz;
 
 		private Battle battle;
-
+		@FXML
+		private GridPane gridlane1weapons;
 		
 		@FXML
 		private ImageView weapon2L1;
 		@FXML
 		private ImageView weapon1L1;
-
+		
 		@FXML
 		public void initialize() {
 			try {
@@ -89,7 +91,7 @@ public class easyController {
 				xyz.setText("Resources: " + battle.getResourcesGathered());
 			}
 		}
-/*
+
 		public void easy(ActionEvent e) throws IOException {
 			root = FXMLLoader.load(getClass().getResource("easy.fxml"));
 			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -106,13 +108,26 @@ public class easyController {
 			x.getWeaponShop();
 			
 		}
-*/
+
 		
 	////////////walltrap
 		public void addwalltraplane1(ActionEvent e)  throws InsufficientResourcesException, InvalidLaneException, IOException {
 			ArrayList<Lane> x = new ArrayList<Lane>();
 			x = battle.getOriginalLanes();
 			battle.purchaseWeapon(4, (Lane) x.get(0));
+			weapon1L1 =new ImageView("gui/menucontroller/walltrap.png"); 
+			gridlane1weapons =new GridPane();
+			gridlane1weapons.add(weapon1L1,0,0);
+			root = FXMLLoader.load(getClass().getResource("easy.fxml"));
+			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			String css = this.getClass().getResource("/game/gui/menucontroller/easy.css").toExternalForm();
+			scene.getStylesheets().add(css);
+			stage.setFullScreen(true);
+			stage.setFullScreenExitHint("");
+			setupBattle();
+			stage.show();
 		}
 		public void addwalltraplane2(ActionEvent e)  throws InsufficientResourcesException, InvalidLaneException, IOException {
 			ArrayList<Lane> x = new ArrayList<Lane>();
@@ -165,6 +180,7 @@ public class easyController {
 			ArrayList<Lane> x = new ArrayList<Lane>();
 			x = battle.getOriginalLanes();
 			battle.purchaseWeapon(3, (Lane) x.get(0));
+			
 		}
 		public void addvolleylane2(ActionEvent e)  throws InsufficientResourcesException, InvalidLaneException, IOException {
 			ArrayList<Lane> x = new ArrayList<Lane>();
