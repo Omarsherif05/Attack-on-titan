@@ -11,5 +11,6 @@
       <Text layoutX="1702.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="195.86328125" AnchorPane.topAnchor="13.05078125" fx:id="xyz" />
       <Button alignment="BOTTOM_LEFT" layoutX="1814.0" layoutY="1037.0" mnemonicParsing="false" onAction="#addweapoen" text="Add weapon" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="1037.0" />
       <Text fx:id="score" layoutX="1610.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="287.86328125" AnchorPane.topAnchor="13.05078125" />
+      <Button layoutX="1712.0" layoutY="1037.0" mnemonicParsing="false" onAction="#passturn" prefHeight="25.0" prefWidth="84.0" text="Pass turn" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="124.0" />
    </children>
 </AnchorPane>

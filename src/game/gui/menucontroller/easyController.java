@@ -89,6 +89,7 @@ public class easyController {
 				xyz.setText("Resources: " + battle.getResourcesGathered());
 			}
 		}
+		 
 /*
 		public void easy(ActionEvent e) throws IOException {
 			root = FXMLLoader.load(getClass().getResource("easy.fxml"));
@@ -113,6 +114,8 @@ public class easyController {
 			ArrayList<Lane> x = new ArrayList<Lane>();
 			x = battle.getOriginalLanes();
 			battle.purchaseWeapon(4, (Lane) x.get(0));
+			
+			
 		}
 		public void addwalltraplane2(ActionEvent e)  throws InsufficientResourcesException, InvalidLaneException, IOException {
 			ArrayList<Lane> x = new ArrayList<Lane>();
