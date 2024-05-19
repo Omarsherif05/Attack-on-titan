@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="587.0" stylesheets="@weapons.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.gui.menucontroller.HardController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="351.0" prefWidth="610.0">
+         <children>
+            <AnchorPane prefHeight="574.0" prefWidth="592.0">
+               <children>
+                  <Text fill="#ff1010" layoutX="146.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add weapon">
+                     <font>
+                        <Font name="Berlin Sans FB" size="49.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="93.0" fitWidth="158.0" layoutX="14.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@walltrap.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="100.0" fitWidth="134.0" layoutX="172.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@sniper_cannon-.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="89.0" fitWidth="158.0" layoutX="296.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@volleyspread.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="93.0" fitWidth="158.0" layoutX="442.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pirecing%20cannon.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#ff1010" layoutX="8.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="your resources:" wrappingWidth="275.40057373046875">
+                     <font>
+                        <Font name="Berlin Sans FB" size="28.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="446.0" layoutY="215.0" mnemonicParsing="false" onAction="#addpiercinglane3" prefHeight="26.0" prefWidth="150.0" text="Piercing cannon" />
+                  <Button layoutX="8.0" layoutY="215.0" mnemonicParsing="false" onAction="#addwalltraplane3" prefHeight="26.0" prefWidth="156.0" text="Proximity trap(Wall trap)" />
+                  <Button layoutX="300.0" layoutY="215.0" mnemonicParsing="false" onAction="#addvolleylane3" text="Volley spread cannon" />
+                  <Button layoutX="186.0" layoutY="215.0" mnemonicParsing="false" onAction="#addsniperlane3" prefHeight="26.0" text="Sniper cannon" />
+                  <Label layoutX="33.0" layoutY="258.0" prefHeight="37.0" prefWidth="60.0" text="Price: 75" textFill="WHITE" />
+                  <Label layoutX="172.0" layoutY="258.0" prefHeight="37.0" prefWidth="60.0" text="Price: 25" textFill="WHITE" />
+                  <Label layoutX="306.0" layoutY="258.0" prefHeight="37.0" prefWidth="60.0" text="Price: 100" textFill="WHITE" />
+                  <Label layoutX="454.0" layoutY="258.0" prefHeight="37.0" prefWidth="60.0" text="Price: 25" textFill="WHITE" />
+                  <Label layoutX="33.0" layoutY="276.0" prefHeight="38.0" prefWidth="92.0" text="Damage:100" textFill="WHITE" />
+                  <Label layoutX="172.0" layoutY="276.0" prefHeight="38.0" prefWidth="92.0" text="Damage:35" textFill="WHITE" />
+                  <Label layoutX="306.0" layoutY="276.0" prefHeight="38.0" prefWidth="92.0" text="Damage:5" textFill="WHITE" />
+                  <Label layoutX="454.0" layoutY="276.0" prefHeight="38.0" prefWidth="92.0" text="Damage:10" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</VBox>
