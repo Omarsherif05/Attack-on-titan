@@ -20,7 +20,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import game.gui.*;
-
 public class modeController {
 	@FXML
 	private Stage stage;
