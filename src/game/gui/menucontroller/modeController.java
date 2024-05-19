@@ -99,7 +99,7 @@ public class modeController {
 	}
 
 	public void easy(ActionEvent e) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("easy2.fxml"));
+		root = FXMLLoader.load(getClass().getResource("easy.fxml"));
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -118,7 +118,6 @@ public class modeController {
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		battle = new Battle(1, 0, 0, 5, 125);
-		System.out.println(battle.getLanes().size());
 		stage.setScene(scene);
 		stage.setFullScreen(true);
 		stage.setFullScreenExitHint("");
