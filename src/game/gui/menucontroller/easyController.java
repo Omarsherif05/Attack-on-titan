@@ -55,12 +55,48 @@ private Text wallhealth;
 		private GridPane gridlane3weapons;
 		
 		
-		
+		//weapons lane1
+		@FXML
+		private ImageView weapon1L1;
 		@FXML
 		private ImageView weapon2L1;
 		@FXML
-		private ImageView weapon1L1;
+		private ImageView weapon3L1;
+		@FXML
+		private ImageView weapon4L1;
+		@FXML
+		private ImageView weapon5L1;
+		@FXML
+		private ImageView weapon6L1;
 		
+		///weapons lane 2
+		private ImageView weapon1L2;
+		@FXML
+		private ImageView weapon2L2;
+		@FXML
+		private ImageView weapon3L2;
+		@FXML
+		private ImageView weapon4L2;
+		@FXML
+		private ImageView weapon5L2;
+		@FXML
+		private ImageView weapon6L2;
+		
+		
+		///weapons lane 3
+		private ImageView weapon1L3;
+		@FXML
+		private ImageView weapon2L3;
+		@FXML
+		private ImageView weapon3L3;
+		@FXML
+		private ImageView weapon4L3;
+		@FXML
+		private ImageView weapon5L3;
+		@FXML
+		private ImageView weapon6L3;
+
+
 		@FXML
 		public void initialize() throws IOException {
 			 battle = BattleEasy.getInstance();
@@ -147,11 +183,7 @@ private Text wallhealth;
 			ArrayList<Lane> x = new ArrayList<Lane>();
 			x = battle.getOriginalLanes();
 			battle.purchaseWeapon(4, (Lane) x.get(0));
-			weapon1L1 =new ImageView("../menucontroller/walltrap.png"); 
-			gridlane1weapons =new GridPane();
-			gridlane1weapons.add(weapon1L1,0,0);
-	
-
+			weapon1L1 =new ImageView("walltrap.png"); 
 			reloadEasyScene(e);
 		}
 		public void addwalltraplane2(ActionEvent e)  throws InsufficientResourcesException, InvalidLaneException, IOException {
@@ -159,7 +191,7 @@ private Text wallhealth;
 			x = battle.getOriginalLanes();
 			battle.purchaseWeapon(4, (Lane) x.get(1));
 
-			weapon1L1 =new ImageView("gui/menucontroller/walltrap.png"); 
+			weapon1L1 =new ImageView("walltrap.png"); 
 			gridlane2weapons =new GridPane();
 			gridlane2weapons.add(weapon1L1,1,0);
 			reloadEasyScene(e);
@@ -168,7 +200,7 @@ private Text wallhealth;
 			ArrayList<Lane> x = new ArrayList<Lane>();
 			x = battle.getOriginalLanes();
 			battle.purchaseWeapon(4, (Lane) x.get(2));
-			weapon1L1 =new ImageView("gui/menucontroller/walltrap.png"); 
+			weapon1L2 =new ImageView("gui/menucontroller/walltrap.png"); 
 			gridlane3weapons =new GridPane();
 			gridlane3weapons.add(weapon1L1,2,0);
 			reloadEasyScene(e);
