@@ -196,7 +196,7 @@ private Text wallhealth;
 		    weapon1L1.setVisible(true);
 
 			reloadEasyScene(e);
-			
+			//
 		}
 		public void addwalltraplane2(ActionEvent e)  throws InsufficientResourcesException, InvalidLaneException, IOException {
 			ArrayList<Lane> x = new ArrayList<Lane>();
