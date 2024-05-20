@@ -6,6 +6,7 @@ import java.util.PriorityQueue;
 
 import game.engine.Battle;
 import game.engine.BattleSingleton;
+import game.engine.base.Wall;
 import game.engine.exceptions.InsufficientResourcesException;
 import game.engine.exceptions.InvalidLaneException;
 import game.engine.lanes.Lane;
@@ -38,6 +39,8 @@ public class easyController {
 		private Text turn;
 		@FXML
 		private Text xyz;
+@FXML
+private Text wallhealth;
 
 		private Battle battle;
 		
@@ -61,6 +64,7 @@ public class easyController {
 		@FXML
 		public void initialize() throws IOException {
 			 battle = BattleSingleton.getInstance();
+			 
 		        setupBattle();
 			
 
@@ -70,7 +74,7 @@ public class easyController {
 				updatePhase();
 				updateTurn();
 				updateScore();
-			
+				updatewall();
 		}
 
 		private void updateTurn() {
@@ -78,7 +82,17 @@ public class easyController {
 				turn.setText("Turn: " + battle.getNumberOfTurns());
 			}
 		}
-
+		private void updatewall() {
+			if (wallhealth != null && battle != null) {
+	            ArrayList<Lane> lanes = battle.getOriginalLanes();
+	            StringBuilder wallHealthText = new StringBuilder("Walls: ");
+	            for (int i = 0; i < lanes.size(); i++) {
+	                Wall wall = lanes.get(i).getLaneWall();
+	                wallHealthText.append("Lane ").append(i + 1).append(": ").append(wall.getCurrentHealth()).append(" ");
+	            }
+	            wallhealth.setText(wallHealthText.toString());
+	        }
+		}
 		private void updatePhase() {
 			if (phase != null && battle != null) {
 				phase.setText("Phase: " + battle.getBattlePhase());
