@@ -202,6 +202,8 @@ private Text wallhealth;
 		}
 		public void addpiercinglane2(ActionEvent e)  throws InsufficientResourcesException, InvalidLaneException, IOException {
 			ArrayList<Lane> x = new ArrayList<Lane>();
+			
+			
 			x = battle.getOriginalLanes();
 			battle.purchaseWeapon(1, (Lane) x.get(1));
 			weapon1L1 =new ImageView("gui/menucontroller/pirecing cannon.png"); 
