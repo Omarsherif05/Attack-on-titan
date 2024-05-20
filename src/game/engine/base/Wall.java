@@ -11,6 +11,7 @@ public class Wall implements Attackee {
 	public Wall(int baseHealth) {
 		this.baseHealth = baseHealth;
 		this.currentHealth = Math.max(0, baseHealth);
+		
 	}
 
 	public int getBaseHealth() {
