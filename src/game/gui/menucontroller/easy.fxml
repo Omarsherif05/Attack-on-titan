@@ -11,12 +11,12 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1074.0" prefWidth="1916.0" stylesheets="@easy.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.gui.menucontroller.easyController">
    <children>
       <Text fx:id="score" layoutX="562.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="15.86328125" AnchorPane.topAnchor="5.05078125" />
-      <Text fx:id="turn" layoutX="502.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="75.86328125" AnchorPane.topAnchor="5.0" />
-      <Text fx:id="phase" layoutX="455.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="122.86328125" AnchorPane.topAnchor="5.05078125" />
-      <Text layoutX="1676.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="217.86328125" AnchorPane.topAnchor="4.05078125" fx:id="xyz" />
+      <Text fx:id="turn" layoutX="1806.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="87.86328125" AnchorPane.topAnchor="3.05078125" />
+      <Text fx:id="phase" layoutX="1749.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="144.86328125" AnchorPane.topAnchor="4.05078125" />
+      <Text layoutX="1625.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="268.86328125" AnchorPane.topAnchor="3.05078125" fx:id="xyz" />
       <Button layoutX="501.0" layoutY="361.0" mnemonicParsing="false" onAction="#addweapoen" text="Add weapon" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="15.0" />
       <Button layoutX="1718.0" layoutY="1035.0" mnemonicParsing="false" onAction="#passturn" prefHeight="25.0" prefWidth="84.0" text="Pass turn" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="114.0" />
-      <Text fx:id="wallhealth" layoutX="1532.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="361.86328125" AnchorPane.topAnchor="5.05078125" />
+      <Text fx:id="wallhealth" layoutX="1471.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="422.86328125" AnchorPane.topAnchor="4.05078125" />
       <GridPane fx:id="gridlane1weapons" layoutX="226.0" layoutY="317.0" prefHeight="93.0" prefWidth="249.0" AnchorPane.leftAnchor="226.0" AnchorPane.rightAnchor="1470.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

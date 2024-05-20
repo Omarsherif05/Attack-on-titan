@@ -10,8 +10,8 @@
       <Text fx:id="phase" layoutX="1773.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="124.86328125" AnchorPane.topAnchor="13.05078125" />
       <Text layoutX="1645.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="252.86328125" AnchorPane.topAnchor="12.0" fx:id="xyz" />
       <Button alignment="BOTTOM_LEFT" layoutX="1814.0" layoutY="1037.0" mnemonicParsing="false" onAction="#addweapoen" text="Add weapon" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="1037.0" />
-      <Text fx:id="score" layoutX="1493.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="404.86328125" AnchorPane.topAnchor="12.05078125" />
+      <Text fx:id="score" layoutX="1467.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="430.86328125" AnchorPane.topAnchor="10.05078125" />
       <Button layoutX="1712.0" layoutY="1037.0" mnemonicParsing="false" onAction="#passturn" prefHeight="25.0" prefWidth="84.0" text="Pass turn" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="124.0" />
-      <Text fx:id="wallhealth" layoutX="980.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="917.86328125" AnchorPane.topAnchor="13.05078125" />
+      <Text fx:id="wallhealth" layoutX="1163.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="734.86328125" AnchorPane.topAnchor="11.05078125" />
    </children>
 </AnchorPane>

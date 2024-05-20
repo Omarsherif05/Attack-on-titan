@@ -18,6 +18,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -97,9 +99,7 @@ public class easyController {
 	@FXML
 	public void initialize() throws IOException {
 		battle = BattleEasy.getInstance();
-
 		setupBattle();
-
 	}
 
 	public void setupBattle() {
@@ -162,164 +162,164 @@ public class easyController {
 		stage.show();
 	}
 
+	public void showErrorPopup(String message) {
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle("Error");
+		alert.setHeaderText(null);
+		alert.setContentText(message);
+		alert.showAndWait();
+	}
+	
+	private void showGameOverAlert() throws IOException {
+	    Alert alert = new Alert(AlertType.INFORMATION);
+	    alert.setTitle("Game Over");
+	    alert.setHeaderText(null);
+	    alert.setContentText("The game is over. All lanes are lost.");
+	    alert.showAndWait();
+	}
 	//////////// walltrap
 	public void addwalltraplane1(ActionEvent e)
-			throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(4, (Lane) x.get(0));
+			throws InvalidLaneException, IOException, InsufficientResourcesException {
+		try {
+			ArrayList<Lane> x = new ArrayList<Lane>();
+			x = battle.getOriginalLanes();
+			battle.purchaseWeapon(4, (Lane) x.get(0));
+		} catch (InsufficientResourcesException e1) {
+			showErrorPopup("Not enough resources to buy Proximity Trap.");
+		}
 		reloadEasyScene(e);
 
 	}
 
 	public void addwalltraplane2(ActionEvent e)
-			throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(4, (Lane) x.get(1));
+			throws InvalidLaneException, IOException, InsufficientResourcesException {
+		try {
+			ArrayList<Lane> x = new ArrayList<Lane>();
+			x = battle.getOriginalLanes();
+			battle.purchaseWeapon(4, (Lane) x.get(1));
+		} catch (InsufficientResourcesException e1) {
+			showErrorPopup("Not enough resources to buy Proximity Trap.");
+		}
 		reloadEasyScene(e);
 	}
 
 	public void addwalltraplane3(ActionEvent e)
-			throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(4, (Lane) x.get(2));
-		reloadEasyScene(e);
-	}
-
-	public void addwalltraplane4(ActionEvent e)
-			throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(4, (Lane) x.get(3));
-		reloadEasyScene(e);
-	}
-
-	public void addwalltraplane5(ActionEvent e)
-			throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(4, (Lane) x.get(4));
+			throws InvalidLaneException, IOException, InsufficientResourcesException {
+		try {
+			ArrayList<Lane> x = new ArrayList<Lane>();
+			x = battle.getOriginalLanes();
+			battle.purchaseWeapon(4, (Lane) x.get(2));
+		} catch (InsufficientResourcesException e1) {
+			showErrorPopup("Not enough resources to buy Proximity Trap.");
+		}
 		reloadEasyScene(e);
 	}
 
 	/////// piercing
 	public void addpiercinglane1(ActionEvent e)
-			throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(1, (Lane) x.get(0));
+			throws InvalidLaneException, IOException, InsufficientResourcesException {
+		try {
+			ArrayList<Lane> x = new ArrayList<Lane>();
+			x = battle.getOriginalLanes();
+			battle.purchaseWeapon(1, (Lane) x.get(0));
+		} catch (InsufficientResourcesException e1) {
+			showErrorPopup("Not enough resources to buy Anti-Titan Shell.");
+		}
 		reloadEasyScene(e);
 
 	}
 
 	public void addpiercinglane2(ActionEvent e)
-			throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(1, (Lane) x.get(1));
+			throws InvalidLaneException, IOException, InsufficientResourcesException {
+		try {
+			ArrayList<Lane> x = new ArrayList<Lane>();
+			x = battle.getOriginalLanes();
+			battle.purchaseWeapon(1, (Lane) x.get(1));
+		} catch (InsufficientResourcesException e1) {
+			showErrorPopup("Not enough resources to buy Anti-Titan Shell.");
+		}
 		reloadEasyScene(e);
-
 	}
 
 	public void addpiercinglane3(ActionEvent e)
 			throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(1, (Lane) x.get(2));
-		reloadEasyScene(e);
-	}
-
-	public void addpiercinglane4(ActionEvent e)
-			throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(1, (Lane) x.get(3));
-		reloadEasyScene(e);
-	}
-
-	public void addpiercinglane5(ActionEvent e)
-			throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(1, (Lane) x.get(4));
+		try {
+			ArrayList<Lane> x = new ArrayList<Lane>();
+			x = battle.getOriginalLanes();
+			battle.purchaseWeapon(1, (Lane) x.get(2));
+		} catch (InsufficientResourcesException e1) {
+			showErrorPopup("Not enough resources to buy Anti-Titan Shell.");
+		}
 		reloadEasyScene(e);
 	}
 
 	///////////// volleyspread
 	public void addvolleylane1(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(3, (Lane) x.get(0));
+		try {
+			ArrayList<Lane> x = new ArrayList<Lane>();
+			x = battle.getOriginalLanes();
+			battle.purchaseWeapon(3, (Lane) x.get(0));
+		} catch (InsufficientResourcesException e1) {
+			showErrorPopup("Not enough resources to buy Wall Spread Cannon.");
+		}
 		reloadEasyScene(e);
 	}
 
 	public void addvolleylane2(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(3, (Lane) x.get(1));
+		try {
+			ArrayList<Lane> x = new ArrayList<Lane>();
+			x = battle.getOriginalLanes();
+			battle.purchaseWeapon(3, (Lane) x.get(1));
+		} catch (InsufficientResourcesException e1) {
+			showErrorPopup("Not enough resources to buy Wall Spread Cannon.");
+		}
 		reloadEasyScene(e);
 
 	}
 
 	public void addvolleylane3(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(3, (Lane) x.get(2));
-		reloadEasyScene(e);
-	}
-
-	public void addvolleylane4(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(3, (Lane) x.get(3));
-		reloadEasyScene(e);
-	}
-
-	public void addvolleylane5(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(3, (Lane) x.get(4));
+		try {
+			ArrayList<Lane> x = new ArrayList<Lane>();
+			x = battle.getOriginalLanes();
+			battle.purchaseWeapon(3, (Lane) x.get(2));
+		} catch (InsufficientResourcesException e1) {
+			showErrorPopup("Not enough resources to buy Wall Spread Cannon.");
+		}
 		reloadEasyScene(e);
 	}
 
 	////////////
 	public void addsniperlane1(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(2, (Lane) x.get(0));
+		try {
+			ArrayList<Lane> x = new ArrayList<Lane>();
+			x = battle.getOriginalLanes();
+			battle.purchaseWeapon(2, (Lane) x.get(0));
+		} catch (InsufficientResourcesException e1) {
+			showErrorPopup("Not enough resources to buy Long Range Spear.");
+		}
 		reloadEasyScene(e);
 
 	}
 
 	public void addsniperlane2(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(2, (Lane) x.get(1));
+		try {
+			ArrayList<Lane> x = new ArrayList<Lane>();
+			x = battle.getOriginalLanes();
+			battle.purchaseWeapon(2, (Lane) x.get(1));
+		} catch (InsufficientResourcesException e1) {
+			showErrorPopup("Not enough resources to buy Long Range Spear.");
+		}
 		reloadEasyScene(e);
-
 	}
 
 	public void addsniperlane3(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(2, (Lane) x.get(2));
-		reloadEasyScene(e);
-	}
-
-	public void addsniperlane4(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(2, (Lane) x.get(3));
-		reloadEasyScene(e);
-	}
-
-	public void addsniperlane5(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
-		ArrayList<Lane> x = new ArrayList<Lane>();
-		x = battle.getOriginalLanes();
-		battle.purchaseWeapon(2, (Lane) x.get(4));
+		try {
+			ArrayList<Lane> x = new ArrayList<Lane>();
+			x = battle.getOriginalLanes();
+			battle.purchaseWeapon(2, (Lane) x.get(2));
+		} catch (InsufficientResourcesException e1) {
+			showErrorPopup("Not enough resources to buy Long Range Spear.");
+		}
 		reloadEasyScene(e);
 	}
 
@@ -354,6 +354,9 @@ public class easyController {
 	}
 
 	public void addweapoen(ActionEvent e) throws IOException {
+		if (battle.isGameOver()) {
+			showGameOverAlert();
+		}
 		root = FXMLLoader.load(getClass().getResource("lanechooseeasy.fxml"));
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		String css = this.getClass().getResource("/game/gui/menucontroller/weapons.css").toExternalForm();
@@ -362,7 +365,6 @@ public class easyController {
 		stage.setScene(scene);
 		stage.setFullScreen(true);
 		stage.setFullScreenExitHint("");
-
 		stage.show();
 	}
 
@@ -385,6 +387,9 @@ public class easyController {
 	public void passturn(ActionEvent e) throws IOException {
 		battle.passTurn();
 		reloadEasyScene(e);
+		if (battle.isGameOver()) {
+	        showGameOverAlert();
+	    }
 	}
 
 }

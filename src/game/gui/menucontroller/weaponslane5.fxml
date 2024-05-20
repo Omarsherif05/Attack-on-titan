@@ -46,19 +46,23 @@
                         <Font name="Berlin Sans FB" size="28.0" />
                      </font>
                   </Text>
-                <Button layoutX="446.0" layoutY="215.0" mnemonicParsing="false" onAction="#addpiercinglane5" prefHeight="26.0" prefWidth="150.0" text="Piercing cannon" />
-                  <Button layoutX="8.0" layoutY="215.0" mnemonicParsing="false" onAction="#addwalltraplane5" prefHeight="26.0" prefWidth="156.0" text="Proximity trap(Wall trap)" />
-                  <Button layoutX="300.0" layoutY="215.0" mnemonicParsing="false" onAction="#addvolleylane5" text="Volley spread cannon" />
+                  <Button layoutX="446.0" layoutY="215.0" mnemonicParsing="false" onAction="#addpiercinglane5" prefHeight="26.0" prefWidth="150.0" text="Anti-Titan Shell" />
+                  <Button layoutX="8.0" layoutY="215.0" mnemonicParsing="false" onAction="#addwalltraplane5" prefHeight="26.0" prefWidth="156.0" text="Proximity trap" />
+                  <Button layoutX="300.0" layoutY="215.0" mnemonicParsing="false" onAction="#addvolleylane5" text="Wall spread cannon" />
                   <Button layoutX="186.0" layoutY="215.0" mnemonicParsing="false" onAction="#addsniperlane5" prefHeight="26.0" text="Sniper cannon" />
-                  <Label layoutX="33.0" layoutY="258.0" prefHeight="37.0" prefWidth="60.0" text="Price: 75" textFill="WHITE" />
-                  <Label layoutX="172.0" layoutY="258.0" prefHeight="37.0" prefWidth="60.0" text="Price: 25" textFill="WHITE" />
-                  <Label layoutX="306.0" layoutY="258.0" prefHeight="37.0" prefWidth="60.0" text="Price: 100" textFill="WHITE" />
-                  <Label layoutX="454.0" layoutY="258.0" prefHeight="37.0" prefWidth="60.0" text="Price: 25" textFill="WHITE" />
-                  <Label layoutX="33.0" layoutY="276.0" prefHeight="38.0" prefWidth="92.0" text="Damage:100" textFill="WHITE" />
-                  <Label layoutX="172.0" layoutY="276.0" prefHeight="38.0" prefWidth="92.0" text="Damage:35" textFill="WHITE" />
-                  <Label layoutX="306.0" layoutY="276.0" prefHeight="38.0" prefWidth="92.0" text="Damage:5" textFill="WHITE" />
-                  <Label layoutX="454.0" layoutY="276.0" prefHeight="38.0" prefWidth="92.0" text="Damage:10" textFill="WHITE" />
-                  <Button layoutX="523.0" layoutY="320.0" mnemonicParsing="false" onAction="#backShop" text="back" AnchorPane.bottomAnchor="6.0" AnchorPane.rightAnchor="36.0" />
+                  <Label layoutX="49.0" layoutY="248.0" prefHeight="37.0" prefWidth="60.0" text="Price: 75" textFill="WHITE" />
+                  <Label layoutX="202.0" layoutY="248.0" prefHeight="26.0" prefWidth="60.0" text="Price: 25" textFill="WHITE" />
+                  <Label layoutX="322.0" layoutY="248.0" prefHeight="37.0" prefWidth="60.0" text="Price: 100" textFill="WHITE" />
+                  <Label layoutX="488.0" layoutY="248.0" prefHeight="37.0" prefWidth="60.0" text="Price: 25" textFill="WHITE" />
+                  <Label layoutX="40.0" layoutY="274.0" prefHeight="26.0" prefWidth="92.0" text="Damage:100" textFill="WHITE" />
+                  <Label layoutX="196.0" layoutY="266.0" prefHeight="26.0" prefWidth="60.0" text="Damage:35" textFill="WHITE" />
+                  <Label layoutX="323.0" layoutY="270.0" prefHeight="31.0" prefWidth="60.0" text="Damage:5" textFill="WHITE" />
+                  <Label layoutX="483.0" layoutY="273.0" prefHeight="25.0" prefWidth="70.0" text="Damage:10" textFill="WHITE" />
+                  <Button layoutX="553.0" layoutY="329.0" mnemonicParsing="false" onAction="#backShop" text="back" AnchorPane.bottomAnchor="-3.0" AnchorPane.rightAnchor="6.0" />
+                  <Label layoutX="460.0" layoutY="297.0" prefHeight="26.0" prefWidth="123.0" text="Type: Piercing Cannon" textFill="WHITE" />
+                  <Label layoutX="305.0" layoutY="297.0" prefHeight="26.0" prefWidth="140.0" text="Type: Wall spread cannon" textFill="WHITE" />
+                  <Label layoutX="156.0" layoutY="287.0" prefHeight="25.0" prefWidth="140.0" text="Type: Wall spread cannon" textFill="WHITE" />
+                  <Label layoutX="9.0" layoutY="298.0" prefHeight="25.0" prefWidth="140.0" text="Type: Wall Trap" textFill="WHITE" />
                </children>
             </AnchorPane>
          </children>
