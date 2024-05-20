@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import game.engine.Battle;
+import game.engine.BattleEasy;
+import game.engine.BattleHard;
+import game.engine.base.Wall;
 import game.engine.exceptions.InsufficientResourcesException;
 import game.engine.exceptions.InvalidLaneException;
 import game.engine.lanes.Lane;
@@ -35,7 +38,8 @@ public class HardController {
 	private Text xyz;
 
 	private Battle battle;
-
+	@FXML
+	private Text wallhealth;
 	@FXML
 	private GridPane gridlane1weapons;
 	@FXML
@@ -55,14 +59,11 @@ public class HardController {
 	private ImageView weapon1L1;
 
 	@FXML
-	public void initialize() {
-		try {
-			battle = new Battle(1, 0, 0, 5, 125);
-		} catch (IOException e) {
-			
-			e.printStackTrace();
-		}
-		setupBattle();
+	public void initialize() throws IOException {
+		 battle = BattleHard.getInstance();
+		 
+	        setupBattle();
+		
 
 	}
 
@@ -72,6 +73,7 @@ public class HardController {
 		updatePhase();
 		updateTurn();
 		updateScore();
+		updatewall();
 	}
 
 	private void updateTurn() {
@@ -85,7 +87,17 @@ public class HardController {
 			phase.setText("Phase: " + battle.getBattlePhase());
 		}
 	}
-
+	private void updatewall() {
+		if (wallhealth != null && battle != null) {
+            ArrayList<Lane> lanes = battle.getOriginalLanes();
+            StringBuilder wallHealthText = new StringBuilder("Walls: ");
+            for (int i = 0; i < lanes.size(); i++) {
+                Wall wall = lanes.get(i).getLaneWall();
+                wallHealthText.append("Lane ").append(i + 1).append(": ").append(wall.getCurrentHealth()).append(" ");
+            }
+            wallhealth.setText(wallHealthText.toString());
+        }
+	}
 	private void updateScore() {
 		if (score != null && battle != null) {
 			score.setText("SCORE: " + battle.getScore());
@@ -97,7 +109,15 @@ public class HardController {
 			xyz.setText("Resources: " + battle.getResourcesGathered());
 		}
 	}
-
+	private void reloadHardScene(ActionEvent e) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("hard.fxml"));
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.setFullScreenExitHint("");
+        stage.show();
+ }
 	public void Lane1(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
 		root = FXMLLoader.load(getClass().getResource("weaponslane1.fxml"));
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -154,6 +174,7 @@ public class HardController {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(4, (Lane) x.get(0));
+		reloadHardScene(e);
 	}
 
 	public void addwalltraplane2(ActionEvent e)
@@ -161,6 +182,7 @@ public class HardController {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(4, (Lane) x.get(1));
+		reloadHardScene(e);
 	}
 
 	public void addwalltraplane3(ActionEvent e)
@@ -171,6 +193,7 @@ public class HardController {
 		weapon1L1 =new ImageView("gui/menucontroller/walltrap.png"); 
 		gridlane2weapons =new GridPane();
 		gridlane2weapons.add(weapon1L1);
+		reloadHardScene(e);
 	}
 
 	public void addwalltraplane4(ActionEvent e)
@@ -181,6 +204,7 @@ public class HardController {
 		weapon1L1 =new ImageView("gui/menucontroller/walltrap.png"); 
 		gridlane1weapons =new GridPane();
 		gridlane1weapons.add(weapon1L1,3,0);
+		reloadHardScene(e);
 	}
 
 	public void addwalltraplane5(ActionEvent e)
@@ -191,6 +215,7 @@ public class HardController {
 		weapon1L1 =new ImageView("gui/menucontroller/walltrap.png"); 
 		gridlane1weapons =new GridPane();
 		gridlane1weapons.add(weapon1L1,4,0);
+		reloadHardScene(e);
 	}
 
 ///////piercing
@@ -199,6 +224,7 @@ public class HardController {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(1, (Lane) x.get(0));
+		reloadHardScene(e);
 	}
 
 	public void addpiercinglane2(ActionEvent e)
@@ -206,6 +232,7 @@ public class HardController {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(1, (Lane) x.get(1));
+		reloadHardScene(e);
 	}
 
 	public void addpiercinglane3(ActionEvent e)
@@ -213,6 +240,7 @@ public class HardController {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(1, (Lane) x.get(2));
+		reloadHardScene(e);
 	}
 
 	public void addpiercinglane4(ActionEvent e)
@@ -220,6 +248,7 @@ public class HardController {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(1, (Lane) x.get(3));
+		reloadHardScene(e);
 	}
 
 	public void addpiercinglane5(ActionEvent e)
@@ -227,6 +256,7 @@ public class HardController {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(1, (Lane) x.get(4));
+		reloadHardScene(e);
 	}
 
 /////////////volleyspread
@@ -234,30 +264,35 @@ public class HardController {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(3, (Lane) x.get(0));
+		reloadHardScene(e);
 	}
 
 	public void addvolleylane2(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(3, (Lane) x.get(1));
+		reloadHardScene(e);
 	}
 
 	public void addvolleylane3(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(3, (Lane) x.get(2));
+		reloadHardScene(e);
 	}
 
 	public void addvolleylane4(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(3, (Lane) x.get(3));
+		reloadHardScene(e);
 	}
 
 	public void addvolleylane5(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(3, (Lane) x.get(4));
+		reloadHardScene(e);
 	}
 
 ////////////
@@ -265,30 +300,35 @@ public class HardController {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(2, (Lane) x.get(0));
+		reloadHardScene(e);
 	}
 
 	public void addsniperlane2(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(2, (Lane) x.get(1));
+		reloadHardScene(e);
 	}
 
 	public void addsniperlane3(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(2, (Lane) x.get(2));
+		reloadHardScene(e);
 	}
 
 	public void addsniperlane4(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(2, (Lane) x.get(3));
+		reloadHardScene(e);
 	}
 
 	public void addsniperlane5(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(2, (Lane) x.get(4));
+		reloadHardScene(e);
 	}
 
 	public void addweapoen(ActionEvent e) throws IOException {
@@ -337,7 +377,7 @@ public class HardController {
 			stage.setFullScreen(true);
 			stage.setFullScreenExitHint("");
 			stage.show();
-		
+			reloadHardScene(e);
 	}
 
 }

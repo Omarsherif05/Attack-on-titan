@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 import game.engine.Battle;
-import game.engine.BattleSingleton;
+import game.engine.BattleEasy;
 import game.engine.base.Wall;
 import game.engine.exceptions.InsufficientResourcesException;
 import game.engine.exceptions.InvalidLaneException;
@@ -63,7 +63,7 @@ private Text wallhealth;
 		
 		@FXML
 		public void initialize() throws IOException {
-			 battle = BattleSingleton.getInstance();
+			 battle = BattleEasy.getInstance();
 			 
 		        setupBattle();
 			
@@ -290,8 +290,8 @@ private Text wallhealth;
 			ArrayList<Lane> x = new ArrayList<Lane>();
 			x = battle.getOriginalLanes();
 			battle.purchaseWeapon(2, (Lane) x.get(0));
-
-			weapon1L1 =new ImageView("gui/menucontroller/sniper_cannon-.png"); 
+		
+			weapon1L1 =new ImageView("../menucontroller/sniper_cannon-.png"); 
 			gridlane1weapons =new GridPane();
 			gridlane1weapons.add(weapon1L1,0,0);
 
@@ -406,10 +406,7 @@ private Text wallhealth;
 			battle.passTurn();
 			reloadEasyScene(e);
 			}
-		public void spawntitans() {
-			battle.refillApproachingTitans();
-			battle.getOriginalLanes().get(0).a;
-		}
+		
 		}
 
 	
