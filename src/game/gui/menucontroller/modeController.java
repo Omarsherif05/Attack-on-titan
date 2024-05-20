@@ -338,15 +338,7 @@ public class modeController {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	public void Lane1(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
 		root = FXMLLoader.load(getClass().getResource("weaponslane1easy.fxml"));
