@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -35,6 +36,17 @@ public class HardController {
 
 	private Battle battle;
 
+	@FXML
+	private GridPane gridlane1weapons;
+	@FXML
+	private GridPane gridlane2weapons;
+	@FXML
+	private GridPane gridlane3weapons;
+	@FXML
+	private GridPane gridlane4weapons;
+	@FXML
+	private GridPane gridlane5weapons;
+	
 	
 	
 	@FXML
@@ -156,6 +168,9 @@ public class HardController {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(4, (Lane) x.get(2));
+		weapon1L1 =new ImageView("gui/menucontroller/walltrap.png"); 
+		gridlane2weapons =new GridPane();
+		gridlane2weapons.add(weapon1L1);
 	}
 
 	public void addwalltraplane4(ActionEvent e)
@@ -163,6 +178,9 @@ public class HardController {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(4, (Lane) x.get(3));
+		weapon1L1 =new ImageView("gui/menucontroller/walltrap.png"); 
+		gridlane1weapons =new GridPane();
+		gridlane1weapons.add(weapon1L1,3,0);
 	}
 
 	public void addwalltraplane5(ActionEvent e)
@@ -170,6 +188,9 @@ public class HardController {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(4, (Lane) x.get(4));
+		weapon1L1 =new ImageView("gui/menucontroller/walltrap.png"); 
+		gridlane1weapons =new GridPane();
+		gridlane1weapons.add(weapon1L1,4,0);
 	}
 
 ///////piercing
