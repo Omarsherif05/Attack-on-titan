@@ -440,13 +440,6 @@ public class HardController {
 			showGameOverAlert();
 		} else {
 			battle.passTurn();
-			root = FXMLLoader.load(getClass().getResource("hard.fxml"));
-			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-			scene = new Scene(root);
-			stage.setScene(scene);
-			stage.setFullScreen(true);
-			stage.setFullScreenExitHint("");
-			stage.show();
 			reloadHardScene(e);
 		}
 	}

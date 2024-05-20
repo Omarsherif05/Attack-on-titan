@@ -169,14 +169,15 @@ public class easyController {
 		alert.setContentText(message);
 		alert.showAndWait();
 	}
-	
+
 	private void showGameOverAlert() throws IOException {
-	    Alert alert = new Alert(AlertType.INFORMATION);
-	    alert.setTitle("Game Over");
-	    alert.setHeaderText(null);
-	    alert.setContentText("The game is over. All lanes are lost.");
-	    alert.showAndWait();
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Game Over");
+		alert.setHeaderText(null);
+		alert.setContentText("The game is over. All lanes are lost.");
+		alert.showAndWait();
 	}
+
 	//////////// walltrap
 	public void addwalltraplane1(ActionEvent e)
 			throws InvalidLaneException, IOException, InsufficientResourcesException {
@@ -356,16 +357,17 @@ public class easyController {
 	public void addweapoen(ActionEvent e) throws IOException {
 		if (battle.isGameOver()) {
 			showGameOverAlert();
+		} else {
+			root = FXMLLoader.load(getClass().getResource("lanechooseeasy.fxml"));
+			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+			String css = this.getClass().getResource("/game/gui/menucontroller/weapons.css").toExternalForm();
+			scene = new Scene(root);
+			scene.getStylesheets().add(css);
+			stage.setScene(scene);
+			stage.setFullScreen(true);
+			stage.setFullScreenExitHint("");
+			stage.show();
 		}
-		root = FXMLLoader.load(getClass().getResource("lanechooseeasy.fxml"));
-		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-		String css = this.getClass().getResource("/game/gui/menucontroller/weapons.css").toExternalForm();
-		scene = new Scene(root);
-		scene.getStylesheets().add(css);
-		stage.setScene(scene);
-		stage.setFullScreen(true);
-		stage.setFullScreenExitHint("");
-		stage.show();
 	}
 
 	public void back(ActionEvent e) throws IOException {
@@ -385,11 +387,13 @@ public class easyController {
 	}
 
 	public void passturn(ActionEvent e) throws IOException {
-		battle.passTurn();
-		reloadEasyScene(e);
 		if (battle.isGameOver()) {
-	        showGameOverAlert();
-	    }
+			showGameOverAlert();
+		} else {
+			battle.passTurn();
+			reloadEasyScene(e);
+
+		}
 	}
 
 }
