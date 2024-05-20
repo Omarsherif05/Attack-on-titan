@@ -18,6 +18,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
@@ -48,7 +49,8 @@ private Text wallhealth;
 		private GridPane easygridpane;
 		
 		@FXML
-		private GridPane gridlane1weapons;
+		private GridPane gridlane1weapons = new GridPane();
+;
 		@FXML
 		private GridPane gridlane2weapons;
 		@FXML
@@ -174,6 +176,9 @@ private Text wallhealth;
 		        Parent root = FXMLLoader.load(getClass().getResource("easy.fxml"));
 		        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		        Scene scene = new Scene(root);
+		        gridlane1weapons = (GridPane) root.lookup("#gridlane1weapons");  // Replace "#gridlane1weapons" with the actual FXML id
+		        gridlane1weapons.getChildren().addAll(weapon1L1);
+
 		        stage.setScene(scene);
 		        stage.setFullScreen(true);
 		        stage.setFullScreenExitHint("");
@@ -185,12 +190,13 @@ private Text wallhealth;
 			x = battle.getOriginalLanes();
 			battle.purchaseWeapon(4, (Lane) x.get(0));
 			
-			weapon1L1 =new ImageView("../menucontroller/walltrap.png"); 
-			gridlane1weapons =new GridPane();
-			gridlane1weapons.add(weapon1L1,0,0);
-	
+			weapon1L1 =new ImageView("walltrap2.png"); 
+			//gridlane1weapons.add(weapon1L1, 0, 0);
+			gridlane1weapons.getChildren().addAll(weapon1L1);
+		    weapon1L1.setVisible(true);
 
 			reloadEasyScene(e);
+			
 		}
 		public void addwalltraplane2(ActionEvent e)  throws InsufficientResourcesException, InvalidLaneException, IOException {
 			ArrayList<Lane> x = new ArrayList<Lane>();

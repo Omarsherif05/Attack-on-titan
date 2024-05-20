@@ -28,8 +28,8 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView fx:id="weapon2L1" fitHeight="30.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
-            <ImageView fx:id="weapon1L1" fitHeight="30.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="weapon1L1" fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="weapon2L1" fitHeight="30.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
             <ImageView fx:id="weapon3L1" fitHeight="30.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
             <ImageView fx:id="weapon4L1" fitHeight="30.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <ImageView fx:id="weapon5L1" fitHeight="30.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
