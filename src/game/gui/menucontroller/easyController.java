@@ -146,15 +146,12 @@ private Text wallhealth;
 			ArrayList<Lane> x = new ArrayList<Lane>();
 			x = battle.getOriginalLanes();
 			battle.purchaseWeapon(4, (Lane) x.get(0));
-			weapon1L1 =new ImageView("gui/menucontroller/walltrap.png"); 
+			weapon1L1 =new ImageView("../menucontroller/walltrap.png"); 
 			gridlane1weapons =new GridPane();
 			gridlane1weapons.add(weapon1L1,0,0);
 	
 
 			reloadEasyScene(e);
-			
-			
-
 		}
 		public void addwalltraplane2(ActionEvent e)  throws InsufficientResourcesException, InvalidLaneException, IOException {
 			ArrayList<Lane> x = new ArrayList<Lane>();
