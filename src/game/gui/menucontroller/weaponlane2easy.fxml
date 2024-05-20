@@ -33,12 +33,12 @@
                   </ImageView>
                   <ImageView fitHeight="89.0" fitWidth="158.0" layoutX="296.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@volleyspread.png" />
+                        <Image url="@../../../volleyspread.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="93.0" fitWidth="158.0" layoutX="442.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@pirecing%20cannon.png" />
+                        <Image url="@../../../pirecing%20cannon.png" />
                      </image>
                   </ImageView>
                   <Text fill="#ff1010" layoutX="8.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="your resources:" wrappingWidth="275.40057373046875">
@@ -58,6 +58,7 @@
                   <Label layoutX="172.0" layoutY="276.0" prefHeight="38.0" prefWidth="92.0" text="Damage:35" textFill="WHITE" />
                   <Label layoutX="306.0" layoutY="276.0" prefHeight="38.0" prefWidth="92.0" text="Damage:5" textFill="WHITE" />
                   <Label layoutX="454.0" layoutY="276.0" prefHeight="38.0" prefWidth="92.0" text="Damage:10" textFill="WHITE" />
+                  <Button layoutX="547.0" layoutY="310.0" mnemonicParsing="false" onAction="#backShop" text="back" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="12.0" />
                </children>
             </AnchorPane>
          </children>

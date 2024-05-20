@@ -50,9 +50,7 @@ public class HardController {
 	private GridPane gridlane4weapons;
 	@FXML
 	private GridPane gridlane5weapons;
-	
-	
-	
+
 	@FXML
 	private ImageView weapon2L1;
 	@FXML
@@ -60,10 +58,9 @@ public class HardController {
 
 	@FXML
 	public void initialize() throws IOException {
-		 battle = BattleHard.getInstance();
-		 
-	        setupBattle();
-		
+		battle = BattleHard.getInstance();
+
+		setupBattle();
 
 	}
 
@@ -87,17 +84,19 @@ public class HardController {
 			phase.setText("Phase: " + battle.getBattlePhase());
 		}
 	}
+
 	private void updatewall() {
 		if (wallhealth != null && battle != null) {
-            ArrayList<Lane> lanes = battle.getOriginalLanes();
-            StringBuilder wallHealthText = new StringBuilder("Walls: ");
-            for (int i = 0; i < lanes.size(); i++) {
-                Wall wall = lanes.get(i).getLaneWall();
-                wallHealthText.append("Lane ").append(i + 1).append(": ").append(wall.getCurrentHealth()).append(" ");
-            }
-            wallhealth.setText(wallHealthText.toString());
-        }
+			ArrayList<Lane> lanes = battle.getOriginalLanes();
+			StringBuilder wallHealthText = new StringBuilder("Walls: ");
+			for (int i = 0; i < lanes.size(); i++) {
+				Wall wall = lanes.get(i).getLaneWall();
+				wallHealthText.append("Lane ").append(i + 1).append(": ").append(wall.getCurrentHealth()).append(" ");
+			}
+			wallhealth.setText(wallHealthText.toString());
+		}
 	}
+
 	private void updateScore() {
 		if (score != null && battle != null) {
 			score.setText("SCORE: " + battle.getScore());
@@ -109,15 +108,17 @@ public class HardController {
 			xyz.setText("Resources: " + battle.getResourcesGathered());
 		}
 	}
+
 	private void reloadHardScene(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("hard.fxml"));
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.setFullScreenExitHint("");
-        stage.show();
- }
+		Parent root = FXMLLoader.load(getClass().getResource("hard.fxml"));
+		Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.setFullScreen(true);
+		stage.setFullScreenExitHint("");
+		stage.show();
+	}
+
 	public void Lane1(ActionEvent e) throws InsufficientResourcesException, InvalidLaneException, IOException {
 		root = FXMLLoader.load(getClass().getResource("weaponslane1.fxml"));
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -190,9 +191,6 @@ public class HardController {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(4, (Lane) x.get(2));
-		weapon1L1 =new ImageView("gui/menucontroller/walltrap.png"); 
-		gridlane2weapons =new GridPane();
-		gridlane2weapons.add(weapon1L1);
 		reloadHardScene(e);
 	}
 
@@ -201,9 +199,6 @@ public class HardController {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(4, (Lane) x.get(3));
-		weapon1L1 =new ImageView("gui/menucontroller/walltrap.png"); 
-		gridlane1weapons =new GridPane();
-		gridlane1weapons.add(weapon1L1,3,0);
 		reloadHardScene(e);
 	}
 
@@ -212,9 +207,6 @@ public class HardController {
 		ArrayList<Lane> x = new ArrayList<Lane>();
 		x = battle.getOriginalLanes();
 		battle.purchaseWeapon(4, (Lane) x.get(4));
-		weapon1L1 =new ImageView("gui/menucontroller/walltrap.png"); 
-		gridlane1weapons =new GridPane();
-		gridlane1weapons.add(weapon1L1,4,0);
 		reloadHardScene(e);
 	}
 
@@ -332,52 +324,45 @@ public class HardController {
 	}
 
 	public void addweapoen(ActionEvent e) throws IOException {
-		
-			root = FXMLLoader.load(getClass().getResource("lanechoosehard.fxml"));
-			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-			scene = new Scene(root);
-			stage.setScene(scene);
-			stage.setFullScreen(true);
-			stage.setFullScreenExitHint("");
-			String css = this.getClass().getResource("/game/gui/menucontroller/weapons.css").toExternalForm();
-			scene.getStylesheets().add(css);
-			stage.show();
-		}
-	
 
-	public void back(ActionEvent e) throws IOException {
-	
-			root = FXMLLoader.load(getClass().getResource("lanechoosehard.fxml"));
-			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-			scene = new Scene(root);
-			stage.setScene(scene);
-			stage.setFullScreen(true);
-			stage.setFullScreenExitHint("");
-			stage.show();
-		}
-	
+		root = FXMLLoader.load(getClass().getResource("lanechoosehard.fxml"));
+		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.setFullScreen(true);
+		stage.setFullScreenExitHint("");
+		String css = this.getClass().getResource("/game/gui/menucontroller/weapons.css").toExternalForm();
+		scene.getStylesheets().add(css);
+		stage.show();
+	}
 
-	public void backShop(ActionEvent e) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("weapons.fxml"));
+	public void passturn(ActionEvent e) throws IOException {
+
+		battle.passTurn();
+		root = FXMLLoader.load(getClass().getResource("hard.fxml"));
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setFullScreen(true);
 		stage.setFullScreenExitHint("");
 		stage.show();
+		reloadHardScene(e);
 	}
 
-	public void passturn(ActionEvent e) throws IOException {
-		
-			battle.passTurn();
-			root = FXMLLoader.load(getClass().getResource("hard.fxml"));
-			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-			scene = new Scene(root);
-			stage.setScene(scene);
-			stage.setFullScreen(true);
-			stage.setFullScreenExitHint("");
-			stage.show();
-			reloadHardScene(e);
+	public void back(ActionEvent e) throws IOException {
+		reloadHardScene(e);
+	}
+
+	public void backShop(ActionEvent e) throws IOException {
+		root = FXMLLoader.load(getClass().getResource("lanechoosehard.fxml"));
+		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		String css = this.getClass().getResource("/game/gui/menucontroller/lanehardmode.css").toExternalForm();
+		scene = new Scene(root);
+		scene.getStylesheets().add(css);
+		stage.setScene(scene);
+		stage.setFullScreen(true);
+		stage.setFullScreenExitHint("");
+		stage.show();
 	}
 
 }

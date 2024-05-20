@@ -32,9 +32,4 @@ public class HowToPlayController {
 		stage.show();
 	}
 
-}/*
-Image image = new Image("howtoplay.png");
-ImageView imageview = new ImageView(image);
-imageview.fitWidthProperty().bind(stage.widthProperty());
-imageview.fitHeightProperty().bind(stage.heightProperty());
-*/
+}

@@ -10,24 +10,27 @@
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.gui.menucontroller.HardController">
    <children>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
-      <AnchorPane prefHeight="505.0" prefWidth="600.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label layoutX="183.0" layoutY="90.0" prefHeight="82.0" prefWidth="233.0" text="Choose lane" textFill="RED">
-               <font>
-                  <Font name="Bell MT" size="41.0" />
-               </font>
-            </Label>
-            <ButtonBar layoutX="70.0" layoutY="200.0" prefHeight="40.0" prefWidth="200.0">
-              <buttons>
-                <Button mnemonicParsing="false" onAction="#Lane1" text="Lane1" />
-                  <Button mnemonicParsing="false" onAction="#Lane2" text="Lane2" />
-                  <Button mnemonicParsing="false" onAction="#Lane3" text="Lane3" />
-                  <Button mnemonicParsing="false" onAction="#Lane4" text="Lane4" />
-                  <Button mnemonicParsing="false" onAction="#Lane5" text="Lane5" />
-              </buttons>
-            </ButtonBar>
-         </children>
-      </AnchorPane>
+            <AnchorPane prefHeight="505.0" prefWidth="600.0">
+               <children>
+                  <Label layoutX="183.0" layoutY="90.0" prefHeight="82.0" prefWidth="233.0" text="Choose lane" textFill="RED" AnchorPane.bottomAnchor="228.0" AnchorPane.leftAnchor="183.0" AnchorPane.rightAnchor="184.0" AnchorPane.topAnchor="90.0">
+                     <font>
+                        <Font name="Bell MT" size="41.0" />
+                     </font>
+                  </Label>
+                  <ButtonBar layoutX="70.0" layoutY="200.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="200.0">
+                    <buttons>
+                      <Button mnemonicParsing="false" onAction="#Lane1" text="Lane1" />
+                        <Button mnemonicParsing="false" onAction="#Lane2" text="Lane2" />
+                        <Button mnemonicParsing="false" onAction="#Lane3" text="Lane3" />
+                        <Button mnemonicParsing="false" onAction="#Lane4" text="Lane4" />
+                        <Button mnemonicParsing="false" onAction="#Lane5" text="Lane5" />
+                    </buttons>
+                  </ButtonBar>
+                  <Button layoutX="550.0" layoutY="348.0" mnemonicParsing="false" onAction="#back" text="Back" AnchorPane.bottomAnchor="27.0" AnchorPane.rightAnchor="9.0" />
+               </children>
+            </AnchorPane>
+         </children></HBox>
    </children>
 </VBox>

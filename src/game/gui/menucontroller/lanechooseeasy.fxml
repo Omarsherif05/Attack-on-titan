@@ -26,6 +26,7 @@
                         <Font name="Arial Rounded MT Bold" size="41.0" />
                      </font>
                   </Text>
+                  <Button layoutX="539.0" layoutY="209.0" mnemonicParsing="false" onAction="#back" text="Back" AnchorPane.bottomAnchor="6.0" AnchorPane.rightAnchor="20.0" />
                </children>
             </AnchorPane>
          </children></HBox>
