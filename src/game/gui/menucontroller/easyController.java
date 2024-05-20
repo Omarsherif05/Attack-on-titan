@@ -110,6 +110,7 @@ private Text wallhealth;
 				xyz.setText("Resources: " + battle.getResourcesGathered());
 			}
 		}
+		//
 		 
 /*
 		public void easy(ActionEvent e) throws IOException {
