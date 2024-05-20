@@ -4,11 +4,11 @@ import java.io.IOException;
 
 import game.engine.base.Wall;
 
-public class BattleSingleton {
+public class BattleEasy {
     private static Battle instance;
 
 
-    private BattleSingleton() {}
+    private BattleEasy() {}
 
     public static Battle getInstance() throws IOException {
         if (instance == null) {
