@@ -111,6 +111,8 @@ public class Battle {
 	}
 
 	public void initializeLanes(int numOfLanes) {
+		  this.lanes.clear();
+		 this.originalLanes.clear();
 		for (int i = 0; i < numOfLanes; i++) {
 			Wall wall = new Wall(WALL_BASE_HEALTH);
 			Lane lane = new Lane(wall);
