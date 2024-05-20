@@ -133,6 +133,7 @@ private Text wallhealth;
 
 =======
 */
+		
 		 private void reloadEasyScene(ActionEvent e) throws IOException {
 		        Parent root = FXMLLoader.load(getClass().getResource("easy.fxml"));
 		        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -147,6 +148,7 @@ private Text wallhealth;
 			ArrayList<Lane> x = new ArrayList<Lane>();
 			x = battle.getOriginalLanes();
 			battle.purchaseWeapon(4, (Lane) x.get(0));
+			
 			weapon1L1 =new ImageView("../menucontroller/walltrap.png"); 
 			gridlane1weapons =new GridPane();
 			gridlane1weapons.add(weapon1L1,0,0);
