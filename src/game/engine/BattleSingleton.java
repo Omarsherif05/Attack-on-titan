@@ -13,6 +13,7 @@ public class BattleSingleton {
             instance.initializeLanes(3);
         }
         return instance;
+        
     }
 }
 
