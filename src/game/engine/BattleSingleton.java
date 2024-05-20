@@ -6,7 +6,7 @@ import game.engine.base.Wall;
 
 public class BattleSingleton {
     private static Battle instance;
-    private static Wall wall;
+
 
     private BattleSingleton() {}
 
@@ -19,12 +19,6 @@ public class BattleSingleton {
         return instance;
         
     }
-    public static Wall getInstance2() throws IOException {
-        if (wall == null) {
-        	wall = new Wall(1000);
-        }
-        return wall;
-        
-    }
+    
 }
 
