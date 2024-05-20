@@ -131,6 +131,8 @@ public class modeController {
 		battle.initializeLanes(5);
 	}
 
+	
+	
 	public void walltrap(ActionEvent e) throws IOException {
 		weaponcode=4;
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
