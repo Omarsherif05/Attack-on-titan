@@ -12,6 +12,5 @@
       <Text layoutX="1676.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="217.86328125" AnchorPane.topAnchor="4.05078125" fx:id="xyz" />
       <Button layoutX="501.0" layoutY="361.0" mnemonicParsing="false" onAction="#addweapoen" text="Add weapon" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="15.0" />
       <Button layoutX="1718.0" layoutY="1035.0" mnemonicParsing="false" onAction="#passturn" prefHeight="25.0" prefWidth="84.0" text="Pass turn" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="114.0" />
-      <Button layoutX="1613.0" layoutY="1035.0" mnemonicParsing="false" onAction="#passturn" prefHeight="25.0" prefWidth="84.0" text="start" />
    </children>
 </AnchorPane>
