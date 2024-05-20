@@ -177,8 +177,10 @@ private Text wallhealth;
 		        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		        Scene scene = new Scene(root);
 		        gridlane1weapons = (GridPane) root.lookup("#gridlane1weapons");  // Replace "#gridlane1weapons" with the actual FXML id
-		        gridlane1weapons.getChildren().addAll(weapon1L1);
-
+	//	        gridlane1weapons.getChildren().addAll(weapon1L1);
+		        gridlane1weapons.getChildren().addAll(weapon2L1);
+		        //gridlane1weapons.getChildren().addAll(weapon1L1);
+		        
 		        stage.setScene(scene);
 		        stage.setFullScreen(true);
 		        stage.setFullScreenExitHint("");
@@ -190,13 +192,13 @@ private Text wallhealth;
 			x = battle.getOriginalLanes();
 			battle.purchaseWeapon(4, (Lane) x.get(0));
 			
-			weapon1L1 =new ImageView("walltrap2.png"); 
-			//gridlane1weapons.add(weapon1L1, 0, 0);
-			gridlane1weapons.getChildren().addAll(weapon1L1);
-		    weapon1L1.setVisible(true);
-
+			weapon2L1 =new ImageView("walltrap2.png"); 
+			weapon2L1.setFitHeight(150);
+			weapon2L1.setFitWidth(150);
+			gridlane1weapons.add(weapon2L1, 0, 2);
+		   
 			reloadEasyScene(e);
-			//
+
 		}
 		public void addwalltraplane2(ActionEvent e)  throws InsufficientResourcesException, InvalidLaneException, IOException {
 			ArrayList<Lane> x = new ArrayList<Lane>();
@@ -451,5 +453,4 @@ private Text wallhealth;
 		
 		}
 
-	
 

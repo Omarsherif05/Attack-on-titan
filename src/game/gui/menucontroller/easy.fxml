@@ -17,7 +17,7 @@
       <Button layoutX="501.0" layoutY="361.0" mnemonicParsing="false" onAction="#addweapoen" text="Add weapon" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="15.0" />
       <Button layoutX="1718.0" layoutY="1035.0" mnemonicParsing="false" onAction="#passturn" prefHeight="25.0" prefWidth="84.0" text="Pass turn" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="114.0" />
       <Text fx:id="wallhealth" layoutX="1532.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.rightAnchor="361.86328125" AnchorPane.topAnchor="5.05078125" />
-      <GridPane fx:id="gridlane1weapons" layoutX="211.0" layoutY="445.0" prefHeight="93.0" prefWidth="220.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="1485.0">
+      <GridPane fx:id="gridlane1weapons" layoutX="226.0" layoutY="317.0" prefHeight="93.0" prefWidth="249.0" AnchorPane.leftAnchor="226.0" AnchorPane.rightAnchor="1470.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -28,7 +28,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView fx:id="weapon1L1" fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="weapon1L1" fitHeight="30.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="weapon2L1" fitHeight="30.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
             <ImageView fx:id="weapon3L1" fitHeight="30.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
             <ImageView fx:id="weapon4L1" fitHeight="30.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -36,7 +36,7 @@
             <ImageView fx:id="weapon6L1" fitHeight="30.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <GridPane fx:id="gridlane2weapons" layoutX="211.0" layoutY="562.0" prefHeight="93.0" prefWidth="220.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="1485.0">
+      <GridPane fx:id="gridlane2weapons" layoutX="227.2" layoutY="439.0" prefHeight="103.0" prefWidth="219.0" AnchorPane.leftAnchor="227.0" AnchorPane.rightAnchor="1470.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -47,16 +47,8 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ImageView fx:id="weapon1L112" fitHeight="30.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
-         </children>
       </GridPane>
-      <GridPane fx:id="gridlane3weapons" layoutX="238.0" layoutY="706.0" prefHeight="93.0" prefWidth="220.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="1485.0">
+      <GridPane fx:id="gridlane3weapons" layoutX="226.0" layoutY="569.0" prefHeight="127.0" prefWidth="220.0" AnchorPane.leftAnchor="226.0" AnchorPane.rightAnchor="1470.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
